@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -25,9 +26,11 @@ class _StoneDiscoverViewContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<StoneDiscoverViewModel>(
       builder: (context, discoverViewModel, child) {
-        return Scaffold(
-          backgroundColor: CrystalColors.backgroundLight,
-          body: SafeArea(
+        return AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle.dark,
+          child: Scaffold(
+            backgroundColor: CrystalColors.backgroundLight,
+            body: SafeArea(
             child: CustomScrollView(
               slivers: [
                 // Header with subtitle
@@ -98,6 +101,7 @@ class _StoneDiscoverViewContent extends StatelessWidget {
                   ),
               ],
             ),
+          ),
           ),
         );
       },

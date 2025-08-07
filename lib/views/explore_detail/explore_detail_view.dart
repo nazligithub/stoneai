@@ -52,24 +52,23 @@ class _ExploreDetailViewContent extends StatelessWidget {
         return Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.transparent,
             elevation: 0,
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back, color: Colors.black),
-              onPressed: () {
-                StoneNavigationHelper.goToMainTabsAndClearStack();
-              },
-            ),
-            title: Text(
-              stone.name,
-              style: GoogleFonts.inter(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+            leading: Container(
+              margin: EdgeInsets.all(8.w),
+              decoration: BoxDecoration(
+                color: Colors.black.withValues(alpha: 0.3),
+                shape: BoxShape.circle,
+              ),
+              child: IconButton(
+                icon: Icon(Icons.arrow_back, color: Colors.white, size: 20.sp),
+                onPressed: () {
+                  StoneNavigationHelper.goToMainTabsAndClearStack();
+                },
               ),
             ),
-            centerTitle: true,
           ),
+          extendBodyBehindAppBar: true,
           body: _buildContent(stone),
         );
       },
@@ -81,50 +80,82 @@ class _ExploreDetailViewContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Stone Image Hero Section
+          // Stone Image Hero Section with Name Overlay
           Container(
             width: double.infinity,
-            height: 250.h,
+            height: 350.h,
             decoration: BoxDecoration(
-              color: Colors.grey.shade100,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20.r),
-                bottomRight: Radius.circular(20.r),
-              ),
+              color: const Color(0xFF1E1E2E),
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20.r),
-                bottomRight: Radius.circular(20.r),
-              ),
-              child: Image.asset(
-                stone.imageUrl,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return Container(
-                    color: Colors.grey.shade200,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.image_not_supported,
-                          size: 50.sp,
-                          color: Colors.grey.shade400,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                // Stone Image
+                Image.asset(
+                  stone.imageUrl,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      decoration: BoxDecoration(
+                        gradient: RadialGradient(
+                          center: Alignment.center,
+                          radius: 1.2,
+                          colors: [
+                            Colors.grey.withValues(alpha: 0.4),
+                            Colors.grey.withValues(alpha: 0.2),
+                            const Color(0xFF11111B),
+                          ],
                         ),
-                        SizedBox(height: 8.h),
-                        Text(
-                          stone.name,
-                          style: GoogleFonts.inter(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey.shade600,
-                          ),
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.diamond_outlined,
+                          size: 60.sp,
+                          color: Colors.white.withValues(alpha: 0.5),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                // Gradient overlay for better text visibility
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withValues(alpha: 0.3),
+                        Colors.transparent,
+                        Colors.black.withValues(alpha: 0.7),
+                      ],
+                      stops: const [0.0, 0.5, 1.0],
+                    ),
+                  ),
+                ),
+                // Stone name centered at bottom
+                Positioned(
+                  bottom: 30.h,
+                  left: 0,
+                  right: 0,
+                  child: Text(
+                    stone.name,
+                    style: GoogleFonts.inter(
+                      fontSize: 32.sp,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      letterSpacing: 0.5,
+                      shadows: [
+                        Shadow(
+                          offset: Offset(0, 2.h),
+                          blurRadius: 8.r,
+                          color: Colors.black.withValues(alpha: 0.8),
                         ),
                       ],
                     ),
-                  );
-                },
-              ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
             ),
           ),
           // Content with padding
