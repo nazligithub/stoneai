@@ -1,0 +1,271 @@
+{
+  "onboard": {
+    "step1": {
+      "title": "Scanner et identifier les pierres",
+      "subtitle": "Pointez votre appareil photo sur une pierre ou un cristal pour l'identifier instantanément et découvrir ses propriétés",
+      "button": "Continuer",
+      "detected_stone": "Quartz rose détecté !",
+      "stone_status": "95% de confiance"
+    },
+    "step2": {
+      "title": "Découvrir les pierres naturelles",
+      "subtitle": "Découvrez les pierres miraculeuses de la nature, apprenez les propriétés uniques et le pouvoir de guérison de chacune.",
+      "button": "Commencer",
+      "stones": {
+        "amethyst": "Améthyste",
+        "lapis_lazuli": "Lapis-lazuli",
+        "emerald": "Émeraude",
+        "dioptase": "Dioptase"
+      },
+      "stone_types": {
+        "purple_crystal": "Cristal violet",
+        "wisdom_stone": "Pierre de sagesse",
+        "green_crystal": "Cristal vert",
+        "healing_stone": "Pierre de guérison"
+      },
+      "detected": "Détecté",
+      "type_label": "Type",
+      "status_label": "Statut"
+    }
+  },
+  "paywall": {
+    "title": "Accès illimité",
+    "features": {
+      "identify_unlimited": "Identifier un nombre illimité de roches et pierres",
+      "unlock_facts": "Débloquer des faits éducatifs",
+      "ai_analysis": "Analyse de pierres par IA",
+      "remove_paywalls": "Supprimer les murs de paiement gênants"
+    },
+    "plans": {
+      "lifetime": "Plan à vie",
+      "weekly": "Plan hebdomadaire",
+      "per_week": "par semaine",
+      "save_badge": "ÉCONOMISEZ 90%"
+    },
+    "continue": "Continuer",
+    "menu": {
+      "title": "Plus d'options",
+      "privacy_policy": "Politique de confidentialité",
+      "terms_of_service": "Conditions d'utilisation",
+      "restore_purchases": "Restaurer les achats",
+      "cancel": "Annuler"
+    },
+    "messages": {
+      "restore_success": "Achats restaurés avec succès",
+      "restore_failed": "Échec de la restauration des achats",
+      "premium_activated": "🎉 Abonnement Premium activé !"
+    }
+  },
+  "discover": {
+    "subtitle": "Souhaitez-vous explorer les pierres les plus appréciées ?",
+    "error": "Une erreur s'est produite"
+  },
+  "stone_detail": {
+    "unknown_stone": "Pierre inconnue",
+    "stone_not_found": "Pierre non trouvée",
+    "sections": {
+      "description": "Description",
+      "basic_identity": "Identité de base",
+      "energy_spiritual_benefits": "Énergie et bienfaits spirituels",
+      "physical_beliefs": "Croyances physiques*",
+      "physical_properties": "Propriétés physiques",
+      "localities": "Localités",
+      "collection_care": "Collection et entretien",
+      "quality_indicators": "Indicateurs de qualité",
+      "faq": "Questions fréquemment posées"
+    },
+    "properties": {
+      "element_chakra": "Élément et Chakra",
+      "zodiac_compatibility": "Compatibilité zodiacale",
+      "spiritual_theme": "Thème spirituel",
+      "mineral_family": "Famille minérale",
+      "hardness": "Dureté",
+      "formation": "Formation",
+      "origin": "Origine",
+      "color_variations": "Variations de couleur",
+      "crystal_system": "Système cristallin",
+      "quality_indicators": "Indicateurs de qualité",
+      "value_factors": "Facteurs de valeur",
+      "sources": "Sources"
+    },
+    "disclaimer": "*Il s'agit de croyances traditionnelles, pas de conseils médicaux"
+  },
+  "camera": {
+    "error": {
+      "title": "Erreur de caméra",
+      "message": "Impossible d'accéder à la caméra",
+      "try_again": "Réessayer"
+    },
+    "tips": {
+      "title": "Conseils collants",
+      "tip1": {
+        "title": "Trop loin et sombre",
+        "subtitle": "Rapprochez-vous et photographiez dans un environnement lumineux"
+      },
+      "tip2": {
+        "title": "Flou",
+        "subtitle": "Tenez fermement et prenez une photo nette"
+      },
+      "tip3": {
+        "title": "Parfait",
+        "subtitle": "Angle et lumière parfaits"
+      },
+      "buttons": {
+        "got_it": "Compris",
+        "ok": "OK"
+      }
+    }
+  },
+  "main_screen": {
+    "ai_button": "IA",
+    "pro_button": "PRO",
+    "lighting_tip": "💡 Conseil : Un bon éclairage améliore la précision d'identification"
+  },
+  "photo_detail": {
+    "start_scan": "Commencer le scan",
+    "crop": "Recadrer",
+    "retake": "Reprendre"
+  },
+  "history": {
+    "title": "Historique",
+    "error": {
+      "try_again": "Réessayer"
+    },
+    "empty": {
+      "title": "Aucun historique encore",
+      "subtitle": "Commencez à identifier des pierres pour voir votre historique ici",
+      "start_identifying": "Commencer l'identification"
+    },
+    "clear_history": {
+      "title": "Effacer l'historique",
+      "message": "Ceci supprimera tout votre historique d'identification. Cette action ne peut pas être annulée.",
+      "cancel": "Annuler",
+      "clear": "Effacer"
+    }
+  },
+  "settings": {
+    "title": "Paramètres",
+    "premium": {
+      "member_title": "Membre Premium",
+      "member_subtitle": "Identifications illimitées et fonctionnalités avancées",
+      "upgrade_title": "Passer à Premium",
+      "upgrade_subtitle": "Débloquer des identifications illimitées et plus"
+    },
+    "sections": {
+      "about": "À propos"
+    },
+    "about": {
+      "help_support": "Aide et support",
+      "help_support_subtitle": "support@mobinaz.com",
+      "privacy_policy": "Politique de confidentialité",
+      "privacy_policy_subtitle": "Lire notre politique de confidentialité",
+      "terms_of_service": "Conditions d'utilisation",
+      "terms_of_service_subtitle": "Lire nos conditions d'utilisation",
+      "restore_purchases": "Restaurer les achats",
+      "restore_purchases_subtitle": "Restaurer vos achats précédents",
+      "version": "Version"
+    }
+  },
+  "stone_loading": {
+    "analyzing": "Analyse de la pierre...",
+    "error_title": "Erreur d'analyse",
+    "retry": "Réessayer",
+    "go_back": "Retour",
+    "ai_tip": "Nous analysons les propriétés\net les informations énergétiques de votre pierre avec la technologie IA",
+    "duration_warning": "Cela peut prendre jusqu'à 15 secondes"
+  },
+  "app": {
+    "subtitle": "Identificateur de pierres"
+  },
+  "ai_chat": {
+    "title": "Chat IA Pierre",
+    "status": "En ligne",
+    "welcome_title": "Bonjour ! Bienvenue dans le Chat IA Pierre",
+    "welcome_message": "Je suis ravi de vous aider avec les pierres. Que souhaitez-vous savoir ?",
+    "suggestions": {
+      "diamond_info": "Informations sur le diamant",
+      "what_is_amethyst": "Qu'est-ce que l'améthyste ?",
+      "stone_cleaning": "Nettoyage des pierres",
+      "chakra_stones": "Pierres de chakra"
+    },
+    "suggestion_messages": {
+      "diamond_properties": "Quelles sont les propriétés et les bienfaits de la pierre de diamant ?",
+      "amethyst_properties": "Quelles sont les propriétés et les domaines d'utilisation de la pierre d'améthyste ?",
+      "stone_cleaning_guide": "Comment puis-je nettoyer les cristaux et les pierres ?",
+      "chakra_stones_guide": "Que sont les pierres de chakra et comment sont-elles utilisées ?"
+    },
+    "input_placeholder": "Demandez sur les pierres...",
+    "send": "Envoyer"
+  },
+  "explore_detail": {
+    "description": "Description",
+    "basic_identity": "Identité de base",
+    "spiritual_properties": "Propriétés spirituelles",
+    "physical_beliefs": "Croyances physiques*",
+    "collection_tips": "Conseils de collection",
+    "faqs": "Questions fréquemment posées",
+    "disclaimer": "*Ce sont des croyances traditionnelles, pas des conseils médicaux",
+    "stones": {
+      "emerald": {
+        "description": "L'émeraude est l'une des pierres précieuses les plus vénérées de l'histoire, célèbre pour sa teinte verte luxuriante et sa connexion symbolique au renouveau, à la croissance et à la vitalité. À travers les siècles, elle a été chérie par la royauté et les guérisseurs pour son énergie mystique et sa beauté intemporelle. Le nom \"émeraude\" dérive du mot grec smaragdos, signifiant pierre verte, et sa couleur est venue représenter la nature, l'abondance et l'équilibre de l'esprit humain.",
+        "spiritual_theme": "Amour inconditionnel, compassion, clarté émotionnelle et sérénité",
+        "core_identity": "Élément/Chakra : Élément Terre / Chakra du Cœur\nSignes du Zodiaqu : Taureau ♉︎, Gémeaux ♊︎\nThème Spirituel : Amour inconditionnel, compassion, clarté émotionnelle et sérénité\nL'émeraude s'aligne avec les énergies nourricières du cœur, aidant les individus à se connecter avec leur vérité intérieure et les autres avec authenticité.",
+        "spiritual_properties": "L'émeraude est considérée comme un puissant activateur du chakra du cœur, encourageant le pardon, la compassion et la capacité d'aimer profondément sans peur. Elle aide à libérer les blessures émotionnelles et favorise un sentiment d'intégrité et d'unité avec le monde. De nombreuses traditions spirituelles utilisent l'émeraude dans les pratiques méditatives pour approfondir l'empathie, améliorer l'estime de soi et soutenir l'intelligence émotionnelle. On dit aussi qu'elle calme l'esprit et apporte une clarté mentale pendant les moments émotionnellement chargés.",
+        "physical_beliefs": "Dans les pratiques de guérison historiques et métaphysiques, l'émeraude était considérée comme bénéfique pour le système cardiovasculaire en soutenant le cœur et la circulation sanguine. Les civilisations anciennes l'associaient également aux yeux, affirmant qu'elle pouvait améliorer la vue et réduire la fatigue. Certaines cultures utilisaient l'émeraude broyée (non recommandé aujourd'hui) dans des élixirs pour la détoxification et pour stimuler la vitalité générale. On pense qu'elle apaise l'inflammation, aide à la récupération après une maladie et stimule la réponse immunitaire par l'alignement énergétique.",
+        "collectors_insight": "Les collectionneurs admirent les émeraudes pour leur saturation verte profonde et leurs inclusions minimales—bien que les inclusions mineures soient courantes et acceptées comme faisant partie du caractère de la pierre (souvent appelées le \"jardin\"). Les émeraudes colombiennes sont particulièrement prisées pour leur clarté et leur couleur vive. En raison de leur dureté modérée (7,5–8 sur l'échelle de Mohs), les émeraudes doivent être stockées séparément dans des boîtes doublées de tissu doux pour éviter les rayures. Les nettoyeurs à ultrasons et l'exposition à la chaleur doivent être évités, car les émeraudes sont souvent traitées à l'huile pour améliorer la clarté.",
+        "localities": "Les principales sources d'émeraudes de haute qualité incluent :\nColombie (Muzo, Chivor, Coscuez) : connue pour les émeraudes vertes vives de qualité supérieure\nZambie : tons vert-bleu plus profonds, souvent plus abordables\nBrésil : qualité variée, souvent vert plus clair\nPakistan et Afghanistan : cristaux de belle qualité, parfois avec une clarté élevée\nRussie (Montagnes de l'Oural) : émeraudes historiques avec un ton vert légèrement jaunâtre",
+        "faqs": "Q : Puis-je porter une émeraude tous les jours ?\nR : Oui, mais cela nécessite des soins délicats. Les émeraudes sont plus tendres que les diamants ou les saphirs et peuvent s'ébrécher si elles sont frappées. Utilisez des sertissages protecteurs pour les bagues et retirez-les pendant l'activité physique.\n\nQ : Qu'est-ce qui rend une émeraude précieuse ?\nR : La couleur est le facteur le plus important—le vert riche et profond est le plus prisé. La clarté et l'origine (par exemple, colombienne) affectent également la valeur.\n\nQ : Les inclusions dans les émeraudes sont-elles mauvaises ?\nR : Pas du tout. Les inclusions sont attendues et acceptées dans les émeraudes. Elles ajoutent souvent du caractère et aident à confirmer l'authenticité."
+      },
+      "diamond": {
+        "description": "Le diamant est la substance naturelle la plus dure connue sur Terre, célébré pour son éclat, sa force et sa beauté intemporelle. Connu comme le \"Roi des Gemmes\", il symbolise la pureté, l'endurance et la clarté. Pendant des siècles, les diamants ont été prisés non seulement pour leur valeur en bijouterie mais aussi pour leurs qualités mystiques et métaphysiques. Le nom dérive du mot grec adamas, signifiant \"invincible\", reflétant à la fois sa résilience physique et son symbolisme spirituel.",
+        "spiritual_theme": "Clarté, invincibilité, force intérieure, connexion divine",
+        "core_identity": "Élément/Chakra: Élément Air / Chakra Couronne\nSignes Zodiacaux: Bélier ♈︎, Lion ♌︎\nThème Spirituel: Clarté, invincibilité, force intérieure, connexion divine\nLes diamants représentent l'élévation spirituelle et la concentration, alignant l'esprit avec un but supérieur et la vérité.",
+        "spiritual_properties": "Les diamants sont censés amplifier les énergies et les pensées, les rendant idéaux pour la manifestation et la définition d'intentions. Ils aident à l'éveil spirituel en connectant le porteur à la conscience divine par le chakra couronne. Émotionnellement, ils aident à dissoudre le doute de soi et renforcent la clarté intérieure. Certaines traditions voient également les diamants comme des protecteurs contre les énergies négatives et l'instabilité émotionnelle, en faisant des outils puissants pour la transformation.",
+        "physical_beliefs": "Métaphysiquement, les diamants sont censés soutenir la santé du cerveau et la clarté cognitive. Ils ont été utilisés dans les systèmes de guérison anciens pour renforcer les os et détoxifier le corps. Certains croient que les diamants peuvent améliorer le flux d'énergie et augmenter l'endurance en alignant les corps physiques et subtils. Bien que non prouvé scientifiquement, les élixirs de diamant étaient autrefois utilisés pour \"fortifier le cœur\" et améliorer la vitalité.",
+        "collectors_insight": "Les diamants sont évalués selon les 4C : taille, clarté, couleur et carat. Les diamants incolores sont les plus précieux, bien que les diamants colorés fantaisie (bleu, rose, jaune) soient également très prisés. En raison de leur dureté extrême (10 sur l'échelle de Mohs), les diamants sont durables pour un port quotidien mais doivent toujours être nettoyés avec soin pour maintenir l'éclat. Stockez séparément pour éviter de rayer d'autres pierres plus tendres.",
+        "localities": "Les principales sources de diamants naturels incluent:\nRussie (Yakoutie, Arkhangelsk): Plus grand producteur mondial\nBotswana & Afrique du Sud: Connus pour les diamants blancs et fantaisie de haute qualité\nCanada (mines Diavik, Ekati): Production respectueuse de l'environnement\nInde (historiquement mines de Golconde): Source de nombreux diamants légendaires\nAustralie (mine Argyle): Célèbre pour les diamants rose et rouge rares",
+        "faqs": "Q: Les diamants sont-ils toujours incolores?\nR: Non. Bien que les diamants incolores soient classiques, les diamants naturels viennent dans une gamme de couleurs, incluant jaune, bleu, rose et même noir.\n\nQ: Les diamants cultivés en laboratoire sont-ils réels?\nR: Oui, les diamants de laboratoire sont chimiquement et physiquement identiques aux naturels. La seule différence est leur origine.\n\nQ: Les diamants peuvent-ils se casser?\nR: Malgré être le minéral le plus dur, les diamants peuvent s'ébrécher s'ils sont frappés au bon angle. Protégez-les dans des sertissages sécurisés."
+      },
+      "ruby": {
+        "description": "Le rubis est une gemme rouge rayonnante longtemps associée à la passion, au pouvoir et à la vitalité. Souvent appelé le \"Roi des Pierres Précieuses\", le rubis a été admiré à travers les cultures pour sa couleur intense et son énergie ardente. Son nom provient du mot latin ruber, signifiant rouge, et il a historiquement symbolisé la force vitale, l'amour et le courage. Qu'il soit utilisé dans d'anciens bijoux royaux ou des talismans modernes, le rubis est une pierre d'expression émotionnelle audacieuse et de force inébranlable.",
+        "spiritual_theme": "Passion, protection, détermination, vitalité",
+        "core_identity": "Élément/Chakra: Élément Feu / Chakras Racine & Cœur\nSignes Zodiacaux: Lion ♌︎, Scorpion ♏︎\nThème Spirituel: Passion, protection, détermination, vitalité\nLe rubis alimente le feu intérieur, encourageant la motivation, la force de volonté et la poursuite intrépide de ses objectifs.",
+        "spiritual_properties": "Le rubis est vénéré pour ses qualités énergisantes et protectrices. Spirituellement, on pense qu'il enflamme l'énergie kundalini, active le cœur et renforce l'aura. Il renforce la confiance en soi et aiguise le corps émotionnel, facilitant l'établissement de limites et la surmonte de la peur. Le rubis est aussi considéré comme une pierre d'amour et de sensualité, aidant à attirer et maintenir des connexions passionnées tout en purifiant les attachements émotionnels qui ne servent plus l'âme.",
+        "physical_beliefs": "Métaphysiquement, on croit que le rubis stimule la circulation, régule la pression artérielle et vivifie le corps physique. Il est souvent associé à l'amélioration des niveaux d'énergie, à la lutte contre la fatigue et à l'amélioration de la santé reproductive. La nature ardente du rubis est censée réchauffer le corps et stimuler le métabolisme. Dans l'Antiquité, il était même utilisé comme charme protecteur contre la maladie et le danger sur le champ de bataille.",
+        "collectors_insight": "Les rubis les plus désirables affichent une teinte rouge vive et pure connue sous le nom de \"sang de pigeon\". Les inclusions sont courantes et n'impactent pas significativement la valeur à moins qu'elles n'affectent la transparence. Les rubis birmans sont particulièrement recherchés pour leur couleur et leur histoire. Avec une dureté de 9 sur l'échelle de Mohs, le rubis est très durable mais devrait encore être protégé des impacts durs et de la chaleur extrême. Beaucoup de rubis sur le marché sont traités thermiquement pour améliorer la couleur.",
+        "localities": "Les principales sources de rubis incluent:\nMyanmar (Birmanie): Célèbre pour les rubis \"sang de pigeon\" de première qualité\nMozambique: Maintenant l'un des principaux producteurs de rubis au monde\nThaïlande: Centre traditionnel pour la taille et le commerce des rubis\nSri Lanka: Connu pour les rubis plus clairs, rosâtres\nTanzanie & Afghanistan: Sources émergentes de rubis de qualité gemme",
+        "faqs": "Q: Le rubis est-il la même chose que le saphir rose?\nR: Pas exactement. Les deux sont du corindon, mais la variété rouge est classifiée comme rubis, tandis que le rose tombe sous le saphir. La ligne peut parfois être subtile.\n\nQ: Le rubis a-t-il besoin d'être chargé énergétiquement?\nR: Oui. En tant qu'amplificateur d'énergie, le rubis bénéficie d'un nettoyage et d'une recharge réguliers, surtout sous la lumière du soleil ou avec des rituels liés au feu.\n\nQ: Le rubis peut-il être porté tous les jours?\nR: Absolument. Sa dureté et sa durabilité le rendent adapté au port quotidien, mais il est préférable d'éviter les produits chimiques intenses ou l'exposition prolongée à la chaleur."
+      },
+      "sapphire": {
+        "description": "Le saphir est une gemme royale connue pour son éclat bleu profond et son élégance intemporelle. Souvent associé à la sagesse, la vérité et la faveur divine, le saphir a captivé les civilisations pendant des millénaires. Son nom provient du latin sapphirus, signifiant \"pierre bleue\", mais les saphirs viennent en fait dans presque toutes les couleurs de l'arc-en-ciel, le bleu étant le plus iconique. Vénéré par les anciens prêtres, rois et érudits, le saphir continue de symboliser la clarté de pensée et l'illumination spirituelle.",
+        "spiritual_theme": "Sagesse, communication, protection, clarté mentale",
+        "core_identity": "Élément/Chakra: Élément Eau / Troisième Œil & Chakras de la Gorge\nSignes Zodiacaux: Vierge ♍︎, Balance ♎︎, Sagittaire ♐︎\nThème Spirituel: Sagesse, communication, protection, clarté mentale\nLe saphir améliore la vérité, l'intuition et la concentration mentale, en faisant une pierre favorite pour les chercheurs et les penseurs.",
+        "spiritual_properties": "Le saphir est connu comme la \"Pierre de Sagesse\". Il favorise la discipline mentale, la concentration profonde et l'insight spirituel. Spirituellement, on dit qu'il ouvre le troisième œil, aiguise l'intuition et encourage la communication honnête. Les saphirs aident à libérer les blocages mentaux, à soulager l'anxiété et à soutenir la résilience émotionnelle. Le saphir bleu, en particulier, est pensé fournir une énergie apaisante et protectrice qui protège contre les influences négatives et améliore un sentiment de paix intérieure.",
+        "physical_beliefs": "Dans la guérison holistique, on croit que le saphir régule la thyroïde et apaise les maux liés à la gorge en raison de son association avec le chakra de la gorge. Il a aussi été utilisé symboliquement pour aider avec les problèmes oculaires, les maux de tête et l'insomnie. Certaines traditions prétendent qu'il peut aider à équilibrer les hormones, améliorer la mémoire et restaurer le flux d'énergie global. Sa nature rafraîchissante le rend utile pour calmer l'inflammation et la tension dans le corps.",
+        "collectors_insight": "Les saphirs les plus précieux exhibent un bleu royal vif et velouté avec une excellente transparence. Les saphirs du Cachemire et de Birmanie sont les plus recherchés pour leur saturation de couleur et leur rareté. Les saphirs étoilés, présentant l'astérisme (une réflexion en forme d'étoile), sont aussi prisés. Avec une dureté de 9 sur l'échelle de Mohs, les saphirs sont durables pour le port quotidien. Le traitement thermique pour améliorer la couleur et la clarté est courant et largement accepté.",
+        "localities": "Les régions productrices de saphirs notables incluent:\nSri Lanka (Ceylan): Connu pour les saphirs de haute qualité, aux tons plus clairs\nCachemire (Inde): Saphirs bleu profond extrêmement rares\nMyanmar (Birmanie): Foyer de pierres bleu royal veloutées\nMadagascar: Production de saphirs abondante et diversifiée\nAustralie & Thaïlande: Saphirs de qualité commerciale et industrielle",
+        "faqs": "Q: Tous les saphirs sont-ils bleus?\nR: Non. Les saphirs viennent en de nombreuses couleurs incluant rose, jaune, vert, blanc et même noir. Seul le corindon rouge est classifié comme rubis.\n\nQ: Qu'est-ce qu'un saphir étoilé?\nR: Un saphir étoilé affiche un effet lumineux en forme d'étoile sur sa surface, causé par des inclusions en forme d'aiguille. Il est le plus visible sous la lumière directe.\n\nQ: Le saphir est-il adapté aux bagues de fiançailles?\nR: Absolument. Sa beauté, sa durabilité et son symbolisme de loyauté font du saphir un choix populaire pour les bijoux de fiançailles et les héritages."
+      },
+      "alexandrite": {
+        "description": "L'alexandrite est une pierre précieuse rare et extraordinaire, célèbre pour sa remarquable capacité de changer de couleur sous différentes conditions d'éclairage—verdâtre en lumière du jour et rouge pourpre sous la lumière incandescente. Souvent décrite comme « émeraude le jour, rubis la nuit », cette transformation magique symbolise la dualité, l'adaptabilité et la beauté cachée. Nommée d'après le tsar russe Alexandre II, l'alexandrite est très prisée pour sa rareté et son effet visuel dramatique. C'est une pierre qui fascine les collectionneurs de gemmes, les guérisseurs métaphysiques et les amoureux de l'inhabituel.",
+        "spiritual_theme": "Équilibre, transformation, dualité, sagesse intérieure",
+        "core_identity": "Élément/Chakra : Éléments Éther & Air / Chakras Couronne & Cœur\nSignes du Zodiaque : Gémeaux ♊︎, Scorpion ♏︎\nThème Spirituel : Équilibre, transformation, dualité, sagesse intérieure\nL'alexandrite embrasse le changement et aide à apporter l'équilibre émotionnel, soutenant l'évolution personnelle et la clarté du but.",
+        "spiritual_properties": "L'alexandrite est considérée comme un puissant talisman pour la transformation et la découverte de soi. Sa nature changeante de couleur reflète notre capacité à nous adapter, changer de perspective et évoluer. Elle soutient l'équilibre émotionnel, encourage la croissance intuitive et apporte la conscience de sa vérité intérieure. Spirituellement, elle fait le pont entre les chakras du cœur et de la couronne, aidant le porteur à rester ancré dans l'amour tout en atteignant une sagesse supérieure. Elle est particulièrement utile pendant les périodes d'incertitude, apportant de la lumière dans les moments de confusion émotionnelle ou de changements d'identité.",
+        "physical_beliefs": "Métaphysiquement, l'alexandrite est censée équilibrer le système nerveux et promouvoir la régénération cellulaire. Elle est souvent utilisée pour soutenir la glande pinéale et les cycles hormonaux, la rendant bénéfique pour la stabilité de l'humeur et l'équilibre énergétique. Les guérisseurs traditionnels l'associent à l'amélioration de la circulation sanguine et au soulagement de la tension ou du stress. On croit aussi qu'elle favorise la détoxification et soutient la récupération des traumatismes émotionnels, améliorant la vitalité et la résilience.",
+        "collectors_insight": "L'alexandrite est l'une des pierres précieuses les plus rares et les plus précieuses, surtout dans les grandes tailles ou avec un fort changement de couleur. L'alexandrite idéale passe du vert bleuté vif au rouge pourpre profond. Les pierres russes de l'Oural sont légendaires, mais les pierres brésiliennes et sri-lankaises sont également admirées. En raison de sa rareté et de son unicité, l'alexandrite est très collectionnable et souvent transmise comme héritage. Elle a une dureté de 8,5 sur l'échelle de Mohs, la rendant durable mais nécessitant encore des sertissages protecteurs.",
+        "localities": "Les principales sources d'alexandrite incluent :\nRussie (Monts Oural) : Source originale et la plus prestigieuse\nBrésil (région d'Hematita) : Connue pour de plus gros cristaux avec un bon changement de couleur\nSri Lanka : Produit une gamme d'alexandrites, souvent plus claires\nTanzanie & Inde : Lieux émergents pour les pierres de qualité gemme\nMadagascar : Devenant de plus en plus significatif sur le marché moderne",
+        "faqs": "Q : Qu'est-ce qui cause le changement de couleur de l'Alexandrite ?\nR : C'est dû à la façon dont la pierre absorbe les longueurs d'onde lumineuses—la teneur en chrome dans le cristal lui permet de refléter le vert sous la lumière du jour et le rouge sous la lumière incandescente.\n\nQ : L'Alexandrite est-elle chère ?\nR : Oui, l'alexandrite naturelle est extrêmement rare et très précieuse, surtout les pierres avec un changement de couleur fort et distinct.\n\nQ : Peut-on porter l'Alexandrite tous les jours ?\nR : Bien que durable, il est préférable de la porter avec précaution pour éviter les rayures. Des sertissages protecteurs dans les bagues sont recommandés si portée quotidiennement."
+      },
+      "tourmaline": {
+        "description": "La Tourmaline Paraíba est une pierre précieuse éblouissante admirée pour sa lueur néon vibrante, allant typiquement du turquoise éclatant au bleu ou vert électrique. Découverte à la fin des années 1980 dans l'état brésilien de Paraíba, cette pierre précieuse a stupéfié le monde des gemmes avec sa couleur intense et sa rareté. Contrairement à toute autre tourmaline, sa lueur radieuse est causée par des traces de cuivre et de manganèse. La Tourmaline Paraíba symbolise l'unicité, la haute énergie et la beauté de la rareté—capturant l'esprit de l'océan et du ciel dans un seul cristal.",
+        "spiritual_theme": "Expression de soi, intuition, individualité, clarté émotionnelle",
+        "core_identity": "Élément/Chakra : Éléments Eau & Air / Chakras Gorge & Cœur\nSignes du Zodiaque : Poissons ♓︎, Verseau ♒︎\nThème Spirituel : Expression de soi, intuition, individualité, clarté émotionnelle\nCette pierre précieuse encourage l'authenticité et la créativité, promouvant l'honnêteté émotionnelle et l'éclat personnel.",
+        "spiritual_properties": "La Tourmaline Paraíba est connue pour son effet upliftant et énergisant sur l'âme. Spirituellement, elle aide à dégager les blocages dans le chakra de la gorge, permettant une communication ouverte, la vérité et l'expression artistique. Elle est souvent utilisée en méditation pour se connecter avec la conscience supérieure et l'énergie océanique—offrant sérénité, insight et un sentiment de rafraîchissement spirituel. La couleur bleu-vert vive résonne également avec le chakra du cœur, encourageant la guérison émotionnelle et la paix intérieure.",
+        "physical_beliefs": "Dans les pratiques métaphysiques, la Tourmaline Paraíba est censée soutenir les systèmes nerveux et lymphatique, aidant à soulager le stress et à détoxifier le corps. Elle peut aussi promouvoir la pensée claire, réduire l'anxiété et améliorer le flux d'énergie global. En raison de sa vibration calmante, on croit qu'elle diminue la tension et améliore la relaxation. De nombreux guérisseurs l'utilisent pour équilibrer les sautes d'humeur et encourager un sommeil réparateur par la libération émotionnelle.",
+        "collectors_insight": "La Tourmaline Paraíba est parmi les pierres précieuses les plus rares et les plus précieuses au monde. Les pierres les plus prisées présentent une lueur \"néon\" vive et une excellente clarté. Les Paraíbas brésiliennes restent les plus recherchées, mais les pierres du Mozambique et du Nigeria ont gagné le respect pour leur qualité. Avec une dureté de 7–7,5 sur l'échelle de Mohs, elle doit être portée avec précaution. En raison de sa rareté, même les petites pierres Paraíba commandent des prix élevés et sont chéries par les collectionneurs sérieux.",
+        "localities": "Les principales sources de Tourmaline Paraíba sont :\nBrésil (État de Paraíba) : Source originale et la plus convoitée\nMozambique : Produit de plus gros cristaux avec une couleur intense\nNigeria : Connue pour les pierres aux tons turquoise\nCes sources produisent de petites quantités, contribuant à l'exclusivité et à la valeur marchande élevée de la gemme.",
+        "faqs": "Q : Qu'est-ce qui fait briller la Tourmaline Paraíba ?\nR : Sa lueur néon caractéristique provient de la teneur en cuivre et manganèse, une combinaison rare dans les cristaux de tourmaline.\n\nQ : La Tourmaline Paraíba est-elle une pierre de naissance ?\nR : Bien qu'elle ne soit pas officiellement une pierre de naissance traditionnelle, elle est souvent associée à octobre (dans le cadre de la famille plus large des tourmalines) et aux personnalités créatives et expressives.\n\nQ : Comment dois-je entretenir la Tourmaline Paraíba ?\nR : Nettoyez délicatement with savon doux et de l'eau tiède. Évitez les nettoyeurs à ultrasons et protégez-la des impacts durs ou de l'exposition prolongée au soleil."
+      }
+    }
+  },
+}

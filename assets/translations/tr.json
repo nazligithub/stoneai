@@ -1,0 +1,322 @@
+{
+  "onboard": {
+    "step1": {
+      "title": "Anında Taş Tanıma",
+      "subtitle": "Kameranızı herhangi bir taş veya kristale doğrultun ve anında tanımlama alın",
+      "button": "Devam",
+      "detected_stone": "Pembe Kuvars Tespit Edildi!",
+      "stone_status": "Tespit Edildi"
+    },
+    "step2": {
+      "title": "Doğal Taşları Keşfedin",
+      "subtitle": "Doğanın mucizevi taşlarını keşfedin, her birinin benzersiz özelliklerini ve şifa gücünü öğrenin.",
+      "button": "Başla",
+      "stones": {
+        "amethyst": "Ametist",
+        "lapis_lazuli": "Lapis Lazuli",
+        "emerald": "Zümrüt",
+        "dioptase": "Dioptaz"
+      },
+      "stone_types": {
+        "purple_crystal": "Mor Kristal",
+        "wisdom_stone": "Bilgelik Taşı",
+        "green_crystal": "Yeşil Kristal",
+        "healing_stone": "Şifa Taşı"
+      },
+      "detected": "Tespit Edildi",
+      "type_label": "Tür",
+      "status_label": "Durum"
+    }
+  },
+  "paywall": {
+    "title": "Sınırsız Erişim",
+    "features": {
+      "identify_unlimited": "Sınırsız kaya ve taş tanımlama",
+      "unlock_facts": "Eğitici bilgileri açın",
+      "ai_analysis": "AI destekli taş analizi",
+      "remove_paywalls": "Rahatsız edici ödeme duvarlarını kaldırın"
+    },
+    "plans": {
+      "lifetime": "Yaşam Boyu Plan",
+      "weekly": "Haftalık Plan",
+      "per_week": "haftalık",
+      "save_badge": "%90 TASARRUF"
+    },
+    "continue": "Devam Et",
+    "menu": {
+      "title": "Diğer Seçenekler",
+      "privacy_policy": "Gizlilik Politikası",
+      "terms_of_service": "Hizmet Şartları",
+      "restore_purchases": "Satın Alımları Geri Yükle",
+      "cancel": "İptal"
+    },
+    "messages": {
+      "restore_success": "Satın alımlar başarıyla geri yüklendi",
+      "restore_failed": "Satın alımları geri yükleme başarısız",
+      "premium_activated": "🎉 Premium üyeliğiniz aktifleştirildi!"
+    }
+  },
+  "discover": {
+    "subtitle": "Çok tercih edilen taşlara göz atmak ister misiniz?",
+    "error": "Bir hata oluştu"
+  },
+  "stone_detail": {
+    "unknown_stone": "Bilinmeyen Taş",
+    "stone_not_found": "Taş bulunamadı",
+    "sections": {
+      "description": "Açıklama",
+      "basic_identity": "Temel Kimlik",
+      "energy_spiritual_benefits": "Enerji & Spiritüel Faydalar",
+      "physical_beliefs": "Fiziksel İnanışlar*",
+      "physical_properties": "Fiziksel Özellikler",
+      "localities": "Yerler",
+      "collection_care": "Koleksiyon & Bakım",
+      "quality_indicators": "Kalite Göstergeleri",
+      "faq": "Sık Sorulan Sorular"
+    },
+    "properties": {
+      "element_chakra": "Element & Çakra",
+      "zodiac_compatibility": "Burç Uyumu",
+      "spiritual_theme": "Ruhsal Tema",
+      "mineral_family": "Mineral Ailesi",
+      "hardness": "Sertlik",
+      "formation": "Oluşum",
+      "origin": "Köken",
+      "color_variations": "Renk Çeşitleri",
+      "crystal_system": "Kristal Sistemi",
+      "quality_indicators": "Kalite Göstergeleri",
+      "value_factors": "Değer Faktörleri",
+      "sources": "Kaynaklar"
+    },
+    "disclaimer": "*Bunlar geleneksel inançlardır, tıbbi tavsiye değildir"
+  },
+  "camera": {
+    "error": {
+      "title": "Kamera Hatası",
+      "message": "Kameraya erişilemiyor",
+      "try_again": "Tekrar Dene"
+    },
+    "tips": {
+      "title": "Yapış İpuçları",
+      "tip1": {
+        "title": "Çok uzak & karanlık",
+        "subtitle": "Yaklaşın ve aydınlık ortamda çekin"
+      },
+      "tip2": {
+        "title": "Bulanık",
+        "subtitle": "Sabit tutun ve net çekim yapın"
+      },
+      "tip3": {
+        "title": "Mükemmel",
+        "subtitle": "Mükemmel açı ve ışık"
+      },
+      "buttons": {
+        "got_it": "Anladım",
+        "ok": "Tamam"
+      }
+    }
+  },
+  "main_screen": {
+    "ai_button": "AI",
+    "pro_button": "PRO",
+    "lighting_tip": "💡 İpucu: İyi aydınlatma tanımlama doğruluğunu artırır"
+  },
+  "photo_detail": {
+    "start_scan": "Tarama başlat",
+    "crop": "Kırp",
+    "retake": "Yeniden çek"
+  },
+  "stone_detail": {
+    "basic_identity": "Temel Kimlik",
+    "properties": {
+      "element_chakra": "Element & Çakra",
+      "zodiac_compatibility": "Burç Uyumluluğu",
+      "spiritual_theme": "Spiritüel Tema"
+    },
+    "energy_benefits": "Enerji & Spiritüel Faydalar",
+    "emotional_balance": "Duygusal Dengeleyici",
+    "energy_balance": "Enerji Dengeleme",
+    "spiritual_clarity": "Ruhsal Berraklık"
+  },
+  "explore_detail": {
+    "description": "Açıklama",
+    "basic_identity": "Temel Kimlik",
+    "spiritual_properties": "Ruhsal Özellikler",
+    "physical_beliefs": "Fiziksel İnançlar*",
+    "collection_tips": "Koleksiyon İpuçları",
+    "faqs": "Sık Sorulan Sorular",
+    "disclaimer": "*Bunlar geleneksel inançlardır, tıbbi tavsiye değildir",
+    "stones": {
+      "emerald": {
+        "description": "Zümrüt, tarih boyunca bereketli yeşil rengi ve yenilenme, büyüme ve canlılık ile olan sembolik bağlantısı nedeniyle en saygın değerli taşlardan biridir. Yüzyıllar boyunca kraliyet aileleri ve şifacılar tarafından mistik enerjisi ve zamansız güzelliği için değer görmüştür. \"Zümrüt\" adı, yeşil taş anlamına gelen Yunanca smaragdos kelimesinden türemiştir ve rengi doğayı, bolluğu ve insan ruhundaki dengeyi temsil eder.",
+        "spiritual_theme": "Koşulsuz sevgi, şefkat, duygusal berraklık ve dinginlik",
+        "core_identity": "Element/Çakra: Toprak Elementi / Kalp Çakrası\nBurç İşaretleri: Boğa ♉︎, İkizler ♊︎\nRuhsal Tema: Koşulsuz sevgi, şefkat, duygusal berraklık ve dinginlik\nZümrüt, kalbin besleyici enerjileriyle uyum sağlar ve bireylerin iç gerçekleriyle ve başkalarıyla otantik şekilde bağlantı kurmalarına yardımcı olur.",
+        "spiritual_properties": "Zümrüt güçlü bir kalp çakrası aktivatörü olarak kabul edilir; bağışlama, şefkat ve korku duymadan derinlemesine sevme yeteneğini teşvik eder. Duygusal yaraların salıverilmesine yardımcı olur ve dünya ile bütünlük ve birlik duygusu yaratır. Birçok spiritüel gelenek zümrütü empatiyi derinleştirmek, öz-değeri artırmak ve duygusal zekayı desteklemek için meditatif uygulamalarda kullanır. Ayrıca zihnin sakinleşmesini ve duygusal yoğunluk anlarında zihinsel berraklık getirmesini sağladığı söylenir.",
+        "physical_beliefs": "Tarihsel ve metafiziksel şifa uygulamalarında zümrütün kalbi ve kan dolaşımını destekleyerek kardiyovasküler sisteme fayda sağladığına inanılmıştır. Antik uygarlıklar onu ayrıca gözlerle ilişkilendirmiş, görme yeteneğini iyileştirebileceğini ve yorgunluğu azaltabileceğini iddia etmişlerdir. Bazı kültürler ezilmiş zümrütü (bugün önerilmez) detoksifikasyon ve genel vitaliteyi uyarmak için iksirler halinde kullanmıştır. İltihabı yatıştırdığı, hastalıktan iyileşmeye yardım ettiği ve enerjetik uyumlama yoluyla bağışıklık tepkisini güçlendirdiği düşünülür.",
+        "collectors_insight": "Koleksiyoncular zümrütleri derin yeşil doygunlukları ve minimal içerikleri için takdir ederler—küçük içerikler yaygındır ve taşın karakterinin bir parçası olarak kabul edilir (genellikle \"jardin\" ya da bahçe olarak adlandırılır). Kolombiya zümrütleri berraklıkları ve canlı renkleri için özellikle değer görür. Orta sertlikleri nedeniyle (Mohs ölçeğinde 7.5–8), zümrütler çizilmeyi önlemek için yumuşak astarlı kutularda ayrı olarak saklanmalıdır. Ultrasonik temizleyiciler ve ısı maruziyetinden kaçınılmalıdır, çünkü zümrütler genellikle berraklığı artırmak için yağ ile işlem görür.",
+        "localities": "Yüksek kaliteli zümrütlerin başlıca kaynakları şunlardır:\nKolombiya (Muzo, Chivor, Coscuez): canlı yeşil, üst kalite zümrütleriyle bilinir\nZambiya: daha derin, mavimsi-yeşil tonlar, genellikle daha uygun fiyatlı\nBrezilya: değişken kalite, genellikle daha açık yeşil\nPakistan ve Afganistan: ince kaliteli kristaller, bazen yüksek berraklıkta\nRusya (Ural Dağları): hafif sarımtırak-yeşil tonlu tarihi zümrütler",
+        "faqs": "S: Zümrütü her gün takabilir miyim?\nC: Evet, ancak nazik bakım gerektirir. Zümrütler elmas veya safirlerden daha yumuşaktır ve vurulduğunda çatlayabilir. Yüzükler için koruyucu ayarlar kullanın ve fiziksel aktivite sırasında çıkarın.\n\nS: Zümrütü değerli kılan nedir?\nC: Renk en önemli faktördür—zengin, derin yeşil en çok değer görür. Berraklık ve köken (örn. Kolombiya) de değeri etkiler.\n\nS: Zümrütlerdeki içerikler kötü mü?\nC: Hiç de değil. İçerikler zümrütlerde beklenir ve kabul edilir. Genellikle karakter katar ve orijinalliği doğrulamaya yardımcı olur."
+      },
+      "diamond": {
+        "description": "Elmas, Dünya'da bilinen en sert doğal madde olup, parlaklığı, gücü ve zamansız güzelliği ile ünlüdür. \"Değerli Taşların Kralı\" olarak bilinir ve saflığı, dayanıklılığı ve berraklığı simgeler. Yüzyıllardır elmaslar yalnızca mücevherdeki değeri için değil, aynı zamanda mistik ve metafiziksel nitelikleri için de ödüllendirilmiştir. İsmi, \"yenilmez\" anlamına gelen Yunanca adamas kelimesinden türemiştir ve hem fiziksel dayanıklılığını hem de ruhsal sembolizmini yansıtır.",
+        "spiritual_theme": "Berraklık, yenilmezlik, iç güç, ilahi bağlantı",
+        "core_identity": "Element/Çakra: Hava Elementi / Taç Çakrası\nBurç İşaretleri: Koç ♈︎, Aslan ♌︎\nRuhsal Tema: Berraklık, yenilmezlik, iç güç, ilahi bağlantı\nElmaslar ruhsal yükselişi ve odaklanmayı temsil eder, zihni daha yüksek amaç ve gerçekle hizalar.",
+        "spiritual_properties": "Elmasların enerjileri ve düşünceleri güçlendirdiğine inanılır, bu da onları tezahür ve niyet belirleme için ideal kılar. Taç çakrası aracılığıyla kullanıcıyı ilahi bilinçle bağlayarak ruhsal uyanışta yardım ederler. Duygusal olarak, öz-şüpheyi çözmeye ve iç berraklığı güçlendirmeye yardım ederler. Bazı gelenekler ayrıca elmasları negatif enerjilere ve duygusal dengesizliğe karşı koruyucu olarak görür, onları dönüşüm için güçlü araçlar haline getirir.",
+        "physical_beliefs": "Metafiziksel olarak, elmasların beyin sağlığını ve bilişsel berraklığı desteklediği düşünülür. Antik şifa sistemlerinde kemikleri güçlendirmek ve vücudu detoksifiye etmek için kullanılmışlardır. Bazıları elmasların fiziksel ve ince bedenleri hizalayarak enerji akışını iyileştirebileceğine ve dayanıklılığı artırabileceğine inanır. Bilimsel olarak kanıtlanmamış olsa da, elmas iksirları bir zamanlar \"kalbi güçlendirmek\" ve canlılığı artırmak için kullanılırdı.",
+        "collectors_insight": "Elmaslar 4C'ye göre değerlendirilir: kesim, berraklık, renk ve karat. Renksiz elmaslar en değerli olanlarıdır, ancak renkli elmaslar (mavi, pembe, sarı) da yüksek değer görür. Aşırı sertlikleri nedeniyle (Mohs ölçeğinde 10), elmaslar günlük kullanım için dayanıklıdır ancak parlaklığı korumak için yine de dikkatli temizlenmelidir. Diğer yumuşak taşları çizmemek için ayrı olarak saklanmalıdır.",
+        "localities": "Doğal elmas kaynaklarının başlıcaları şunlardır:\nRusya (Yakutistan, Arhangelsk): Küresel olarak en büyük üretici\nBotsvana ve Güney Afrika: Yüksek kaliteli beyaz ve renkli elmaslarıyla tanınır\nKanada (Diavik, Ekati madenleri): Çevre sorumluluğu olan üretim\nHindistan (tarihsel olarak Golconda madenleri): Birçok efsanevi elmasın kaynağı\nAvustralya (Argyle madeni): Nadir pembe ve kırmızı elmaslarıyla ünlü",
+        "faqs": "S: Elmaslar her zaman renksiz mi?\nC: Hayır. Renksiz elmaslar klasik olsa da, doğal elmaslar sarı, mavi, pembe ve hatta siyah dahil çeşitli renklerde gelir.\n\nS: Laboratuvarda üretilen elmaslar gerçek mi?\nC: Evet, laboratuvar elmasları kimyasal ve fiziksel olarak doğal olanlarla aynıdır. Tek fark kökenlerdir.\n\nS: Elmaslar kırılabilir mi?\nC: En sert mineral olmalarına rağmen, doğru açıda vurulduklarında çatlayabilirler. Güvenli ayarlarda koruyun."
+      },
+      "ruby": {
+        "description": "Yakut, tutku, güç ve canlılıkla uzun süredir ilişkilendirilen ışıltılı kırmızı bir değerli taştır. Sıklıkla \"Değerli Taşların Kralı\" olarak anılan yakut, yoğun rengi ve ateşli enerjisi nedeniyle kültürler arası hayranlık uyandırmıştır. İsmi, kırmızı anlamına gelen Latince ruber kelimesinden gelir ve tarihsel olarak yaşam gücü, aşk ve cesaret simgesi olmuştur. İster antik kraliyet mücevherlerinde ister modern tılsımlarda kullanılsın, yakut cesur duygusal ifade ve sarsılmaz güç taşıdır.",
+        "spiritual_theme": "Tutku, koruma, kararlılık, canlılık",
+        "core_identity": "Element/Çakra: Ateş Elementi / Kök ve Kalp Çakraları\nBurç İşaretleri: Aslan ♌︎, Akrep ♏︎\nRuhsal Tema: Tutku, koruma, kararlılık, canlılık\nYakut, iç ateşi besler, motivasyonu, irade gücünü ve kişinin hedeflerinin korkusuzca peşinden gitmesini teşvik eder.",
+        "spiritual_properties": "Yakut enerji verici ve koruyucu nitelikleri için saygı görür. Spiritüel olarak kundalini enerjisini ateşlediği, kalbi aktive ettiği ve aurayı güçlendirdiği düşünülür. Özgüveni güçlendirir ve duygusal bedeni keskinleştirir, böylece sınır koymayı ve korkuyu yenmeyi kolaylaştırır. Yakut ayrıca aşk ve şehvet taşı olarak kabul edilir, tutkulu bağlantıları çekmeye ve sürdürmeye yardımcı olurken ruha artık hizmet etmeyen duygusal bağlılıkları arındırır.",
+        "physical_beliefs": "Metafiziksel olarak yakutun kan dolaşımını artırdığı, kan basıncını düzenlediği ve fiziksel bedeni canlandırdığı inanılır. Sıklıkla enerji seviyelerini iyileştirmek, yorgunlukla mücadele etmek ve üreme sağlığını geliştirmekle ilişkilendirilir. Yakutun ateşli doğasının vücudu ısıttığı ve metabolizmayı uyardığı düşünülür. Antik zamanlarda, savaş alanında hastalık ve tehlikeye karşı koruyucu bir tılsım olarak bile kullanılırdı.",
+        "collectors_insight": "En arzu edilen yakutlar \"güvercin kanı\" olarak bilinen canlı, saf kırmızı renk sergiler. İçerikler yaygındır ve şeffaflığı etkilemediği sürece değeri önemli ölçüde etkilemez. Burma yakutları renkleri ve tarihleri nedeniyle özellikle aranır. Mohs ölçeğinde 9 sertliğe sahip yakut son derece dayanıklıdır ancak yine de sert darbelerden ve aşırı ısıdan korunmalıdır. Piyasadaki birçok yakut rengi geliştirmek için ısıl işlem görmüştür.",
+        "localities": "Başlıca yakut kaynakları şunlardır:\nMyanmar (Burma): Üst kalite \"güvercin kanı\" yakutlarıyla ünlü\nMozambik: Şimdi dünyanın önde gelen yakut üreticilerinden biri\nTayland: Yakut kesimi ve ticareti için geleneksel merkez\nSri Lanka: Daha açık, pembemsi yakutlarıyla tanınır\nTanzanya ve Afganistan: Mücevher kalitesi yakutların yükselen kaynakları",
+        "faqs": "S: Yakut pembe safirle aynı mı?\nC: Tam olarak değil. İkisi de korund, ancak kırmızı çeşit yakut olarak sınıflandırılırken pembe safir kategorisine girer. Çizgi bazen ince olabilir.\n\nS: Yakutun enerjetik olarak şarj edilmesi gerekir mi?\nC: Evet. Enerji güçlendirici olarak yakut, özellikle güneş ışığı altında veya ateşle ilgili ritüellerle düzenli temizlik ve şarjdan fayda görür.\n\nS: Yakut her gün takılabilir mi?\nC: Kesinlikle. Sertliği ve dayanıklılığı günlük kullanım için uygundur, ancak yoğun kimyasallardan veya uzun süreli ısı maruziyetinden kaçınmak en iyisidir."
+      },
+      "sapphire": {
+        "description": "Safir, derin mavi parlaklığı ve zamansız zarafeti ile bilinen kraliyet değerli taşıdır. Sıklıkla bilgelik, gerçek ve ilahi lütufla ilişkilendirilen safir, binlerce yıldır medeniyetleri büyülemiştir. İsmi \"mavi taş\" anlamına gelen Latince sapphirus'tan gelir, ancak safirler aslında gökkuşağının neredeyse her renginde gelir ve mavi en ikonik olanıdır. Antik rahipler, krallar ve bilginler tarafından saygı gören safir, düşünce berraklığı ve ruhsal aydınlanmayı simgelemeye devam eder.",
+        "spiritual_theme": "Bilgelik, iletişim, koruma, zihinsel berraklık",
+        "core_identity": "Element/Çakra: Su Elementi / Üçüncü Göz ve Boğaz Çakraları\nBurç İşaretleri: Başak ♍︎, Terazi ♎︎, Yay ♐︎\nRuhsal Tema: Bilgelik, iletişim, koruma, zihinsel berraklık\nSafir gerçeği, sezgiyi ve zihinsel odaklanmayı artırır, bu da onu arayış halindeki kişiler ve düşünürler için favori taş yapar.",
+        "spiritual_properties": "Safir \"Bilgelik Taşı\" olarak bilinir. Zihinsel disiplini, derin konsantrasyonu ve ruhsal içgörüyü teşvik eder. Spiritüel olarak üçüncü gözü açtığı, sezgiyi keskinleştirdiği ve dürüst iletişimi teşvik ettiği söylenir. Safirler zihinsel blokajları çözmeye, kaygıyı hafifletmeye ve duygusal dayanıklılığı desteklemeye yardımcı olur. Mavi safir özellikle negatif etkilerden koruyan ve iç huzur duygusunu artıran sakinleştirici, koruyucu enerji sağladığı düşünülür.",
+        "physical_beliefs": "Bütüncül şifada, safirin boğaz çakrasıyla ilişkisi nedeniyle tiroidi düzenlediğine ve boğazla ilgili rahatsızlıkları yatıştırdığına inanılır. Ayrıca göz sorunları, baş ağrıları ve uykusuzluk konularında yardımcı olmak için sembolik olarak kullanılmıştır. Bazı gelenekler hormonları dengelemeye, hafızayı iyileştirmeye ve genel enerji akışını restore etmeye yardımcı olabileceğini iddia eder. Soğutucu doğası vücuttaki iltihabı ve gerginliği yatıştırmada faydalıdır.",
+        "collectors_insight": "En değerli safirler mükemmel şeffaflıkla canlı, kadifemsi kraliyet mavisi sergiler. Keşmir ve Burma safirleri renk doygunlukları ve nadirlikleri nedeniyle en çok arananlarıdır. Asterizm (yıldız şeklinde yansıma) özelliği gösteren yıldızlı safirler de değer görür. Mohs ölçeğinde 9 sertliğe sahip safirler günlük kullanım için dayanıklıdır. Renk ve berraklığı geliştirmek için ısıl işlem yaygın ve geniş çapta kabul edilir.",
+        "localities": "Önemli safir üretim bölgeleri şunlardır:\nSri Lanka (Ceylon): Yüksek kaliteli, açık tonlu safirlerle bilinir\nKeşmir (Hindistan): Son derece nadir, derin mavi safirler\nMyanmar (Burma): Kadifemsi kraliyet mavisi taşların evi\nMadagaskar: Bol ve çeşitli safir üretimi\nAvustralya ve Tayland: Ticari sınıf ve endüstriyel safirler",
+        "faqs": "S: Tüm safirler mavi midir?\nC: Hayır. Safirler pembe, sarı, yeşil, beyaz ve hatta siyah dahil birçok renkte gelir. Sadece kırmızı korund yakut olarak sınıflandırılır.\n\nS: Yıldızlı safir nedir?\nC: Yıldızlı safir yüzeyinde ışıltılı yıldız benzeri efekt sergiler, buna iğne benzeri içerikler neden olur. Doğrudan ışık altında en belirgindir.\n\nS: Safir nişan yüzükleri için uygun mudur?\nC: Kesinlikle. Güzelliği, dayanıklılığı ve sadakat sembolizmi safiri nişan ve aile yadigarı mücevherleri için popüler seçim yapar."
+      },
+      "alexandrite": {
+        "description": "Aleksandrit, farklı ışık koşulları altında renk değiştirme yeteneği ile ünlü nadir ve olağanüstü bir değerli taştır—gün ışığında yeşilimsi, akkor ışığında mor-kırmızımsı. Sıklıkla \"gündüz zümrüt, gece yakut\" olarak tanımlanan bu büyülü dönüşüm ikiliği, uyum ve gizli güzelliği simgeler. Rus Çarı II. Aleksandr'ın adını taşıyan Aleksandrit, nadir olması ve dramatik görsel etkisi nedeniyle çok değerlidir. Değerli taş koleksiyoncularını, metafizik şifacıları ve sıradışı olanı sevenleri büyüleyen bir taştır.",
+        "spiritual_theme": "Denge, dönüşüm, ikilik, iç bilgelik",
+        "core_identity": "Element/Çakra: Eter & Hava Elementleri / Taç & Kalp Çakraları\nBurç İşaretleri: İkizler ♊︎, Akrep ♏︎\nRuhani Tema: Denge, dönüşüm, ikilik, iç bilgelik\nAleksandrit değişimi kucaklar ve duygusal dengeyi sağlamaya yardımcı olur, kişisel evrim ve amaç netliğini destekler.",
+        "spiritual_properties": "Aleksandrit, dönüşüm ve kendini keşfetme için güçlü bir tılsım kabul edilir. Renk değiştiren doğası, uyum sağlama, bakış açısını değiştirme ve gelişim kapasitemizi yansıtır. Duygusal dengeyi destekler, sezgisel büyümeyi teşvik eder ve kişinin iç gerçeğinin farkına varmasını sağlar. Ruhani olarak, kalp ve taç çakraları arasında köprü kurar, kullanıcının sevgide kök salırken daha yüksek bilgeliğe ulaşmasına yardımcı olur. Belirsizlik zamanlarında özellikle yararlıdır, duygusal karışıklık veya kimlik değişimi anlarında ışık sağlar.",
+        "physical_beliefs": "Metafizik olarak aleksandritin sinir sistemini dengelediğine ve hücresel yenilenmeyi desteklediğine inanılır. Sıklıkla pineal bez ve hormonal döngüleri desteklemek için kullanılır, bu da ruh hali dengeleyiciliği ve enerji dengesi için faydalı kılar. Geleneksel şifacılar onu kan dolaşımını iyileştirme ve gerginlik veya stresi rahatlatma ile ilişkilendirir. Ayrıca detoksifikasyonu teşvik ettiğine ve duygusal travmadan iyileşmeyi desteklediğine, canlılık ve dayanıklılığı artırdığına inanılır.",
+        "collectors_insight": "Aleksandrit en nadir ve en değerli değerli taşlardan biridir, özellikle büyük boyutlarda veya güçlü renk değişimine sahip olanlarda. İdeal aleksandrit canlı mavimsi-yeşilden derin morumsu-kırmızıya değişir. Rus Ural taşları efsanevidir, ancak Brezilya ve Sri Lanka taşları da beğenilir. Nadir olması ve benzersizliği nedeniyle aleksandrit son derece koleksiyonluk değerdedir ve sıklıkla aile yadigarı olarak aktarılır. Mohs ölçeğinde 8,5 sertliğe sahiptir, bu da dayanıklı olmasını sağlar ancak yine de koruyucu ayarlar gerektirir.",
+        "localities": "Aleksandritin başlıca kaynakları şunlardır:\nRusya (Ural Dağları): Orijinal ve en prestijli kaynak\nBrezilya (Hematita bölgesi): İyi renk değişimine sahip daha büyük kristalleri ile bilinen\nSri Lanka: Çeşitli aleksandritler üretir, genellikle daha açık tonlarda\nTanzanya & Hindistan: Mücevher kalitesi taşlar için gelişmekte olan konumlar\nMadagaskar: Modern pazarda giderek daha önemli hale gelen",
+        "faqs": "S: Aleksandritin renk değişimine ne sebep olur?\nC: Taşın ışık dalga boylarını nasıl emdiği ile ilgilidir—kristaldeki krom içeriği gün ışığında yeşili, akkor ışığında kırmızıyı yansıtmasını sağlar.\n\nS: Aleksandrit pahalı mı?\nC: Evet, doğal aleksandrit son derece nadir ve yüksek değerlidir, özellikle güçlü ve belirgin renk değişimine sahip taşlar.\n\nS: Aleksandrit her gün takılabilir mi?\nC: Dayanıklı olsa da çizilmeyi önlemek için dikkatli takılması en iyisidir. Günlük takılacaksa yüzüklerde koruyucu ayarlar önerilir."
+      },
+      "tourmaline": {
+        "description": "Paraíba Turmalin, genellikle parlak turkuazdan elektrik mavisine veya yeşile kadar değişen canlı neon benzeri parıltısı ile hayranlık uyandıran göz alıcı bir değerli taştır. 1980'lerin sonlarında Brezilya'nın Paraíba eyaletinde keşfedilen bu değerli taş, yoğun rengi ve nadir olması ile mücevher dünyasını büyüledi. Diğer turmalinlerden farklı olarak, parlayan ışıltısı eser miktarda bakır ve manganez nedeniyle oluşur. Paraíba Turmalin benzersizliği, yüksek enerjiyi ve nadir güzelliği simgeler—okyanus ve gökyüzünün ruhunu tek bir kristalde yakalar.",
+        "spiritual_theme": "Kendini ifade etme, sezgi, bireysellik, duygusal netlik",
+        "core_identity": "Element/Çakra: Su & Hava Elementleri / Boğaz & Kalp Çakraları\nBurç İşaretleri: Balık ♓︎, Kova ♒︎\nRuhani Tema: Kendini ifade etme, sezgi, bireysellik, duygusal netlik\nBu değerli taş özgünlüğü ve yaratıcılığı teşvik eder, duygusal dürüstlüğü ve kişisel parlaklığı destekler.",
+        "spiritual_properties": "Paraíba Turmalin ruh üzerindeki yükseltici ve enerji verici etkisi ile bilinir. Ruhani olarak, boğaz çakrasındaki blokajları temizlemeye yardımcı olur, açık iletişim, gerçeği söyleme ve sanatsal ifadeyi mümkün kılar. Daha yüksek bilinç ve okyanus enerjisi ile bağlantı kurmak için meditasyonda sıklıkla kullanılır—dinginlik, kavrayış ve ruhani tazelik hissi sunar. Canlı mavi-yeşil renk ayrıca kalp çakrası ile rezonansa girer, duygusal şifa ve iç huzuru teşvik eder.",
+        "physical_beliefs": "Metafizik uygulamalarda Paraíba Turmmalinin sinir ve lenfatik sistemleri desteklediği, stresi hafifletmeye ve vücudu detoksifiye etmeye yardımcı olduğu düşünülür. Ayrıca net düşünceyi teşvik edebilir, kaygıyı azaltabilir ve genel enerji akışını iyileştirebilir. Sakinleştirici titreşimi nedeniyle gerilimi azalttığına ve rahatlama artırdığına inanılır. Birçok şifacı onu ruh hali değişimlerini dengelemek ve duygusal serbest bırakma yoluyla dinlendirici uykuyu teşvik etmek için kullanır.",
+        "collectors_insight": "Paraíba Turmalin dünyadaki en nadir ve en değerli değerli taşlar arasındadır. En çok değer verilen taşlar canlı \"neon\" parıltısı ve mükemmel berraklık sergiler. Brezilya Paraíbaları en çok aranan olmaya devam eder, ancak Mozambik ve Nijerya'dan gelen taşlar kaliteleri nedeniyle saygı kazanmıştır. Mohs ölçeğinde 7-7,5 sertliğe sahip olduğu için dikkatli takılmalıdır. Nadir olması nedeniyle, küçük Paraíba taşları bile yüksek fiyatlara sahiptir ve ciddi koleksiyoncular tarafından değerli kabul edilir.",
+        "localities": "Paraíba Turmmalinin ana kaynakları şunlardır:\nBrezilya (Paraíba Eyaleti): Orijinal ve en arzu edilen kaynak\nMozambik: Yoğun renge sahip daha büyük kristaller üretir\nNijerya: Turkuaz tonlu taşları ile bilinir\nBu kaynaklar küçük miktarlarda üretim yapar, bu da mücevherin münhasırlığına ve yüksek pazar değerine katkıda bulunur.",
+        "faqs": "S: Paraíba Turmmalini neyin parlatır?\nC: Karakteristik neon parıltısı, turmalin kristallerinde nadir bir kombinasyon olan bakır ve manganez içeriğinden gelir.\n\nS: Paraíba Turmalin bir doğum taşı mı?\nC: Resmi olarak geleneksel bir doğum taşı olmasa da, sıklıkla Ekim ayı (daha geniş turmalin ailesinin bir parçası olarak) ve yaratıcı, ifade edici kişilikler ile ilişkilendirilir.\n\nS: Paraíba Turmmaline nasıl bakım yapmalıyım?\nC: Hafif sabun ve ılık su ile nazikçe temizleyin. Ultrasonik temizleyicilerden kaçının ve sert darbelere veya uzun süre güneş ışığına maruz kalmaya karşı koruyun."
+      }
+    }
+  },
+  "stone_loading": {
+    "analyzing_properties": "Taşınızın özelliklerini ve enerji bilgilerini AI teknolojisi ile analiz ediyoruz",
+    "stone_not_detected": "Taş Tespit Edilemedi",
+    "stone_not_detected_desc": "Görüntüde taş veya kristal tespit edilemedi. Lütfen bir taş/kristal fotoğrafı yükleyin.",
+    "ok": "Tamam",
+    "try_again": "Yeniden Dene",
+    "retry": "Yeniden Dene",
+    "go_back": "Geri Dön",
+    "error_title": "Hata"
+  },
+  "history": {
+    "title": "Geçmiş",
+    "error": {
+      "try_again": "Tekrar Dene"
+    },
+    "empty": {
+      "title": "Henüz geçmiş yok",
+      "subtitle": "Geçmişinizi burada görmek için taş tanımlama işlemini başlatın",
+      "start_identifying": "Tanımlamaya başla"
+    },
+    "clear_history": {
+      "title": "Geçmişi temizle",
+      "message": "Bu, tüm tanımlama geçmişinizi kaldıracaktır. Bu işlem geri alınamaz.",
+      "cancel": "İptal",
+      "clear": "Temizle"
+    }
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "premium": {
+      "member_title": "Premium Üye",
+      "member_subtitle": "Sınırsız tanımlama ve gelişmiş özellikler",
+      "upgrade_title": "Premium'a Yükselt",
+      "upgrade_subtitle": "Sınırsız tanımlama ve daha fazlasını açın"
+    },
+    "sections": {
+      "about": "Hakkında"
+    },
+    "about": {
+      "help_support": "Yardım ve Destek",
+      "help_support_subtitle": "support@mobinaz.com",
+      "privacy_policy": "Gizlilik Politikası",
+      "privacy_policy_subtitle": "Gizlilik politikamızı okuyun",
+      "terms_of_service": "Hizmet Şartları",
+      "terms_of_service_subtitle": "Hizmet şartlarımızı okuyun",
+      "restore_purchases": "Satın Alımları Geri Yükle",
+      "restore_purchases_subtitle": "Önceki satın alımlarınızı geri yükleyin",
+      "version": "Sürüm"
+    }
+  },
+  "stone_loading": {
+    "analyzing": "Taş Analiz Ediliyor...",
+    "error_title": "Analiz Hatası",
+    "retry": "Tekrar Dene",
+    "go_back": "Geri Dön",
+    "ai_tip": "AI teknolojisi ile taşınızın özelliklerini\nve enerji bilgilerini analiz ediyoruz",
+    "duration_warning": "Bu işlem 15 saniye kadar sürebilir",
+    "preparing_image": "Görsel hazırlanıyor...",
+    "starting_ai_analysis": "AI analiz başlatılıyor...",
+    "preparing_results": "Sonuçlar hazırlanıyor...",
+    "analysis_complete": "Analiz tamamlandı!",
+    "processing_image": "Görsel işleniyor...",
+    "ai_model_working": "AI modeli çalışıyor...",
+    "determining_stone_properties": "Taş özellikleri belirleniyor...",
+    "final_checks": "Son kontroller yapılıyor..."
+  },
+  "stones": {
+    "alexandrite": "Aleksandrit",
+    "diamond": "Elmas",
+    "sapphire": "Safir",
+    "tourmaline": "Paraíba Turmalin",
+    "ruby": "Yakut",
+    "emerald": "Zümrüt"
+  },
+  "categories": {
+    "precious_gemstone": "Değerli Taş",
+    "rare_gemstone": "Nadir Taş",
+    "igneous": "Magmatik",
+    "sedimentary": "Tortul",
+    "metamorphic": "Başkalaşım",
+    "minerals": "Mineraller",
+    "crystals": "Kristaller"
+  },
+  "navigation": {
+    "explore": "Keşfet",
+    "history": "Geçmiş"
+  },
+  "ai_chat": {
+    "title": "AI Taş Sohbeti",
+    "status": "Çevrimiçi",
+    "welcome_title": "Merhaba! AI Taş Sohbetine Hoş Geldiniz",
+    "welcome_message": "Taşlar hakkında size yardımcı olmaktan mutluluk duyarım. Ne öğrenmek istiyorsunuz?",
+    "suggestions": {
+      "diamond_info": "Elmas bilgisi",
+      "what_is_amethyst": "Ametist nedir?",
+      "stone_cleaning": "Taş temizliği",
+      "chakra_stones": "Çakra taşları"
+    },
+    "suggestion_messages": {
+      "diamond_properties": "Elmas taşının özellikleri ve faydaları nelerdir?",
+      "amethyst_properties": "Ametist taşının özellikleri ve kullanım alanları nelerdir?",
+      "stone_cleaning_guide": "Kristalleri ve taşları nasıl temizleyebilirim?",
+      "chakra_stones_guide": "Çakra taşları nelerdir ve nasıl kullanılır?"
+    },
+    "input_placeholder": "Taşlar hakkında sorun...",
+    "send": "Gönder"
+  },
+  "app": {
+    "subtitle": "Taş Tanımlayıcı"
+  }
+}

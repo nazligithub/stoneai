@@ -1,0 +1,305 @@
+{
+  "onboard": {
+    "step1": {
+      "title": "Scan & Identify Stones",
+      "subtitle": "Point your camera at any stone or crystal to instantly identify it and learn about its properties",
+      "button": "Continue",
+      "detected_stone": "Rose Quartz Detected!",
+      "stone_status": "95% Confidence"
+    },
+    "step2": {
+      "title": "Discover Natural Stones",
+      "subtitle": "Discover nature's miraculous stones, learn the unique properties and healing power of each.",
+      "button": "Get Started",
+      "stones": {
+        "amethyst": "Amethyst",
+        "lapis_lazuli": "Lapis Lazuli", 
+        "emerald": "Emerald",
+        "dioptase": "Dioptase"
+      },
+      "stone_types": {
+        "purple_crystal": "Purple Crystal",
+        "wisdom_stone": "Wisdom Stone",
+        "green_crystal": "Green Crystal",
+        "healing_stone": "Healing Stone"
+      },
+      "detected": "Detected",
+      "type_label": "Type",
+      "status_label": "Status"
+    }
+  },
+  "paywall": {
+    "title": "Unlimited Access",
+    "features": {
+      "identify_unlimited": "Identify unlimited rocks & stones",
+      "unlock_facts": "Unlock educational facts",
+      "ai_analysis": "AI-powered stone analysis",
+      "remove_paywalls": "Remove annoying paywalls"
+    },
+    "plans": {
+      "lifetime": "Lifetime Plan",
+      "weekly": "Weekly Plan",
+      "per_week": "per week",
+      "save_badge": "SAVE 90%"
+    },
+    "continue": "Continue",
+    "menu": {
+      "title": "More Options",
+      "privacy_policy": "Privacy Policy",
+      "terms_of_service": "Terms of Service",
+      "restore_purchases": "Restore Purchases",
+      "cancel": "Cancel"
+    },
+    "messages": {
+      "restore_success": "Purchases restored successfully",
+      "restore_failed": "Failed to restore purchases",
+      "premium_activated": "🎉 Premium membership activated!"
+    }
+  },
+  "discover": {
+    "subtitle": "Would you like to explore the most preferred stones?",
+    "error": "An error occurred"
+  },
+  "stone_detail": {
+    "unknown_stone": "Unknown Stone",
+    "stone_not_found": "Stone not found",
+    "sections": {
+      "description": "Description",
+      "basic_identity": "Basic Identity",
+      "energy_spiritual_benefits": "Energy & Spiritual Benefits",
+      "physical_beliefs": "Physical Beliefs*",
+      "physical_properties": "Physical Properties",
+      "localities": "Localities",
+      "collection_care": "Collection & Care",
+      "quality_indicators": "Quality Indicators",
+      "faq": "Frequently Asked Questions"
+    },
+    "properties": {
+      "element_chakra": "Element & Chakra",
+      "zodiac_compatibility": "Zodiac Compatibility", 
+      "spiritual_theme": "Spiritual Theme",
+      "mineral_family": "Mineral Family",
+      "hardness": "Hardness",
+      "formation": "Formation",
+      "origin": "Origin",
+      "color_variations": "Color Variations",
+      "crystal_system": "Crystal System",
+      "quality_indicators": "Quality Indicators",
+      "value_factors": "Value Factors",
+      "sources": "Sources"
+    },
+    "disclaimer": "*These are traditional beliefs, not medical advice"
+  },
+  "camera": {
+    "error": {
+      "title": "Camera Error",
+      "message": "Unable to access camera",
+      "try_again": "Try Again"
+    },
+    "tips": {
+      "title": "Sticky Tips",
+      "tip1": {
+        "title": "Too far & dark",
+        "subtitle": "Get closer and shoot in bright environment"
+      },
+      "tip2": {
+        "title": "Blurry",
+        "subtitle": "Hold steady and take clear shot"
+      },
+      "tip3": {
+        "title": "Perfect",
+        "subtitle": "Perfect angle and light"
+      },
+      "buttons": {
+        "got_it": "Got it",
+        "ok": "OK"
+      }
+    },
+    "main_screen": {
+      "ai_button": "AI",
+      "pro_button": "PRO",
+      "lighting_tip": "💡 Tip: Good lighting helps identification accuracy"
+    }
+  },
+  "app": {
+    "subtitle": "Stone Identifier"
+  },
+  "photo_detail": {
+    "start_scan": "Start Scan",
+    "crop": "Crop",
+    "retake": "Retake"
+  },
+  "stone_loading": {
+    "analyzing_properties": "We are analyzing your stone's properties and energy information with AI technology",
+    "stone_not_detected": "Stone Not Detected",
+    "stone_not_detected_desc": "No stone or crystal detected in the image. Please upload a stone/crystal photo.",
+    "ok": "OK",
+    "try_again": "Try Again",
+    "retry": "Try Again",
+    "go_back": "Go Back",
+    "error_title": "Error",
+    "analyzing": "Analyzing Stone...",
+    "ai_tip": "We are analyzing your stone's properties\nand energy information with AI technology",
+    "duration_warning": "This may take up to 15 seconds",
+    "preparing_image": "Preparing image...",
+    "starting_ai_analysis": "Starting AI analysis...",
+    "preparing_results": "Preparing results...",
+    "analysis_complete": "Analysis complete!",
+    "processing_image": "Processing image...",
+    "ai_model_working": "AI model working...",
+    "determining_stone_properties": "Determining stone properties...",
+    "final_checks": "Performing final checks..."
+  },
+  "history": {
+    "title": "History",
+    "error": {
+      "try_again": "Try Again"
+    },
+    "empty": {
+      "title": "No History Yet",
+      "subtitle": "Start identifying stones to see your history here",
+      "start_identifying": "Start Identifying"
+    },
+    "clear_history": {
+      "title": "Clear History",
+      "message": "This will remove all your identification history. This action cannot be undone.",
+      "cancel": "Cancel",
+      "clear": "Clear"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "premium": {
+      "member_title": "Premium Member",
+      "member_subtitle": "Unlimited identifications & advanced features",
+      "upgrade_title": "Upgrade to Premium",
+      "upgrade_subtitle": "Unlock unlimited identifications & more"
+    },
+    "sections": {
+      "about": "About"
+    },
+    "about": {
+      "help_support": "Help & Support",
+      "help_support_subtitle": "support@mobinaz.com",
+      "privacy_policy": "Privacy Policy",
+      "privacy_policy_subtitle": "Read our privacy policy",
+      "terms_of_service": "Terms of Service",
+      "terms_of_service_subtitle": "Read our terms of service",
+      "restore_purchases": "Restore Purchases",
+      "restore_purchases_subtitle": "Restore your previous purchases",
+      "version": "Version"
+    }
+  },
+  "stones": {
+    "alexandrite": "Alexandrite",
+    "diamond": "Diamond",
+    "sapphire": "Sapphire",
+    "tourmaline": "Paraíba Tourmaline",
+    "ruby": "Ruby",
+    "emerald": "Emerald"
+  },
+  "categories": {
+    "precious_gemstone": "Precious Gemstone",
+    "rare_gemstone": "Rare Gemstone",
+    "igneous": "Igneous",
+    "sedimentary": "Sedimentary",
+    "metamorphic": "Metamorphic",
+    "minerals": "Minerals",
+    "crystals": "Crystals"
+  },
+  "navigation": {
+    "explore": "Explore",
+    "history": "History"
+  },
+  "ai_chat": {
+    "title": "AI Stone Chat",
+    "status": "Online",
+    "welcome_title": "Hello! Welcome to AI Stone Chat",
+    "welcome_message": "I'm happy to help you with stones. What would you like to know?",
+    "suggestions": {
+      "diamond_info": "Diamond information",
+      "what_is_amethyst": "What is amethyst?",
+      "stone_cleaning": "Stone cleaning",
+      "chakra_stones": "Chakra stones"
+    },
+    "suggestion_messages": {
+      "diamond_properties": "What are the properties and benefits of diamond stone?",
+      "amethyst_properties": "What are the properties and usage areas of amethyst stone?",
+      "stone_cleaning_guide": "How can I clean crystals and stones?",
+      "chakra_stones_guide": "What are chakra stones and how are they used?"
+    },
+    "input_placeholder": "Ask about stones...",
+    "send": "Send"
+  },
+  "explore_detail": {
+    "description": "Description",
+    "basic_identity": "Basic Identity",
+    "spiritual_properties": "Spiritual Properties",
+    "physical_beliefs": "Physical Beliefs*",
+    "collection_tips": "Collection Tips",
+    "faqs": "Frequently Asked Questions",
+    "disclaimer": "*These are traditional beliefs, not medical advice",
+    "stones": {
+      "emerald": {
+        "description": "Emerald is one of the most revered gemstones in history, celebrated for its lush green hue and symbolic connection to renewal, growth, and vitality. Throughout centuries, it has been cherished by royalty and healers alike for its mystical energy and timeless beauty. The name \"emerald\" is derived from the Greek word smaragdos, meaning green gem, and its color has come to represent nature, abundance, and balance in the human spirit.",
+        "spiritual_theme": "Unconditional love, compassion, emotional clarity, and serenity",
+        "core_identity": "Element/Chakra: Earth Element / Heart Chakra\nZodiac Signs: Taurus ♉︎, Gemini ♊︎\nSpiritual Theme: Unconditional love, compassion, emotional clarity, and serenity\nEmerald aligns with the nurturing energies of the heart, helping individuals connect with their inner truth and others with authenticity.",
+        "spiritual_properties": "Emerald is considered a powerful heart chakra activator, encouraging forgiveness, compassion, and the ability to love deeply without fear. It assists in releasing emotional wounds and promotes a sense of wholeness and unity with the world. Many spiritual traditions use emerald in meditative practices to deepen empathy, enhance self-worth, and support emotional intelligence. It is also said to calm the mind and bring mental clarity during emotionally charged times.",
+        "physical_beliefs": "In historical and metaphysical healing practices, emerald has been believed to benefit the cardiovascular system by supporting the heart and blood circulation. Ancient civilizations also associated it with the eyes, claiming it could improve eyesight and reduce fatigue. Some cultures used crushed emerald in elixirs (not recommended today) for detoxification and to stimulate overall vitality. It's thought to soothe inflammation, aid recovery from illness, and boost the immune response through energetic alignment.",
+        "collectors_insight": "Collectors admire emeralds for their deep green saturation and minimal inclusions—although minor inclusions are common and accepted as part of the stone's character (often called the \"jardin,\" or garden). Colombian emeralds are especially prized for their clarity and vivid color. Due to their moderate hardness (7.5–8 on Mohs scale), emeralds should be stored separately in soft-lined boxes to prevent scratching. Ultrasonic cleaners and heat exposure should be avoided, as emeralds are often treated with oil to enhance clarity.",
+        "localities": "Major sources of high-quality emeralds include:\nColombia (Muzo, Chivor, Coscuez): known for vivid green, top-grade emeralds\nZambia: deeper, bluish-green tones, often more affordable\nBrazil: varied quality, often lighter green\nPakistan & Afghanistan: fine-quality crystals, sometimes with high clarity\nRussia (Ural Mountains): historic emeralds with a slightly yellowish-green tone",
+        "faqs": "Q: Can I wear an emerald every day?\nA: Yes, but it requires gentle care. Emeralds are softer than diamonds or sapphires and may chip if hit. Use protective settings for rings, and remove them during physical activity.\n\nQ: What makes an emerald valuable?\nA: Color is the most important factor—rich, deep green is most prized. Clarity and origin (e.g., Colombian) also affect value.\n\nQ: Are inclusions in emeralds bad?\nA: Not at all. Inclusions are expected and accepted in emeralds. They often add character and help confirm authenticity."
+      },
+      "diamond": {
+        "description": "Diamond is the hardest known natural substance on Earth, celebrated for its brilliance, strength, and timeless beauty. Known as the \"King of Gems,\" it symbolizes purity, endurance, and clarity. For centuries, diamonds have been prized not only for their value in jewelry but also for their mystical and metaphysical qualities. The name derives from the Greek word adamas, meaning \"unconquerable,\" reflecting both its physical resilience and spiritual symbolism.",
+        "spiritual_theme": "Clarity, invincibility, inner strength, divine connection",
+        "core_identity": "Element/Chakra: Air Element / Crown Chakra\nZodiac Signs: Aries ♈︎, Leo ♌︎\nSpiritual Theme: Clarity, invincibility, inner strength, divine connection\nDiamonds represent spiritual elevation and focus, aligning the mind with higher purpose and truth.",
+        "spiritual_properties": "Diamonds are believed to amplify energies and thoughts, making them ideal for manifestation and intention-setting. They aid in spiritual awakening by connecting the wearer to divine consciousness through the crown chakra. Emotionally, they help dissolve self-doubt and strengthen inner clarity. Some traditions also view diamonds as protectors against negative energies and emotional instability, making them powerful tools for transformation.",
+        "physical_beliefs": "Metaphysically, diamonds are thought to support brain health and cognitive clarity. They have been used in ancient healing systems to strengthen the bones and detoxify the body. Some believe diamonds can improve energy flow and enhance stamina by aligning the physical and subtle bodies. Though not scientifically proven, diamond elixirs were once used to \"fortify the heart\" and enhance vitality.",
+        "collectors_insight": "Diamonds are evaluated based on the 4Cs: cut, clarity, color, and carat. Colorless diamonds are the most valuable, though fancy colored diamonds (blue, pink, yellow) are also highly prized. Due to their extreme hardness (10 on Mohs scale), diamonds are durable for everyday wear but should still be cleaned with care to maintain brilliance. Store separately to avoid scratching other softer stones.",
+        "localities": "Key sources of natural diamonds include:\nRussia (Yakutia, Arkhangelsk): Largest producer globally\nBotswana & South Africa: Known for high-quality white and fancy diamonds\nCanada (Diavik, Ekati mines): Environmentally responsible production\nIndia (historically Golconda mines): Source of many legendary diamonds\nAustralia (Argyle mine): Famous for rare pink and red diamonds",
+        "faqs": "Q: Are diamonds always colorless?\nA: No. While colorless diamonds are classic, natural diamonds come in a range of colors, including yellow, blue, pink, and even black.\n\nQ: Are lab-grown diamonds real?\nA: Yes, lab diamonds are chemically and physically identical to natural ones. The only difference is their origin.\n\nQ: Can diamonds break?\nA: Despite being the hardest mineral, diamonds can chip if hit at the right angle. Protect them in secure settings."
+      },
+      "ruby": {
+        "description": "Ruby is a radiant red gemstone long associated with passion, power, and vitality. Often referred to as the \"King of Precious Stones,\" ruby has been admired across cultures for its intense color and fiery energy. Its name stems from the Latin word ruber, meaning red, and it has historically symbolized life force, love, and courage. Whether used in ancient royal jewelry or modern talismans, ruby is a stone of bold emotional expression and unwavering strength.",
+        "spiritual_theme": "Passion, protection, determination, vitality",
+        "core_identity": "Element/Chakra: Fire Element / Root & Heart Chakras\nZodiac Signs: Leo ♌︎, Scorpio ♏︎\nSpiritual Theme: Passion, protection, determination, vitality\nRuby fuels the inner fire, encouraging motivation, strength of will, and fearless pursuit of one's goals.",
+        "spiritual_properties": "Ruby is revered for its energizing and protective qualities. Spiritually, it is thought to ignite the kundalini energy, activate the heart, and strengthen the aura. It empowers self-confidence and sharpens the emotional body, making it easier to set boundaries and overcome fear. Ruby is also considered a stone of love and sensuality, helping to attract and maintain passionate connections while purifying emotional attachments that no longer serve the soul.",
+        "physical_beliefs": "Metaphysically, ruby is believed to boost circulation, regulate blood pressure, and invigorate the physical body. It is often associated with improving energy levels, combatting fatigue, and enhancing reproductive health. Ruby's fiery nature is thought to warm the body and stimulate metabolism. In ancient times, it was even used as a protective charm to guard against illness and danger on the battlefield.",
+        "collectors_insight": "The most desirable rubies display a vivid, pure red hue known as \"pigeon blood.\" Inclusions are common and do not significantly impact value unless they affect transparency. Burmese rubies are especially sought after for their color and history. With a hardness of 9 on the Mohs scale, ruby is highly durable but should still be protected from harsh impacts and extreme heat. Many rubies on the market are heat-treated to enhance color.",
+        "localities": "Primary ruby sources include:\nMyanmar (Burma): Famous for top-grade \"pigeon blood\" rubies\nMozambique: Now one of the world's leading ruby producers\nThailand: Traditional hub for cutting and trading rubies\nSri Lanka: Known for lighter, pinkish rubies\nTanzania & Afghanistan: Emerging sources of gem-quality rubies",
+        "faqs": "Q: Is ruby the same as pink sapphire?\nA: Not exactly. Both are corundum, but the red variety is classified as ruby, while pink falls under sapphire. The line can sometimes be subtle.\n\nQ: Does ruby need to be charged energetically?\nA: Yes. As an energy amplifier, ruby benefits from regular cleansing and charging, especially under sunlight or with fire-related rituals.\n\nQ: Can ruby be worn every day?\nA: Absolutely. Its hardness and durability make it suitable for daily wear, but it's best to avoid intense chemicals or prolonged exposure to heat."
+      },
+      "sapphire": {
+        "description": "Sapphire is a royal gemstone known for its deep blue brilliance and timeless elegance. Often associated with wisdom, truth, and divine favor, sapphire has captivated civilizations for millennia. Its name originates from the Latin sapphirus, meaning \"blue stone,\" but sapphires actually come in nearly every color of the rainbow, with blue being the most iconic. Revered by ancient priests, kings, and scholars, sapphire continues to symbolize clarity of thought and spiritual enlightenment.",
+        "spiritual_theme": "Wisdom, communication, protection, mental clarity",
+        "core_identity": "Element/Chakra: Water Element / Third Eye & Throat Chakras\nZodiac Signs: Virgo ♍︎, Libra ♎︎, Sagittarius ♐︎\nSpiritual Theme: Wisdom, communication, protection, mental clarity\nSapphire enhances truth, intuition, and mental focus, making it a favorite stone for seekers and thinkers.",
+        "spiritual_properties": "Sapphire is known as the \"Stone of Wisdom.\" It promotes mental discipline, deep concentration, and spiritual insight. Spiritually, it is said to open the third eye, sharpen intuition, and encourage honest communication. Sapphires help release mental blockages, ease anxiety, and support emotional resilience. Blue sapphire, in particular, is thought to provide a calming, protective energy that shields against negative influences and enhances a sense of inner peace.",
+        "physical_beliefs": "In holistic healing, sapphire is believed to regulate the thyroid and soothe throat-related ailments due to its association with the throat chakra. It has also been used symbolically to aid with eye issues, headaches, and insomnia. Some traditions claim it can help balance hormones, improve memory, and restore overall energy flow. Its cooling nature makes it useful in calming inflammation and tension in the body.",
+        "collectors_insight": "The most valued sapphires exhibit a vivid, velvety royal blue with excellent transparency. Kashmir and Burmese sapphires are the most sought-after for their color saturation and rarity. Star sapphires, featuring asterism (a star-shaped reflection), are also prized. With a hardness of 9 on the Mohs scale, sapphires are durable for everyday wear. Heat treatment to enhance color and clarity is common and widely accepted.",
+        "localities": "Notable sapphire-producing regions include:\nSri Lanka (Ceylon): Known for high-quality, lighter-toned sapphires\nKashmir (India): Extremely rare, deep blue sapphires\nMyanmar (Burma): Home to velvety royal blue stones\nMadagascar: Abundant and diverse sapphire production\nAustralia & Thailand: Commercial-grade and industrial sapphires",
+        "faqs": "Q: Are all sapphires blue?\nA: No. Sapphires come in many colors including pink, yellow, green, white, and even black. Only red corundum is classified as ruby.\n\nQ: What is a star sapphire?\nA: A star sapphire displays a glowing star-like effect on its surface, caused by needle-like inclusions. It is most visible under direct light.\n\nQ: Is sapphire suitable for engagement rings?\nA: Absolutely. Its beauty, durability, and symbolism of loyalty make sapphire a popular choice for engagement and heirloom jewelry."
+      },
+      "alexandrite": {
+        "description": "Alexandrite is a rare and extraordinary gemstone famous for its remarkable ability to change color under different lighting conditions—greenish in daylight and purplish-red under incandescent light. Often described as \"emerald by day, ruby by night,\" this magical transformation symbolizes duality, adaptability, and hidden beauty. Named after Russian Tsar Alexander II, Alexandrite is highly prized for its rarity and dramatic visual effect. It's a stone that fascinates gem collectors, metaphysical healers, and lovers of the unusual.",
+        "spiritual_theme": "Balance, transformation, duality, inner wisdom",
+        "core_identity": "Element/Chakra: Ether & Air Elements / Crown & Heart Chakras\nZodiac Signs: Gemini ♊︎, Scorpio ♏︎\nSpiritual Theme: Balance, transformation, duality, inner wisdom\nAlexandrite embraces change and helps bring emotional equilibrium, supporting personal evolution and clarity of purpose.",
+        "spiritual_properties": "Alexandrite is considered a powerful talisman for transformation and self-discovery. Its color-shifting nature mirrors our ability to adapt, shift perspective, and evolve. It supports emotional balance, encourages intuitive growth, and brings awareness to one's inner truth. Spiritually, it bridges the heart and crown chakras, helping the wearer stay grounded in love while reaching for higher wisdom. It is especially useful during times of uncertainty, providing light in moments of emotional confusion or identity shifts.",
+        "physical_beliefs": "Metaphysically, alexandrite is believed to balance the nervous system and promote cellular regeneration. It's often used to support the pineal gland and hormonal cycles, making it beneficial for mood stability and energy balance. Traditional healers associate it with improving blood circulation and relieving tension or stress. It is also believed to foster detoxification and support recovery from emotional trauma, enhancing vitality and resilience.",
+        "collectors_insight": "Alexandrite is one of the rarest and most valuable gemstones, especially in larger sizes or with strong color change. The ideal alexandrite shifts from vivid bluish-green to deep purplish-red. Russian Ural stones are legendary, but Brazilian and Sri Lankan stones are also admired. Due to its rarity and uniqueness, alexandrite is highly collectible and often passed down as an heirloom. It has a hardness of 8.5 on the Mohs scale, making it durable yet still needing protective settings.",
+        "localities": "Top sources of alexandrite include:\nRussia (Ural Mountains): The original and most prestigious source\nBrazil (Hematita region): Known for larger crystals with good color change\nSri Lanka: Produces a range of alexandrites, often lighter in tone\nTanzania & India: Emerging locations for gem-quality stones\nMadagascar: Increasingly significant in the modern market",
+        "faqs": "Q: What causes Alexandrite's color change?\nA: It's due to how the stone absorbs light wavelengths—chromium content in the crystal allows it to reflect green under daylight and red under incandescent light.\n\nQ: Is Alexandrite expensive?\nA: Yes, natural alexandrite is extremely rare and highly valuable, especially stones with strong and distinct color change.\n\nQ: Can Alexandrite be worn every day?\nA: While durable, it's best worn with care to avoid scratching. Protective settings in rings are recommended if worn daily."
+      },
+      "tourmaline": {
+        "description": "Paraíba Tourmaline is a dazzling gemstone admired for its vibrant neon-like glow, typically ranging from bright turquoise to electric blue or green. Discovered in the late 1980s in Brazil's Paraíba state, this gemstone stunned the gem world with its intense color and rarity. Unlike any other tourmaline, its radiant glow is caused by trace amounts of copper and manganese. Paraíba Tourmaline symbolizes uniqueness, high energy, and the beauty of rarity—capturing the spirit of the ocean and the sky in a single crystal.",
+        "spiritual_theme": "Self-expression, intuition, individuality, emotional clarity",
+        "core_identity": "Element/Chakra: Water & Air Elements / Throat & Heart Chakras\nZodiac Signs: Pisces ♓︎, Aquarius ♒︎\nSpiritual Theme: Self-expression, intuition, individuality, emotional clarity\nThis gemstone encourages authenticity and creativity, promoting emotional honesty and personal brilliance.",
+        "spiritual_properties": "Paraíba Tourmaline is known for its uplifting and energizing effect on the soul. Spiritually, it helps clear blockages in the throat chakra, enabling open communication, truth-telling, and artistic expression. It's often used in meditation to connect with higher consciousness and oceanic energy—offering serenity, insight, and a sense of spiritual refreshment. The vivid blue-green color also resonates with the heart chakra, encouraging emotional healing and inner peace.",
+        "physical_beliefs": "In metaphysical practices, Paraíba Tourmaline is thought to support the nervous and lymphatic systems, helping to relieve stress and detoxify the body. It may also promote clear thinking, reduce anxiety, and improve overall energy flow. Due to its calming vibration, it is believed to lower tension and enhance relaxation. Many healers use it to balance mood swings and encourage restful sleep through emotional release.",
+        "collectors_insight": "Paraíba Tourmaline is among the rarest and most valuable gemstones in the world. The most prized stones exhibit a vivid \"neon\" glow and excellent clarity. Brazilian Paraíbas remain the most sought after, but stones from Mozambique and Nigeria have gained respect for their quality. With a hardness of 7–7.5 on the Mohs scale, it should be worn with care. Due to its rarity, even small Paraíba stones command high prices and are treasured by serious collectors.",
+        "localities": "The main sources of Paraíba Tourmaline are:\nBrazil (Paraíba State): Original and most coveted source\nMozambique: Produces larger crystals with intense color\nNigeria: Known for turquoise-toned stones\nThese sources yield small quantities, contributing to the gem's exclusivity and high market value.",
+        "faqs": "Q: What makes Paraíba Tourmaline glow?\nA: Its signature neon glow comes from copper and manganese content, a rare combination in tourmaline crystals.\n\nQ: Is Paraíba Tourmaline a birthstone?\nA: While not officially a traditional birthstone, it is often associated with October (as part of the broader tourmaline family) and with creative, expressive personalities.\n\nQ: How should I care for Paraíba Tourmaline?\nA: Clean gently with mild soap and warm water. Avoid ultrasonic cleaners and protect it from hard impacts or prolonged sunlight exposure."
+      }
+    }
+  }
+}

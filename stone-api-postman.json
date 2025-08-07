@@ -1,0 +1,319 @@
+{
+  "info": {
+    "name": "Stone AI API",
+    "description": "AI-powered stone/crystal identification and properties API using Google Gemini",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Stones",
+      "item": [
+        {
+          "name": "Scan Stone",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "test-user-123",
+                "type": "text",
+                "description": "Required: User identifier"
+              },
+              {
+                "key": "X-Locale",
+                "value": "tr",
+                "type": "text",
+                "description": "Optional: Language code (tr, en). Default: tr"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "",
+                  "description": "Required: Stone/crystal image file (max 10MB)"
+                },
+                {
+                  "key": "scan_type",
+                  "value": "identification",
+                  "type": "text",
+                  "description": "Optional: Type of scan (identification, properties, energy_reading). Default: identification"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/stones/scan",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "stones", "scan"]
+            },
+            "description": "Upload a stone/crystal image and get AI-powered identification and properties"
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-User-Id",
+                    "value": "test-user-123"
+                  },
+                  {
+                    "key": "X-Locale",
+                    "value": "tr"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "stone.jpg"
+                    },
+                    {
+                      "key": "scan_type",
+                      "value": "identification",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"message\": \"Stone identified successfully\",\n  \"data\": {\n    \"submission_id\": 123,\n    \"image_url\": \"https://your-storage.supabase.co/stone-images/123.jpg\",\n    \"stone\": {\n      \"name\": \"Alexandrite\",\n      \"confidence\": 0.95,\n      \"basic_info\": {\n        \"mineral_family\": \"Chrysoberyl\",\n        \"hardness\": \"8.5\",\n        \"color_variations\": \"Yeşilden kırmızıya\",\n        \"crystal_system\": \"Orthorhombic\"\n      },\n      \"spiritual\": {\n        \"element_chakra\": \"Hava & Eter | Taç & Alın Çakrası\",\n        \"zodiac_compatibility\": \"İkizler ♊︎, Yengeç ♋︎\",\n        \"spiritual_theme\": \"Dönüşüm, denge, çift yönlü bakış\",\n        \"benefits\": [\n          {\n            \"icon\": \"🔄\",\n            \"title\": \"Yin-Yang Dengesi\",\n            \"description\": \"Işıkta renk değişimi kişinin esneklik ve adaptasyon becerisini yansıtır.\"\n          },\n          {\n            \"icon\": \"🔮\",\n            \"title\": \"Sezgi Keskinleştirici\",\n            \"description\": \"Ruh hallerinin altında yatan gerçek motivasyonları görmeye yardım eder.\"\n          },\n          {\n            \"icon\": \"🧩\",\n            \"title\": \"Karar Netliği\",\n            \"description\": \"Karmaşık konularda 'iki renk, tek taş' metaforuyla bütüncül düşünceyi teşvik eder.\"\n          }\n        ]\n      },\n      \"physical\": {\n        \"description\": \"Sistemik denge getirdiği, hormon seviyelerini düzenlemeye yardımcı olduğu söylenir.\",\n        \"icon\": \"🩺\"\n      },\n      \"collection\": {\n        \"quality_indicators\": \"%90+ gündüz-gece renk değişimi olan Brezilya taşları vitrin kalitesindedir\",\n        \"sources\": \"Brezilya, Sri Lanka, Rusya\",\n        \"value_factors\": \"3 ct üstü logaritmik fiyat artar\"\n      },\n      \"faqs\": [\n        {\n          \"question\": \"Gece kırmızı olmuyorsa sahte mi?\",\n          \"answer\": \"Işık kaynağı tayfı yetersiz olabilir; akkor lamba test et.\"\n        },\n        {\n          \"question\": \"Renk değişimi enerjiyi nasıl etkiler?\",\n          \"answer\": \"Taşın 'duygusal geçişler' için köprü olduğu kabul edilir.\"\n        }\n      ]\n    },\n    \"processing_time_ms\": 2500\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get History",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "test-user-123",
+                "type": "text",
+                "description": "Required: User identifier"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/stones/history?limit=50",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "stones", "history"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Optional: Maximum number of results (default: 50)"
+                }
+              ]
+            },
+            "description": "Get stone scanning history for the authenticated user"
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-User-Id",
+                    "value": "test-user-123"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/stones/history",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "stones", "history"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"message\": \"History retrieved successfully\",\n  \"data\": {\n    \"submissions\": [\n      {\n        \"id\": 123,\n        \"stone_name\": \"Alexandrite\",\n        \"status\": \"completed\",\n        \"scan_type\": \"identification\",\n        \"locale\": \"tr\",\n        \"created_at\": \"2025-07-30T10:00:00Z\",\n        \"processing_time_ms\": 2500,\n        \"image_url\": \"https://your-storage.supabase.co/stone-images/123.jpg\",\n        \"confidence\": 0.95,\n        \"element_chakra\": \"Hava & Eter | Taç & Alın Çakrası\",\n        \"zodiac_compatibility\": \"İkizler ♊︎, Yengeç ♋︎\"\n      },\n      {\n        \"id\": 124,\n        \"stone_name\": \"Amethyst\",\n        \"status\": \"completed\",\n        \"scan_type\": \"identification\",\n        \"locale\": \"tr\",\n        \"created_at\": \"2025-07-30T11:00:00Z\",\n        \"processing_time_ms\": 2300,\n        \"image_url\": \"https://your-storage.supabase.co/stone-images/124.jpg\",\n        \"confidence\": 0.92,\n        \"element_chakra\": \"Hava | Taç Çakrası\",\n        \"zodiac_compatibility\": \"Kova ♒︎, Balık ♓︎\"\n      }\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Submission Details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "test-user-123",
+                "type": "text",
+                "description": "Required: User identifier"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/stones/submission/123",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "stones", "submission", "123"]
+            },
+            "description": "Get detailed information about a specific stone scanning submission (validates ownership)"
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-User-Id",
+                    "value": "test-user-123"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/stones/submission/123",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "stones", "submission", "123"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"message\": \"Submission retrieved successfully\",\n  \"data\": {\n    \"id\": 123,\n    \"user_id\": \"test-user-123\",\n    \"stone_id\": 1,\n    \"status\": \"completed\",\n    \"scan_type\": \"identification\",\n    \"locale\": \"tr\",\n    \"image_url\": \"https://your-storage.supabase.co/stone-images/123.jpg\",\n    \"created_at\": \"2025-07-30T10:00:00Z\",\n    \"completed_at\": \"2025-07-30T10:00:02.5Z\",\n    \"processing_time_ms\": 2500,\n    \"stone\": {\n      \"name\": \"Alexandrite\",\n      \"confidence\": 0.95,\n      \"properties\": {\n        \"basic_info\": {\n          \"mineral_family\": \"Chrysoberyl\",\n          \"hardness\": \"8.5\",\n          \"color_variations\": \"Yeşilden kırmızıya\",\n          \"crystal_system\": \"Orthorhombic\"\n        },\n        \"spiritual_properties\": {\n          \"primary_chakras\": [\"Taç Çakrası\", \"Alın Çakrası\"],\n          \"elements\": [\"Hava\", \"Eter\"],\n          \"key_benefits\": [\"Dönüşüm\", \"Denge\", \"Esneklik\"]\n        },\n        \"usage_guide\": {\n          \"meditation\": \"Renk değişimini gözlemleyerek meditasyon\",\n          \"wearing\": \"Yüzük veya kolye olarak sol tarafa takılması önerilir\",\n          \"cleansing\": \"Ay ışığında veya selenit ile temizleme\"\n        }\n      },\n      \"element_chakra\": \"Hava & Eter | Taç & Alın Çakrası\",\n      \"zodiac_compatibility\": \"İkizler ♊︎, Yengeç ♋︎\",\n      \"spiritual_theme\": \"Dönüşüm, denge, çift yönlü bakış\",\n      \"energy_benefits\": [\n        {\n          \"icon\": \"🔄\",\n          \"title\": \"Yin-Yang Dengesi\",\n          \"description\": \"Işıkta renk değişimi kişinin esneklik ve adaptasyon becerisini yansıtır.\"\n        }\n      ],\n      \"physical_beliefs\": {\n        \"description\": \"Sistemik denge getirdiği, hormon seviyelerini düzenlemeye yardımcı olduğu söylenir.\",\n        \"icon\": \"🩺\"\n      },\n      \"collection_tips\": {\n        \"quality_indicators\": \"%90+ gündüz-gece renk değişimi olan Brezilya taşları vitrin kalitesindedir\",\n        \"sources\": \"Brezilya, Sri Lanka, Rusya\",\n        \"value_factors\": \"3 ct üstü logaritmik fiyat artar\"\n      },\n      \"identified_at\": \"2025-07-30T10:00:02.5Z\"\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Stones List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/stones/list",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "stones", "list"]
+            },
+            "description": "Get all available stones in the database"
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/stones/list",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "stones", "list"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"message\": \"Stones list retrieved successfully\",\n  \"data\": {\n    \"stones\": [\n      {\n        \"id\": 1,\n        \"name\": \"Alexandrite\",\n        \"element_chakra\": \"Hava & Eter | Taç & Alın Çakrası\",\n        \"zodiac_compatibility\": \"İkizler ♊︎, Yengeç ♋︎\",\n        \"spiritual_theme\": \"Dönüşüm, denge, çift yönlü bakış\"\n      },\n      {\n        \"id\": 2,\n        \"name\": \"Amethyst\",\n        \"element_chakra\": \"Hava | Taç Çakrası\",\n        \"zodiac_compatibility\": \"Kova ♒︎, Balık ♓︎\",\n        \"spiritual_theme\": \"Ruhsal arınma, huzur, meditasyon\"\n      },\n      {\n        \"id\": 3,\n        \"name\": \"Rose Quartz\",\n        \"element_chakra\": \"Su | Kalp Çakrası\",\n        \"zodiac_compatibility\": \"Boğa ♉︎, Terazi ♎︎\",\n        \"spiritual_theme\": \"Koşulsuz sevgi, şifa, duygusal denge\"\n      },\n      {\n        \"id\": 4,\n        \"name\": \"Black Tourmaline\",\n        \"element_chakra\": \"Toprak | Kök Çakrası\",\n        \"zodiac_compatibility\": \"Oğlak ♑︎\",\n        \"spiritual_theme\": \"Koruma, topraklama, negatif enerji kalkanı\"\n      },\n      {\n        \"id\": 5,\n        \"name\": \"Citrine\",\n        \"element_chakra\": \"Ateş | Solar Pleksus Çakrası\",\n        \"zodiac_compatibility\": \"Koç ♈︎, İkizler ♊︎, Aslan ♌︎\",\n        \"spiritual_theme\": \"Bolluk, başarı, kişisel güç\"\n      }\n    ]\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get User Statistics",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "test-user-123",
+                "type": "text",
+                "description": "Required: User identifier"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/stones/stats",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "stones", "stats"]
+            },
+            "description": "Get stone scanning statistics for the authenticated user"
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-User-Id",
+                    "value": "test-user-123"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/stones/stats",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["api", "stones", "stats"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "body": "{\n  \"success\": true,\n  \"message\": \"Stats retrieved successfully\",\n  \"data\": {\n    \"total_scans\": 50,\n    \"successful_scans\": 48,\n    \"failed_scans\": 2,\n    \"avg_processing_time_ms\": 2300,\n    \"unique_stones_found\": 15,\n    \"top_stones\": [\n      {\n        \"stone_name\": \"Amethyst\",\n        \"scan_count\": 12,\n        \"avg_confidence\": 0.92\n      },\n      {\n        \"stone_name\": \"Rose Quartz\",\n        \"scan_count\": 8,\n        \"avg_confidence\": 0.88\n      },\n      {\n        \"stone_name\": \"Clear Quartz\",\n        \"scan_count\": 6,\n        \"avg_confidence\": 0.95\n      },\n      {\n        \"stone_name\": \"Black Tourmaline\",\n        \"scan_count\": 5,\n        \"avg_confidence\": 0.85\n      },\n      {\n        \"stone_name\": \"Citrine\",\n        \"scan_count\": 4,\n        \"avg_confidence\": 0.90\n      }\n    ]\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        },
+        "description": "Check if the API server is running"
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "body": "{\n  \"status\": \"OK\",\n  \"timestamp\": \"2025-07-30T10:00:00.000Z\"\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// You can add pre-request scripts here if needed"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// You can add test scripts here if needed"
+        ]
+      }
+    }
+  ]
+}

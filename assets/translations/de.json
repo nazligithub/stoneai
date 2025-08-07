@@ -1,0 +1,271 @@
+{
+  "onboard": {
+    "step1": {
+      "title": "Steine scannen & identifizieren",
+      "subtitle": "Richten Sie Ihre Kamera auf einen Stein oder Kristall, um ihn sofort zu identifizieren und seine Eigenschaften zu erfahren",
+      "button": "Weiter",
+      "detected_stone": "Rosenquarz erkannt!",
+      "stone_status": "95% Vertrauen"
+    },
+    "step2": {
+      "title": "Natürliche Steine entdecken",
+      "subtitle": "Entdecken Sie die wundersamen Steine der Natur und lernen Sie die einzigartigen Eigenschaften und Heilkraft jedes einzelnen kennen.",
+      "button": "Loslegen",
+      "stones": {
+        "amethyst": "Amethyst",
+        "lapis_lazuli": "Lapislazuli",
+        "emerald": "Smaragd",
+        "dioptase": "Dioptas"
+      },
+      "stone_types": {
+        "purple_crystal": "Violetter Kristall",
+        "wisdom_stone": "Weisheitsstein",
+        "green_crystal": "Grüner Kristall",
+        "healing_stone": "Heilstein"
+      },
+      "detected": "Erkannt",
+      "type_label": "Typ",
+      "status_label": "Status"
+    }
+  },
+  "paywall": {
+    "title": "Unbegrenzter Zugang",
+    "features": {
+      "identify_unlimited": "Unbegrenzt Gesteine & Steine identifizieren",
+      "unlock_facts": "Bildungsinhalte freischalten",
+      "ai_analysis": "KI-gestützte Steinanalyse",
+      "remove_paywalls": "Lästige Bezahlschranken entfernen"
+    },
+    "plans": {
+      "lifetime": "Lebenslanger Plan",
+      "weekly": "Wöchentlicher Plan",
+      "per_week": "pro Woche",
+      "save_badge": "90% SPAREN"
+    },
+    "continue": "Weiter",
+    "menu": {
+      "title": "Weitere Optionen",
+      "privacy_policy": "Datenschutzrichtlinie",
+      "terms_of_service": "Nutzungsbedingungen",
+      "restore_purchases": "Käufe wiederherstellen",
+      "cancel": "Abbrechen"
+    },
+    "messages": {
+      "restore_success": "Käufe erfolgreich wiederhergestellt",
+      "restore_failed": "Fehler beim Wiederherstellen der Käufe",
+      "premium_activated": "🎉 Premium-Mitgliedschaft aktiviert!"
+    }
+  },
+  "discover": {
+    "subtitle": "Möchten Sie die beliebtesten Steine entdecken?",
+    "error": "Ein Fehler ist aufgetreten"
+  },
+  "stone_detail": {
+    "unknown_stone": "Unbekannter Stein",
+    "stone_not_found": "Stein nicht gefunden",
+    "sections": {
+      "description": "Beschreibung",
+      "basic_identity": "Grundidentität",
+      "energy_spiritual_benefits": "Energie & Spirituelle Vorteile",
+      "physical_beliefs": "Körperliche Überzeugungen*",
+      "physical_properties": "Physikalische Eigenschaften",
+      "localities": "Lokalitäten",
+      "collection_care": "Sammlung & Pflege",
+      "quality_indicators": "Qualitätsindikatoren",
+      "faq": "Häufig gestellte Fragen"
+    },
+    "properties": {
+      "element_chakra": "Element & Chakra",
+      "zodiac_compatibility": "Sternzeichen-Kompatibilität",
+      "spiritual_theme": "Spirituelles Thema",
+      "mineral_family": "Mineralfamilie",
+      "hardness": "Härte",
+      "formation": "Entstehung",
+      "origin": "Herkunft",
+      "color_variations": "Farbvariationen",
+      "crystal_system": "Kristallsystem",
+      "quality_indicators": "Qualitätsindikatoren",
+      "value_factors": "Wertfaktoren",
+      "sources": "Quellen"
+    },
+    "disclaimer": "*Dies sind traditionelle Überzeugungen, keine medizinische Beratung"
+  },
+  "camera": {
+    "error": {
+      "title": "Kamerafehler",
+      "message": "Kein Zugriff auf Kamera möglich",
+      "try_again": "Erneut versuchen"
+    },
+    "tips": {
+      "title": "Klebrige Tipps",
+      "tip1": {
+        "title": "Zu weit & dunkel",
+        "subtitle": "Kommen Sie näher und fotografieren Sie in heller Umgebung"
+      },
+      "tip2": {
+        "title": "Unscharf",
+        "subtitle": "Halten Sie ruhig und machen Sie eine klare Aufnahme"
+      },
+      "tip3": {
+        "title": "Perfekt",
+        "subtitle": "Perfekter Winkel und Licht"
+      },
+      "buttons": {
+        "got_it": "Verstanden",
+        "ok": "OK"
+      }
+    },
+    "main_screen": {
+      "ai_button": "KI",
+      "pro_button": "PRO",
+      "lighting_tip": "💡 Tipp: Gute Beleuchtung hilft bei der Identifikationsgenauigkeit"
+    }
+  },
+  "photo_detail": {
+    "start_scan": "Scan starten",
+    "crop": "Zuschneiden",
+    "retake": "Neu aufnehmen"
+  },
+  "history": {
+    "title": "Verlauf",
+    "error": {
+      "try_again": "Erneut versuchen"
+    },
+    "empty": {
+      "title": "Noch kein Verlauf",
+      "subtitle": "Beginnen Sie mit der Identifizierung von Steinen, um hier Ihren Verlauf zu sehen",
+      "start_identifying": "Identifizierung starten"
+    },
+    "clear_history": {
+      "title": "Verlauf löschen",
+      "message": "Dies entfernt Ihren gesamten Identifizierungsverlauf. Diese Aktion kann nicht rückgängig gemacht werden.",
+      "cancel": "Abbrechen",
+      "clear": "Löschen"
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "premium": {
+      "member_title": "Premium-Mitglied",
+      "member_subtitle": "Unbegrenzte Identifikationen & erweiterte Funktionen",
+      "upgrade_title": "Auf Premium upgraden",
+      "upgrade_subtitle": "Unbegrenzte Identifikationen & mehr freischalten"
+    },
+    "sections": {
+      "about": "Über"
+    },
+    "about": {
+      "help_support": "Hilfe & Support",
+      "help_support_subtitle": "support@mobinaz.com",
+      "privacy_policy": "Datenschutzrichtlinie",
+      "privacy_policy_subtitle": "Unsere Datenschutzrichtlinie lesen",
+      "terms_of_service": "Nutzungsbedingungen",
+      "terms_of_service_subtitle": "Unsere Nutzungsbedingungen lesen",
+      "restore_purchases": "Käufe wiederherstellen",
+      "restore_purchases_subtitle": "Ihre vorherigen Käufe wiederherstellen",
+      "version": "Version"
+    }
+  },
+  "stone_loading": {
+    "analyzing": "Stein wird analysiert...",
+    "error_title": "Analysefehler",
+    "retry": "Erneut versuchen",
+    "go_back": "Zurück",
+    "ai_tip": "Wir analysieren die Eigenschaften\nund Energieinformationen Ihres Steins mit KI-Technologie",
+    "duration_warning": "Dies kann bis zu 15 Sekunden dauern"
+  },
+  "app": {
+    "subtitle": "Stein-Identifikator"
+  },
+  "ai_chat": {
+    "title": "KI-Stein-Chat",
+    "status": "Online",
+    "welcome_title": "Hallo! Willkommen im KI-Stein-Chat",
+    "welcome_message": "Ich helfe Ihnen gerne bei Steinen. Was möchten Sie wissen?",
+    "suggestions": {
+      "diamond_info": "Diamant-Informationen",
+      "what_is_amethyst": "Was ist Amethyst?",
+      "stone_cleaning": "Steinreinigung",
+      "chakra_stones": "Chakra-Steine"
+    },
+    "suggestion_messages": {
+      "diamond_properties": "Was sind die Eigenschaften und Vorteile von Diamantstein?",
+      "amethyst_properties": "Was sind die Eigenschaften und Anwendungsbereiche von Amethyststein?",
+      "stone_cleaning_guide": "Wie kann ich Kristalle und Steine reinigen?",
+      "chakra_stones_guide": "Was sind Chakra-Steine und wie werden sie verwendet?"
+    },
+    "input_placeholder": "Fragen Sie nach Steinen...",
+    "send": "Senden"
+  },
+  "explore_detail": {
+    "description": "Beschreibung",
+    "basic_identity": "Grundlegende Identität",
+    "spiritual_properties": "Spirituelle Eigenschaften",
+    "physical_beliefs": "Körperliche Überzeugungen*",
+    "collection_tips": "Sammeltipps",
+    "faqs": "Häufig gestellte Fragen",
+    "disclaimer": "*Dies sind traditionelle Überzeugungen, keine medizinische Beratung",
+    "stones": {
+      "emerald": {
+        "description": "Smaragd ist einer der am meisten verehrten Edelsteine der Geschichte, gefeiert für seinen üppigen grünen Farbton und seine symbolische Verbindung zu Erneuerung, Wachstum und Vitalität. Jahrhundertelang wurde er von Königshäusern und Heilern gleichermaßen für seine mystische Energie und zeitlose Schönheit geschätzt. Der Name \"Smaragd\" stammt vom griechischen Wort smaragdos, was grüner Edelstein bedeutet, und seine Farbe ist zu einem Symbol für Natur, Überfluss und Gleichgewicht im menschlichen Geist geworden.",
+        "spiritual_theme": "Bedingungslose Liebe, Mitgefühl, emotionale Klarheit und Gelassenheit",
+        "core_identity": "Element/Chakra: Erd-Element / Herz-Chakra\nSternzeichen: Stier ♉︎, Zwillinge ♊︎\nSpirituelles Thema: Bedingungslose Liebe, Mitgefühl, emotionale Klarheit und Gelassenheit\nSmaragd richtet sich nach den nährenden Energien des Herzens aus und hilft Menschen dabei, sich mit ihrer inneren Wahrheit und anderen authentisch zu verbinden.",
+        "spiritual_properties": "Smaragd gilt als mächtiger Herz-Chakra-Aktivator, der Vergebung, Mitgefühl und die Fähigkeit fördert, tief ohne Angst zu lieben. Er hilft dabei, emotionale Wunden loszulassen und fördert ein Gefühl der Ganzheit und Einheit mit der Welt. Viele spirituelle Traditionen verwenden Smaragd in meditativen Praktiken, um Empathie zu vertiefen, das Selbstwertgefühl zu stärken und emotionale Intelligenz zu unterstützen. Es wird auch gesagt, dass er den Geist beruhigt und in emotional aufgeladenen Zeiten geistige Klarheit bringt.",
+        "physical_beliefs": "In historischen und metaphysischen Heilpraktiken wurde geglaubt, dass Smaragd dem Herz-Kreislauf-System zugutekommt, indem er Herz und Blutzirkulation unterstützt. Antike Zivilisationen verbanden ihn auch mit den Augen und behaupteten, er könne das Sehvermögen verbessern und Müdigkeit reduzieren. Einige Kulturen verwendeten zerkleinerten Smaragd (heute nicht empfohlen) in Elixieren für Entgiftung und zur Stimulation der allgemeinen Vitalität. Es wird angenommen, dass er Entzündungen lindert, bei der Genesung von Krankheiten hilft und die Immunantwort durch energetische Ausrichtung stärkt.",
+        "collectors_insight": "Sammler bewundern Smaragde für ihre tiefen grünen Sättigungen und minimalen Einschlüsse—obwohl geringfügige Einschlüsse häufig sind und als Teil des Charakters des Steins akzeptiert werden (oft als \"Jardin\" oder Garten bezeichnet). Kolumbianische Smaragde werden besonders für ihre Klarheit und lebendige Farbe geschätzt. Aufgrund ihrer mittleren Härte (7,5–8 auf der Mohs-Skala) sollten Smaragde separat in weich ausgekleideten Boxen aufbewahrt werden, um Kratzer zu vermeiden. Ultraschallreiniger und Hitzeeinwirkung sollten vermieden werden, da Smaragde oft mit Öl behandelt werden, um die Klarheit zu verbessern.",
+        "localities": "Hauptquellen für hochwertige Smaragde sind:\nKolumbien (Muzo, Chivor, Coscuez): bekannt für lebendige grüne, erstklassige Smaragde\nSambia: tiefere, bläulich-grüne Töne, oft erschwinglicher\nBrasilien: verschiedene Qualitäten, oft helleres Grün\nPakistan & Afghanistan: feine Kristalle, manchmal mit hoher Klarheit\nRussland (Ural-Gebirge): historische Smaragde mit leicht gelblich-grünem Ton",
+        "faqs": "F: Kann ich täglich einen Smaragd tragen?\nA: Ja, aber er erfordert sanfte Pflege. Smaragde sind weicher als Diamanten oder Saphire und können bei Schlägen absplittern. Verwenden Sie Schutzfassungen für Ringe und entfernen Sie sie bei körperlichen Aktivitäten.\n\nF: Was macht einen Smaragd wertvoll?\nA: Farbe ist der wichtigste Faktor—reiches, tiefes Grün wird am meisten geschätzt. Klarheit und Herkunft (z.B. kolumbianisch) beeinflussen ebenfalls den Wert.\n\nF: Sind Einschlüsse in Smaragden schlecht?\nA: Überhaupt nicht. Einschlüsse werden in Smaragden erwartet und akzeptiert. Sie verleihen oft Charakter und helfen bei der Authentizitätsprüfung."
+      },
+      "diamond": {
+        "description": "Diamant ist die härteste bekannte natürliche Substanz auf der Erde, gefeiert für seinen Glanz, seine Stärke und zeitlose Schönheit. Als \"König der Edelsteine\" bekannt, symbolisiert er Reinheit, Ausdauer und Klarheit. Jahrhundertelang wurden Diamanten nicht nur für ihren Wert in Schmuck geschätzt, sondern auch für ihre mystischen und metaphysischen Eigenschaften. Der Name stammt vom griechischen Wort adamas, was \"unbesiegbar\" bedeutet, und spiegelt sowohl seine physische Widerstandsfähigkeit als auch seinen spirituellen Symbolismus wider.",
+        "spiritual_theme": "Klarheit, Unbesiegbarkeit, innere Stärke, göttliche Verbindung",
+        "core_identity": "Element/Chakra: Luft-Element / Kronen-Chakra\nSternzeichen: Widder ♈︎, Löwe ♌︎\nSpirituelles Thema: Klarheit, Unbesiegbarkeit, innere Stärke, göttliche Verbindung\nDiamanten repräsentieren spirituelle Erhebung und Fokus, die den Geist mit höherem Zweck und Wahrheit ausrichten.",
+        "spiritual_properties": "Es wird geglaubt, dass Diamanten Energien und Gedanken verstärken, was sie ideal für Manifestation und Absichtssetzung macht. Sie helfen beim spirituellen Erwachen, indem sie den Träger durch das Kronen-Chakra mit dem göttlichen Bewusstsein verbinden. Emotional helfen sie dabei, Selbstzweifel aufzulösen und innere Klarheit zu stärken. Einige Traditionen sehen Diamanten auch als Beschützer gegen negative Energien und emotionale Instabilität, was sie zu mächtigen Werkzeugen für Transformation macht.",
+        "physical_beliefs": "Metaphysich wird angenommen, dass Diamanten die Gehirngesundheit und kognitive Klarheit unterstützen. Sie wurden in antiken Heilsystemen verwendet, um die Knochen zu stärken und den Körper zu entgiften. Einige glauben, dass Diamanten den Energiefluss verbessern und die Ausdauer steigern können, indem sie die physischen und subtilen Körper ausrichten. Obwohl wissenschaftlich nicht bewiesen, wurden Diamant-Elixiere einst verwendet, um \"das Herz zu stärken\" und die Vitalität zu erhöhen.",
+        "collectors_insight": "Diamanten werden nach den 4Cs bewertet: Schliff, Reinheit, Farbe und Karat. Farblose Diamanten sind die wertvollsten, obwohl fancy-farbige Diamanten (blau, rosa, gelb) ebenfalls sehr geschätzt werden. Aufgrund ihrer extremen Härte (10 auf der Mohs-Skala) sind Diamanten langlebig für den täglichen Gebrauch, sollten aber dennoch vorsichtig gereinigt werden, um die Brillanz zu erhalten. Separat lagern, um das Verkratzen anderer weicherer Steine zu vermeiden.",
+        "localities": "Hauptquellen natürlicher Diamanten umfassen:\nRussland (Jakutien, Archangelsk): Größter Produzent weltweit\nBotswana & Südafrika: Bekannt für hochwertige weiße und fancy Diamanten\nKanada (Diavik, Ekati Minen): Umweltverantwortliche Produktion\nIndien (historisch Golconda Minen): Quelle vieler legendärer Diamanten\nAustralien (Argyle Mine): Berühmt für seltene rosa und rote Diamanten",
+        "faqs": "F: Sind Diamanten immer farblos?\nA: Nein. Während farblose Diamanten klassisch sind, kommen natürliche Diamanten in verschiedenen Farben vor, einschließlich gelb, blau, rosa und sogar schwarz.\n\nF: Sind im Labor gezüchtete Diamanten echt?\nA: Ja, Labor-Diamanten sind chemisch und physikalisch identisch mit natürlichen. Der einzige Unterschied ist ihre Herkunft.\n\nF: Können Diamanten brechen?\nA: Trotz ihrer Eigenschaft als härtestes Mineral können Diamanten splittern, wenn sie im richtigen Winkel getroffen werden. Schützen Sie sie in sicheren Fassungen."
+      },
+      "ruby": {
+        "description": "Rubin ist ein strahlender roter Edelstein, der seit langem mit Leidenschaft, Macht und Vitalität verbunden wird. Oft als \"König der Edelsteine\" bezeichnet, wird Rubin kulturübergreifend für seine intensive Farbe und feurige Energie bewundert. Sein Name stammt vom lateinischen Wort ruber, was rot bedeutet, und er hat historisch Lebenskraft, Liebe und Mut symbolisiert. Ob in antikem königlichem Schmuck oder modernen Talismanen verwendet, Rubin ist ein Stein des mutigen emotionalen Ausdrucks und unerschütterlicher Stärke.",
+        "spiritual_theme": "Leidenschaft, Schutz, Entschlossenheit, Vitalität",
+        "core_identity": "Element/Chakra: Feuer-Element / Wurzel- & Herz-Chakras\nSternzeichen: Löwe ♌︎, Skorpion ♏︎\nSpirituelles Thema: Leidenschaft, Schutz, Entschlossenheit, Vitalität\nRubin nährt das innere Feuer und fördert Motivation, Willenskraft und die furchtlose Verfolgung der eigenen Ziele.",
+        "spiritual_properties": "Rubin wird für seine energetisierenden und schützenden Eigenschaften verehrt. Spirituell wird angenommen, dass er die Kundalini-Energie entzündet, das Herz aktiviert und die Aura stärkt. Er stärkt das Selbstvertrauen und schärft den emotionalen Körper, wodurch es einfacher wird, Grenzen zu setzen und Angst zu überwinden. Rubin wird auch als Stein der Liebe und Sinnlichkeit betrachtet, der hilft, leidenschaftliche Verbindungen anzuziehen und aufrechtzuerhalten, während er emotionale Bindungen reinigt, die der Seele nicht mehr dienen.",
+        "physical_beliefs": "Metaphysisch wird geglaubt, dass Rubin die Durchblutung fördert, den Blutdruck reguliert und den physischen Körper belebt. Er wird oft mit der Verbesserung des Energieniveaus, der Bekämpfung von Müdigkeit und der Verbesserung der reproduktiven Gesundheit in Verbindung gebracht. Rubins feurige Natur soll den Körper wärmen und den Stoffwechsel stimulieren. In der Antike wurde er sogar als Schutzamulett verwendet, um vor Krankheit und Gefahr auf dem Schlachtfeld zu schützen.",
+        "collectors_insight": "Die begehrtesten Rubine zeigen einen lebendigen, reinen roten Farbton, der als \"Taubenblut\" bekannt ist. Einschlüsse sind häufig und beeinträchtigen den Wert nicht erheblich, es sei denn, sie beeinträchtigen die Transparenz. Burmesische Rubine werden besonders für ihre Farbe und Geschichte geschätzt. Mit einer Härte von 9 auf der Mohs-Skala ist Rubin sehr langlebig, sollte aber dennoch vor harten Stößen und extremer Hitze geschützt werden. Viele Rubine auf dem Markt sind hitzebehandelt, um die Farbe zu verbessern.",
+        "localities": "Primäre Rubin-Quellen umfassen:\nMyanmar (Burma): Berühmt für erstklassige \"Taubenblut\"-Rubine\nMosambik: Jetzt einer der weltweit führenden Rubin-Produzenten\nThailand: Traditioneller Knotenpunkt für das Schneiden und Handeln von Rubinen\nSri Lanka: Bekannt für hellere, rosa Rubine\nTansania & Afghanistan: Aufkommende Quellen für edelsteinqualitative Rubine",
+        "faqs": "F: Ist Rubin dasselbe wie rosa Saphir?\nA: Nicht genau. Beide sind Korund, aber die rote Varietät wird als Rubin klassifiziert, während rosa unter Saphir fällt. Die Linie kann manchmal subtil sein.\n\nF: Muss Rubin energetisch aufgeladen werden?\nA: Ja. Als Energieverstärker profitiert Rubin von regelmäßiger Reinigung und Aufladung, besonders unter Sonnenlicht oder mit feuerverbundenen Ritualen.\n\nF: Kann Rubin täglich getragen werden?\nA: Absolut. Seine Härte und Langlebigkeit machen ihn für den täglichen Gebrauch geeignet, aber es ist am besten, intensive Chemikalien oder längere Hitzeeinwirkung zu vermeiden."
+      },
+      "sapphire": {
+        "description": "Saphir ist ein königlicher Edelstein, bekannt für seinen tiefen blauen Glanz und zeitlose Eleganz. Oft mit Weisheit, Wahrheit und göttlicher Gunst verbunden, hat Saphir Zivilisationen über Jahrtausende fasziniert. Sein Name stammt vom lateinischen sapphirus, was \"blauer Stein\" bedeutet, aber Saphire kommen tatsächlich in fast jeder Farbe des Regenbogens vor, wobei Blau die ikonischste ist. Verehrt von antiken Priestern, Königen und Gelehrten, symbolisiert Saphir weiterhin Klarheit des Denkens und spirituelle Erleuchtung.",
+        "spiritual_theme": "Weisheit, Kommunikation, Schutz, geistige Klarheit",
+        "core_identity": "Element/Chakra: Wasser-Element / Drittes Auge & Hals-Chakras\nSternzeichen: Jungfrau ♍︎, Waage ♎︎, Schütze ♐︎\nSpirituelles Thema: Weisheit, Kommunikation, Schutz, geistige Klarheit\nSaphir verstärkt Wahrheit, Intuition und geistige Konzentration, was ihn zu einem Lieblings-Stein für Suchende und Denker macht.",
+        "spiritual_properties": "Saphir ist als \"Stein der Weisheit\" bekannt. Er fördert geistige Disziplin, tiefe Konzentration und spirituelle Einsicht. Spirituell wird gesagt, dass er das dritte Auge öffnet, die Intuition schärft und ehrliche Kommunikation fördert. Saphire helfen dabei, geistige Blockaden zu lösen, Angst zu lindern und emotionale Widerstandsfähigkeit zu unterstützen. Blauer Saphir soll insbesondere eine beruhigende, schützende Energie bieten, die vor negativen Einflüssen schützt und ein Gefühl des inneren Friedens verstärkt.",
+        "physical_beliefs": "In der ganzheitlichen Heilung wird geglaubt, dass Saphir die Schilddrüse reguliert und kehlkopfbezogene Beschwerden aufgrund seiner Verbindung mit dem Hals-Chakra lindert. Er wurde auch symbolisch zur Hilfe bei Augenproblemen, Kopfschmerzen und Schlaflosigkeit verwendet. Einige Traditionen behaupten, er könne helfen, Hormone auszugleichen, das Gedächtnis zu verbessern und den allgemeinen Energiefluss wiederherzustellen. Seine kühlende Natur macht ihn nützlich bei der Beruhigung von Entzündungen und Spannungen im Körper.",
+        "collectors_insight": "Die wertvollsten Saphire zeigen ein lebendiges, samtiges Königsblau mit ausgezeichneter Transparenz. Kashmir- und Burmesische Saphire werden für ihre Farbsättigung und Seltenheit am meisten gesucht. Sternsaphire mit Asterismus (sternenförmige Reflexion) werden ebenfalls geschätzt. Mit einer Härte von 9 auf der Mohs-Skala sind Saphire langlebig für den täglichen Gebrauch. Hitzebehandlung zur Verbesserung von Farbe und Klarheit ist üblich und weithin akzeptiert.",
+        "localities": "Bemerkenswerte Saphir-produzierende Regionen umfassen:\nSri Lanka (Ceylon): Bekannt für hochwertige, hellere Saphire\nKaschmir (Indien): Extrem seltene, tiefblaue Saphire\nMyanmar (Burma): Heimat samtiger königsblauer Steine\nMadagaskar: Reichhaltige und vielfältige Saphir-Produktion\nAustralien & Thailand: Kommerzielle und industrielle Saphire",
+        "faqs": "F: Sind alle Saphire blau?\nA: Nein. Saphire kommen in vielen Farben vor, einschließlich rosa, gelb, grün, weiß und sogar schwarz. Nur roter Korund wird als Rubin klassifiziert.\n\nF: Was ist ein Sternsaphir?\nA: Ein Sternsaphir zeigt einen leuchtenden sternähnlichen Effekt auf seiner Oberfläche, verursacht durch nadelartige Einschlüsse. Er ist am besten unter direktem Licht sichtbar.\n\nF: Ist Saphir für Verlobungsringe geeignet?\nA: Absolut. Seine Schönheit, Langlebigkeit und Symbolik der Loyalität machen Saphir zu einer beliebten Wahl für Verlobungs- und Erbstückschmuck."
+      },
+      "alexandrite": {
+        "description": "Alexandrit ist ein seltener und außergewöhnlicher Edelstein, berühmt für seine bemerkenswerte Fähigkeit, unter verschiedenen Lichtbedingungen die Farbe zu wechseln—grünlich bei Tageslicht und purpur-rot unter Glühlampen. Oft als „Smaragd bei Tag, Rubin bei Nacht" beschrieben, symbolisiert diese magische Verwandlung Dualität, Anpassungsfähigkeit und verborgene Schönheit. Benannt nach dem russischen Zaren Alexander II., wird Alexandrit für seine Seltenheit und dramatische visuelle Wirkung hoch geschätzt. Es ist ein Stein, der Edelsteinsammler, metaphysische Heiler und Liebhaber des Ungewöhnlichen fasziniert.",
+        "spiritual_theme": "Balance, Transformation, Dualität, innere Weisheit",
+        "core_identity": "Element/Chakra: Äther & Luft Elemente / Kronen & Herz Chakren\nSternzeichen: Zwillinge ♊︎, Skorpion ♏︎\nSpirituelles Thema: Balance, Transformation, Dualität, innere Weisheit\nAlexandrit umarmt Veränderung und hilft, emotionales Gleichgewicht zu bringen, unterstützt persönliche Entwicklung und Klarheit des Zwecks.",
+        "spiritual_properties": "Alexandrit wird als mächtiger Talisman für Transformation und Selbstentdeckung betrachtet. Seine farbwechselnde Natur spiegelt unsere Fähigkeit wider, sich anzupassen, die Perspektive zu ändern und sich zu entwickeln. Er unterstützt emotionales Gleichgewicht, fördert intuitives Wachstum und bringt Bewusstsein für die innere Wahrheit. Spirituell verbindet er Herz- und Kronen-Chakra und hilft dem Träger, in der Liebe verwurzelt zu bleiben, während er nach höherer Weisheit greift. Er ist besonders nützlich in Zeiten der Unsicherheit und bietet Licht in Momenten emotionaler Verwirrung oder Identitätswandel.",
+        "physical_beliefs": "Metaphysisch wird geglaubt, dass Alexandrit das Nervensystem ausgleicht und die Zellregeneration fördert. Er wird oft zur Unterstützung der Zirbeldrüse und hormoneller Zyklen verwendet, was ihn für Stimmungsstabilität und Energiebalance vorteilhaft macht. Traditionelle Heiler verbinden ihn mit der Verbesserung der Blutzirkulation und der Linderung von Spannungen oder Stress. Es wird auch geglaubt, dass er die Entgiftung fördert und die Erholung von emotionalen Traumata unterstützt, wodurch Vitalität und Widerstandsfähigkeit gesteigert werden.",
+        "collectors_insight": "Alexandrit ist einer der seltensten und wertvollsten Edelsteine, besonders in größeren Größen oder mit starkem Farbwechsel. Der ideale Alexandrit wechselt von lebendigem bläulich-grün zu tiefem purpur-rot. Russische Ural-Steine sind legendär, aber brasilianische und sri-lankische Steine werden ebenfalls bewundert. Aufgrund seiner Seltenheit und Einzigartigkeit ist Alexandrit sehr sammlungswürdig und wird oft als Erbstück weitergegeben. Er hat eine Härte von 8,5 auf der Mohs-Skala, was ihn dauerhaft macht, aber dennoch schützende Fassungen benötigt.",
+        "localities": "Hauptquellen für Alexandrit sind:\nRussland (Ural-Gebirge): Die ursprüngliche und prestigeträchtigste Quelle\nBrasilien (Hematita-Region): Bekannt für größere Kristalle mit gutem Farbwechsel\nSri Lanka: Produziert eine Reihe von Alexandriten, oft heller im Ton\nTansania & Indien: Aufkommende Standorte für edelsteinqualitative Steine\nMadagaskar: Zunehmend bedeutsam im modernen Markt",
+        "faqs": "F: Was verursacht Alexandrits Farbwechsel?\nA: Es liegt daran, wie der Stein Lichtwellenlängen absorbiert—der Chromgehalt im Kristall ermöglicht es ihm, grün bei Tageslicht und rot bei Glühlampenlicht zu reflektieren.\n\nF: Ist Alexandrit teuer?\nA: Ja, natürlicher Alexandrit ist extrem selten und hochwertig, besonders Steine mit starkem und deutlichem Farbwechsel.\n\nF: Kann Alexandrit täglich getragen werden?\nA: Obwohl langlebig, wird er am besten vorsichtig getragen, um Kratzer zu vermeiden. Schützende Fassungen in Ringen werden empfohlen, wenn täglich getragen."
+      },
+      "tourmaline": {
+        "description": "Paraíba-Turmalin ist ein schillernder Edelstein, bewundert für sein lebendiges neonartiges Leuchten, das typischerweise von hellem Türkis bis zu elektrischem Blau oder Grün reicht. Entdeckt in den späten 1980er Jahren in Brasiliens Bundesstaat Paraíba, verblüffte dieser Edelstein die Edelsteinwelt mit seiner intensiven Farbe und Seltenheit. Anders als jeder andere Turmalin wird sein strahlendes Leuchten durch Spuren von Kupfer und Mangan verursacht. Paraíba-Turmalin symbolisiert Einzigartigkeit, hohe Energie und die Schönheit der Seltenheit—er fängt den Geist des Ozeans und des Himmels in einem einzigen Kristall ein.",
+        "spiritual_theme": "Selbstausdruck, Intuition, Individualität, emotionale Klarheit",
+        "core_identity": "Element/Chakra: Wasser & Luft Elemente / Hals & Herz Chakren\nSternzeichen: Fische ♓︎, Wassermann ♒︎\nSpirituelles Thema: Selbstausdruck, Intuition, Individualität, emotionale Klarheit\nDieser Edelstein ermutigt Authentizität und Kreativität, fördert emotionale Ehrlichkeit und persönliche Brillanz.",
+        "spiritual_properties": "Paraíba-Turmalin ist bekannt für seine aufhebende und energetisierende Wirkung auf die Seele. Spirituell hilft er dabei, Blockaden im Hals-Chakra zu klären und ermöglicht offene Kommunikation, Wahrheitsfindung und künstlerischen Ausdruck. Er wird oft in der Meditation verwendet, um sich mit höherem Bewusstsein und ozeanischer Energie zu verbinden—bietet Gelassenheit, Einsicht und ein Gefühl spiritueller Erfrischung. Die lebendige blaugrüne Farbe resoniert auch mit dem Herz-Chakra und fördert emotionale Heilung und inneren Frieden.",
+        "physical_beliefs": "In metaphysischen Praktiken wird angenommen, dass Paraíba-Turmalin das Nerven- und Lymphsystem unterstützt und hilft, Stress zu lindern und den Körper zu entgiften. Er kann auch klares Denken fördern, Angst reduzieren und den allgemeinen Energiefluss verbessern. Aufgrund seiner beruhigenden Schwingung wird geglaubt, dass er Spannungen reduziert und Entspannung fördert. Viele Heiler verwenden ihn, um Stimmungsschwankungen zu balancieren und durch emotionales Loslassen erholsamen Schlaf zu fördern.",
+        "collectors_insight": "Paraíba-Turmalin gehört zu den seltensten und wertvollsten Edelsteinen der Welt. Die geschätztesten Steine zeigen ein lebendiges \"Neon\"-Leuchten und ausgezeichnete Klarheit. Brasilianische Paraíbas bleiben die begehrtesten, aber Steine aus Mosambik und Nigeria haben Respekt für ihre Qualität gewonnen. Mit einer Härte von 7–7,5 auf der Mohs-Skala sollte er vorsichtig getragen werden. Aufgrund seiner Seltenheit erzielen selbst kleine Paraíba-Steine hohe Preise und werden von ernsthaften Sammlern geschätzt.",
+        "localities": "Die Hauptquellen für Paraíba-Turmalin sind:\nBrasilien (Bundesstaat Paraíba): Ursprüngliche und begehrteste Quelle\nMosambik: Produziert größere Kristalle mit intensiver Farbe\nNigeria: Bekannt für türkisfarbene Steine\nDiese Quellen bringen kleine Mengen hervor, was zur Exklusivität und zum hohen Marktwert des Edelsteins beiträgt.",
+        "faqs": "F: Was lässt Paraíba-Turmalin leuchten?\nA: Sein charakteristisches Neon-Leuchten kommt von Kupfer- und Mangangehalt, eine seltene Kombination in Turmalin-Kristallen.\n\nF: Ist Paraíba-Turmalin ein Geburtsstein?\nA: Obwohl nicht offiziell ein traditioneller Geburtsstein, wird er oft mit dem Oktober (als Teil der breiteren Turmalin-Familie) und mit kreativen, expressiven Persönlichkeiten assoziiert.\n\nF: Wie sollte ich Paraíba-Turmalin pflegen?\nA: Sanft mit milder Seife und warmem Wasser reinigen. Ultraschallreiniger vermeiden und vor harten Stößen oder längerer Sonneneinstrahlung schützen."
+      }
+    }
+  },
+}
