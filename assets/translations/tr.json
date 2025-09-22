@@ -1,4 +1,14 @@
 {
+  "home": {
+    "subtitle": "Çevrenizdeki Kristalleri Keşfedin",
+    "crystal_expert_title": "AI Kristal Uzmanı Asistanınız!",
+    "crystal_expert_subtitle": "Kristaller ve özellikleri hakkında her şeyi sorun",
+    "ask_question": "Bir soru sorun...",
+    "scan_rock": "Değerli Taş Tanımlayıcıyı Tara",
+    "identify_stones": "Kristalleri ve taşları tanımlayın",
+    "featured_crystals": "Öne Çıkan Kristaller",
+    "error": "Kristaller yüklenirken hata oluştu"
+  },
   "onboard": {
     "step1": {
       "title": "Anında Taş Tanıma",
@@ -28,27 +38,41 @@
       "status_label": "Durum"
     }
   },
+  "rating": {
+    "title": "Rockify'ı Değerlendir",
+    "subtitle": "Bizimle taş keşfetmeyi sevdin mi? Değerlendirmen iyileştirmelerimize yardım eder ve daha fazla taş tutkununa ulaşmamızı sağlar!",
+    "button": "Rockify'ı Değerlendir",
+    "rated": "Değerlendirdim!",
+    "continue": "Devam Et"
+  },
   "paywall": {
-    "title": "Sınırsız Erişim",
+    "title": "Premium'u Aç",
+    "subtitle": "Premium özelliklerle sınırsız taş tanımlama",
     "features": {
-      "identify_unlimited": "Sınırsız kaya ve taş tanımlama",
-      "unlock_facts": "Eğitici bilgileri açın",
-      "ai_analysis": "AI destekli taş analizi",
-      "remove_paywalls": "Rahatsız edici ödeme duvarlarını kaldırın"
+      "unlimited_identification": "Sınırsız Taş Tanımlama",
+      "all_facts": "Tüm Taş Bilgilerine Erişim",
+      "ai_analysis": "AI Destekli Analiz"
     },
     "plans": {
-      "lifetime": "Yaşam Boyu Plan",
-      "weekly": "Haftalık Plan",
-      "per_week": "haftalık",
-      "save_badge": "%90 TASARRUF"
+      "weekly": {
+        "title": "Haftalık Erişim",
+        "subtitle": "İstediğin zaman iptal et"
+      },
+      "lifetime": {
+        "title": "Yaşam Boyu Erişim",
+        "subtitle": "Tek seferlik ödeme",
+        "save_badge": "%%%d TASARRUF"
+      }
     },
     "continue": "Devam Et",
-    "menu": {
-      "title": "Diğer Seçenekler",
-      "privacy_policy": "Gizlilik Politikası",
-      "terms_of_service": "Hizmet Şartları",
-      "restore_purchases": "Satın Alımları Geri Yükle",
-      "cancel": "İptal"
+    "security": {
+      "ios": "App Store tarafından güvence altında",
+      "android": "Google Play tarafından güvence altında"
+    },
+    "footer": {
+      "terms": "Şartlar",
+      "privacy": "Gizlilik",
+      "restore": "Geri Yükle"
     },
     "messages": {
       "restore_success": "Satın alımlar başarıyla geri yüklendi",
@@ -293,13 +317,16 @@
     "crystals": "Kristaller"
   },
   "navigation": {
+    "home": "Ana Sayfa",
     "explore": "Keşfet",
     "history": "Geçmiş"
   },
   "ai_chat": {
-    "title": "AI Taş Sohbeti",
+    "title": "AI Chat",
     "status": "Çevrimiçi",
-    "welcome_title": "Merhaba! AI Taş Sohbetine Hoş Geldiniz",
+    "input_placeholder": "Değerli taşlar hakkında sorun...",
+    "premium_required": "AI sohbet için premium gerekli",
+    "welcome_title": "Merhaba! AI Değerli Taş Sohbetine Hoş Geldiniz",
     "welcome_message": "Taşlar hakkında size yardımcı olmaktan mutluluk duyarım. Ne öğrenmek istiyorsunuz?",
     "suggestions": {
       "diamond_info": "Elmas bilgisi",

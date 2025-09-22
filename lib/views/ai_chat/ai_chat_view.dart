@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'dart:math';
 import 'ai_chat_viewmodel.dart';
@@ -17,18 +16,24 @@ class AIChatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Get initial message from route arguments
+    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    final initialMessage = args?['initialMessage'] as String?;
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.dark,
       child: ChangeNotifierProvider(
         create: (_) => AIChatViewModel(),
-        child: const _AIChatViewContent(),
+        child: _AIChatViewContent(initialMessage: initialMessage),
       ),
     );
   }
 }
 
 class _AIChatViewContent extends StatefulWidget {
-  const _AIChatViewContent();
+  final String? initialMessage;
+
+  const _AIChatViewContent({this.initialMessage});
 
   @override
   State<_AIChatViewContent> createState() => _AIChatViewContentState();
@@ -47,6 +52,15 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
       duration: const Duration(milliseconds: 1500),
       vsync: this,
     )..repeat();
+
+    // Send initial message if provided
+    if (widget.initialMessage != null && widget.initialMessage!.isNotEmpty) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final chatViewModel = Provider.of<AIChatViewModel>(context, listen: false);
+        chatViewModel.sendMessage(widget.initialMessage!);
+        _scrollToBottom();
+      });
+    }
   }
 
   @override
@@ -63,7 +77,19 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
       builder: (context, chatViewModel, appProvider, child) {
         // Check if user is premium for AI chat access
         if (!appProvider.isPremiumUser) {
-          return const PaywallView();
+          // Navigate to paywall with proper animation and close this screen
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            Navigator.of(context).pop(); // Close AI chat
+            StoneNavigationHelper.goToPaywall();
+          });
+
+          // Show loading while navigating
+          return Scaffold(
+            backgroundColor: Colors.grey[50],
+            body: const Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
         }
         
         return Scaffold(
@@ -124,7 +150,7 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
                             children: [
                               Text(
                                 'ai_chat.title'.tr(),
-                                style: GoogleFonts.inter(
+                                style: GoogleFonts.poppins(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600,
                                   color: CrystalColors.textPrimary,
@@ -132,7 +158,7 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
                               ),
                               Text(
                                 'ai_chat.status'.tr(),
-                                style: GoogleFonts.inter(
+                                style: GoogleFonts.poppins(
                                   fontSize: 12,
                                   color: Colors.green,
                                   fontWeight: FontWeight.w500,
@@ -188,7 +214,7 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
                               controller: _messageController,
                               decoration: InputDecoration(
                                 hintText: 'ai_chat.input_placeholder'.tr(),
-                                hintStyle: GoogleFonts.inter(
+                                hintStyle: GoogleFonts.poppins(
                                   color: CrystalColors.textSecondary,
                                   fontSize: 14,
                                 ),
@@ -224,7 +250,7 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
                             decoration: BoxDecoration(
                               color: chatViewModel.isLoading
                                   ? CrystalColors.textSecondary
-                                  : CrystalColors.primaryBlue,
+                                  : const Color(0xFF4A90A4),
                               borderRadius: BorderRadius.circular(24),
                             ),
                             child: chatViewModel.isLoading
@@ -276,7 +302,7 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
           // Welcome Text
           Text(
             'ai_chat.welcome_title'.tr(),
-            style: GoogleFonts.inter(
+            style: GoogleFonts.poppins(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: CrystalColors.textPrimary,
@@ -288,7 +314,7 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
           
           Text(
             'ai_chat.welcome_message'.tr(),
-            style: GoogleFonts.inter(
+            style: GoogleFonts.poppins(
               fontSize: 16,
               color: CrystalColors.textSecondary,
               height: 1.4,
@@ -373,7 +399,7 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
         child: Center(
           child: Text(
             text,
-            style: GoogleFonts.inter(
+            style: GoogleFonts.poppins(
               fontSize: 13,
               color: CrystalColors.primaryBlue,
               fontWeight: FontWeight.w600,
@@ -402,7 +428,7 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
               height: 32,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: CrystalColors.primaryBlue.withValues(alpha: 0.1),
+                color: const Color(0xFF4A90A4).withValues(alpha: 0.1),
               ),
               child: ClipOval(
                 child: Image.asset(
@@ -420,7 +446,7 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
               decoration: BoxDecoration(
                 color: isUser
-                    ? CrystalColors.primaryBlue
+                    ? const Color(0xFF4A90A4)
                     : Colors.white.withValues(alpha: 0.9),
                 borderRadius: BorderRadius.circular(20).copyWith(
                   bottomLeft: isUser ? const Radius.circular(20) : const Radius.circular(4),
@@ -434,26 +460,24 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
                   ),
                 ],
               ),
-              child: isUser 
-                ? Text(
-                    message.text,
-                    style: GoogleFonts.inter(
-                      fontSize: 14,
-                      color: Colors.white,
-                      height: 1.4,
-                    ),
-                  )
-                : _buildHtmlContent(message.text),
+              child: Text(
+                _parseMessage(message.text),
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
+                  color: isUser ? Colors.white : CrystalColors.textPrimary,
+                  height: 1.4,
+                ),
+              ),
             ),
           ),
           if (isUser) ...[
             SizedBox(width: 8.w),
             CircleAvatar(
               radius: 16,
-              backgroundColor: CrystalColors.primaryBlue.withValues(alpha: 0.1),
+              backgroundColor: const Color(0xFF4A90A4).withValues(alpha: 0.1),
               child: Icon(
                 Icons.person,
-                color: CrystalColors.primaryBlue,
+                color: const Color(0xFF4A90A4),
                 size: 16,
               ),
             ),
@@ -539,49 +563,21 @@ class _AIChatViewContentState extends State<_AIChatViewContent>
     );
   }
 
-  Widget _buildHtmlContent(String htmlContent) {
-    // Create HTML content with proper styling
-    final styledHtml = '''
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body { 
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                font-size: 14px;
-                line-height: 1.4;
-                color: #333333;
-                margin: 0;
-                padding: 8px;
-                background-color: transparent;
-            }
-            h1 { font-size: 18px; font-weight: bold; margin: 8px 0; }
-            h2 { font-size: 16px; font-weight: bold; margin: 6px 0; }
-            h3 { font-size: 15px; font-weight: 600; margin: 4px 0; }
-            p { margin: 4px 0; }
-            strong { font-weight: bold; }
-            em { font-style: italic; }
-            ul, ol { margin: 4px 0; padding-left: 20px; }
-            li { margin: 2px 0; }
-        </style>
-    </head>
-    <body>
-        $htmlContent
-    </body>
-    </html>
-    ''';
-
-    final controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.disabled)
-      ..setBackgroundColor(Colors.transparent)
-      ..loadHtmlString(styledHtml);
-
-    return SizedBox(
-      height: 150.h, // Estimate height, could be dynamic based on content
-      child: WebViewWidget(controller: controller),
-    );
+  String _parseMessage(String message) {
+    // Clean message with better formatting preservation
+    return message
+        .replaceAll(RegExp(r'<[^>]*>'), '') // Remove HTML tags
+        .replaceAll(RegExp(r'\*\*(.+?)\*\*'), r'$1') // Bold markdown
+        .replaceAll(RegExp(r'\*(.+?)\*'), r'$1') // Italic markdown
+        .replaceAll(RegExp(r'^• ', multiLine: true), '• ') // Keep bullet points
+        .replaceAll(RegExp(r'^\* ', multiLine: true), '• ') // Convert asterisk to bullet
+        .replaceAll(RegExp(r'^- ', multiLine: true), '• ') // Convert dash to bullet
+        .replaceAll(RegExp(r'^\d+\. ', multiLine: true), '• ') // Convert numbered lists to bullets
+        .replaceAll(RegExp(r'^###\s+(.+)', multiLine: true), r'$1') // H3 headers
+        .replaceAll(RegExp(r'^##\s+(.+)', multiLine: true), r'$1') // H2 headers
+        .replaceAll(RegExp(r'^#\s+(.+)', multiLine: true), r'$1') // H1 headers
+        .replaceAll(RegExp(r'\n{3,}'), '\n\n') // Limit consecutive line breaks
+        .trim();
   }
 
   void _scrollToBottom() {

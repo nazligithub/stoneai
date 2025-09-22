@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
 import '../../../helpers/stone_navigation_helper.dart';
+import '../../providers/remote_config_provider.dart';
 
 class StoneItem {
   final String name;
@@ -55,11 +57,29 @@ class StoneOnboardTwoViewModel extends ChangeNotifier {
     ),
   ];
 
-  void onContinue() {
+  void onContinue(BuildContext context) async {
     HapticFeedback.mediumImpact();
-    StoneNavigationHelper.navigatorKey.currentState?.pushReplacementNamed(
-      '/paywall',
-      arguments: {'isFromOnboarding': true},
-    );
+
+    // Check remote config for rating screen
+    final remoteConfig = Provider.of<RemoteConfigProvider>(context, listen: false);
+
+    // Wait for config to load if still loading
+    if (remoteConfig.isLoading) {
+      debugPrint('⏳ Waiting for remote config to load...');
+      // Show loading indicator or wait briefly
+      await Future.delayed(const Duration(milliseconds: 500));
+    }
+
+    debugPrint('🎯 Remote Config Check:');
+    debugPrint('showRatingScreen: ${remoteConfig.showRatingScreen}');
+    debugPrint('isLoading: ${remoteConfig.isLoading}');
+
+    if (remoteConfig.showRatingScreen) {
+      debugPrint('✅ Navigating to Rating Screen');
+      StoneNavigationHelper.goToRating();
+    } else {
+      debugPrint('❌ Navigating to Paywall (Rating disabled)');
+      StoneNavigationHelper.goToPaywall(isFromOnboarding: true);
+    }
   }
 }

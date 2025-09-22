@@ -1,4 +1,14 @@
 {
+  "home": {
+    "subtitle": "Descubra cristais ao seu redor",
+    "crystal_expert_title": "Seu assistente especialista em cristais IA!",
+    "crystal_expert_subtitle": "Pergunte qualquer coisa sobre cristais e suas propriedades",
+    "ask_question": "Faça uma pergunta...",
+    "scan_rock": "Scanner de pedras preciosas",
+    "identify_stones": "Identificar cristais e pedras",
+    "featured_crystals": "Cristais em destaque",
+    "error": "Erro ao carregar cristais"
+  },
   "onboard": {
     "step1": {
       "title": "Escaneie e identifique pedras",

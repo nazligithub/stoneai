@@ -1,4 +1,14 @@
 {
+  "home": {
+    "subtitle": "주변의 크리스탈 발견하기",
+    "crystal_expert_title": "당신의 AI 크리스탈 전문 어시스턴트!",
+    "crystal_expert_subtitle": "크리스탈과 그 특성에 대해 무엇이든 물어보세요",
+    "ask_question": "질문하기...",
+    "scan_rock": "보석 스캐너",
+    "identify_stones": "크리스탈과 돌 식별하기",
+    "featured_crystals": "주요 크리스탈",
+    "error": "크리스탈 로딩 오류"
+  },
   "onboard": {
     "step1": {
       "title": "돌 스캔 및 식별",

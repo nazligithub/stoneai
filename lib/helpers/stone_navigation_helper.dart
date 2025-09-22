@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../constants/stone_routes.dart';
 import '../viewmodels/stone_app_provider.dart';
+import '../views/paywall/paywall_view.dart';
+import '../views/ai_chat/ai_chat_view.dart';
 
 class StoneNavigationHelper {
   static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -126,11 +128,78 @@ class StoneNavigationHelper {
   }
 
   static Future<void> goToPaywall({bool isFromOnboarding = false}) {
-    return navigateTo(StoneRoutes.paywall, arguments: {'isFromOnboarding': isFromOnboarding});
+    if (!isNavigatorReady) {
+      debugPrint('Navigation failed: Navigator not ready');
+      return Future.value();
+    }
+    try {
+      return navigatorKey.currentState!.push<void>(
+        PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) => const PaywallView(),
+          fullscreenDialog: true,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            const begin = Offset(0.0, 1.0);
+            const end = Offset.zero;
+            const curve = Curves.easeInOut;
+
+            var tween = Tween(begin: begin, end: end).chain(
+              CurveTween(curve: curve),
+            );
+
+            return SlideTransition(
+              position: animation.drive(tween),
+              child: child,
+            );
+          },
+          settings: RouteSettings(
+            name: StoneRoutes.paywall,
+            arguments: {'isFromOnboarding': isFromOnboarding},
+          ),
+        ),
+      );
+    } catch (e) {
+      debugPrint('Navigation error: $e');
+      return Future.value();
+    }
+  }
+
+  static Future<void> goToRating() {
+    return navigateTo(StoneRoutes.rating);
   }
 
   static Future<void> goToAIChat() {
-    return navigateTo(StoneRoutes.aiChat);
+    if (!isNavigatorReady) {
+      debugPrint('Navigation failed: Navigator not ready');
+      return Future.value();
+    }
+    try {
+      return navigatorKey.currentState!.push<void>(
+        PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) => const AIChatView(),
+          fullscreenDialog: true,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            const begin = Offset(0.0, 1.0);
+            const end = Offset.zero;
+            const curve = Curves.easeInOut;
+
+            var tween = Tween(begin: begin, end: end).chain(
+              CurveTween(curve: curve),
+            );
+
+            return SlideTransition(
+              position: animation.drive(tween),
+              child: child,
+            );
+          },
+          settings: RouteSettings(
+            name: StoneRoutes.aiChat,
+          ),
+        ),
+      );
+    } catch (e) {
+      debugPrint('Navigation error: $e');
+      return Future.value();
+    }
   }
 
   static Future<void> goToPhotoDetail({required String imagePath}) {

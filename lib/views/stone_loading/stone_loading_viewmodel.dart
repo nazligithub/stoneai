@@ -264,7 +264,7 @@ class StoneLoadingViewModel extends ChangeNotifier {
               SizedBox(width: 8.w),
               Text(
                 'stone_loading.stone_not_detected'.tr(),
-                style: GoogleFonts.inter(
+                style: GoogleFonts.poppins(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
                   color: Colors.black,
@@ -274,7 +274,7 @@ class StoneLoadingViewModel extends ChangeNotifier {
           ),
           content: Text(
             'stone_loading.stone_not_detected_desc'.tr(),
-            style: GoogleFonts.inter(
+            style: GoogleFonts.poppins(
               fontSize: 14.sp,
               color: Colors.grey[700],
               height: 1.4,
@@ -291,7 +291,7 @@ class StoneLoadingViewModel extends ChangeNotifier {
               ),
               child: Text(
                 'stone_loading.ok'.tr(),
-                style: GoogleFonts.inter(
+                style: GoogleFonts.poppins(
                   fontSize: 14.sp,
                   color: Colors.grey[600],
                   fontWeight: FontWeight.w500,
@@ -312,7 +312,7 @@ class StoneLoadingViewModel extends ChangeNotifier {
               ),
               child: Text(
                 'stone_loading.try_again'.tr(),
-                style: GoogleFonts.inter(
+                style: GoogleFonts.poppins(
                   fontSize: 14.sp,
                   color: Colors.white,
                   fontWeight: FontWeight.w600,

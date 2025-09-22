@@ -1,182 +1,167 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
-import 'package:easy_localization/easy_localization.dart';
+import '../../helpers/revenue_cat_helper.dart';
 import '../../viewmodels/stone_app_provider.dart';
 import '../../helpers/stone_navigation_helper.dart';
-import '../../helpers/revenue_cat_helper.dart';
+import 'package:provider/provider.dart';
 
 class PaywallViewModel extends ChangeNotifier {
+  bool _isWeeklySelected = false;
+  bool _isLifetimeSelected = true;
   bool _isLoading = false;
+
+  bool get isWeeklySelected => _isWeeklySelected;
+  bool get isLifetimeSelected => _isLifetimeSelected;
   bool get isLoading => _isLoading;
 
-  String? _error;
-  String? get error => _error;
+  StoreProduct? get weeklyProduct {
+    final weeklyList = RevenueCatHelper.shared.products.where(
+      (product) => product.identifier.toLowerCase().contains('weekly'),
+    ).toList();
 
-  bool _isDisposed = false;
+    if (weeklyList.isNotEmpty) {
+      return weeklyList.first;
+    }
 
-  // Purchase methods
-  Future<void> purchaseYearly() async {
-    await _makePurchase('yearly_premium');
+    return RevenueCatHelper.shared.products.isNotEmpty
+      ? RevenueCatHelper.shared.products.first
+      : null;
   }
 
-  Future<void> startTrial() async {
-    await _makePurchase('weekly_trial');
+  StoreProduct? get lifetimeProduct {
+    final lifetimeList = RevenueCatHelper.shared.products.where(
+      (product) => product.identifier.toLowerCase().contains('lifetime'),
+    ).toList();
+
+    if (lifetimeList.isNotEmpty) {
+      return lifetimeList.first;
+    }
+
+    return RevenueCatHelper.shared.products.isNotEmpty
+      ? RevenueCatHelper.shared.products.last
+      : null;
   }
 
-  Future<void> purchaseLifetime() async {
-    await _makePurchase('lifetime_premium');
+  String get weeklyPrice => weeklyProduct?.priceString ?? '\$4.99';
+  String get lifetimePrice => lifetimeProduct?.priceString ?? '\$39.99';
+
+  String get lifetimeWeeklyPrice {
+    final lifetimePriceValue = lifetimeProduct?.price ?? 39.99;
+    final weeklyPrice = lifetimePriceValue / 52;
+    return '\$${weeklyPrice.toStringAsFixed(2)}/week';
   }
 
-  Future<void> startWeeklyTrial() async {
-    await _makePurchase('weekly_trial');
+  int get savingsPercentage {
+    final weeklyPriceValue = weeklyProduct?.price ?? 4.99;
+    final lifetimePriceValue = lifetimeProduct?.price ?? 39.99;
+    final weeklyYearlyTotal = weeklyPriceValue * 52;
+    if (weeklyYearlyTotal > 0) {
+      final savings = ((weeklyYearlyTotal - lifetimePriceValue) / weeklyYearlyTotal * 100);
+      return savings.round();
+    }
+    return 70;
   }
 
-  Future<void> purchaseProduct(String productId) async {
-    await _makePurchase(productId);
+  void initialize() {
+    // Products are already fetched in splash screen
+    notifyListeners();
   }
 
-  Future<void> _makePurchase(String productId) async {
-    if (_isDisposed) return;
+  void selectWeekly() {
+    _isWeeklySelected = true;
+    _isLifetimeSelected = false;
+    notifyListeners();
+  }
 
+  void selectLifetime() {
+    _isWeeklySelected = false;
+    _isLifetimeSelected = true;
+    notifyListeners();
+  }
+
+  Future<bool> purchase() async {
     _isLoading = true;
-    _error = null;
-    _safeNotifyListeners();
+    notifyListeners();
 
     try {
-      // Use RevenueCatHelper to make purchase
-      final success = await RevenueCatHelper.shared.purchaseProduct(productId);
-      
-      if (success) {
-        // Purchase successful
-        await _handleSuccessfulPurchase();
-      } else {
-        throw Exception('Purchase failed');
+      StoreProduct? productToPurchase;
+
+      if (_isWeeklySelected) {
+        productToPurchase = weeklyProduct;
+      } else if (_isLifetimeSelected) {
+        productToPurchase = lifetimeProduct;
       }
 
+      if (productToPurchase == null) {
+        debugPrint('No product selected');
+        _isLoading = false;
+        notifyListeners();
+        return false;
+      }
+
+      final success = await RevenueCatHelper.shared.purchaseProduct(productToPurchase.identifier);
+
+      _isLoading = false;
+      notifyListeners();
+
+      // Notify app provider if purchase was successful
+      if (success && StoneNavigationHelper.context != null) {
+        final appProvider = Provider.of<StoneAppProvider>(
+          StoneNavigationHelper.context!,
+          listen: false,
+        );
+        await appProvider.setPremiumUser(true);
+        return true;
+      }
+      return false;
     } catch (e) {
       debugPrint('Purchase error: $e');
-      _error = _getPurchaseErrorMessage(e);
-    } finally {
       _isLoading = false;
-      _safeNotifyListeners();
+      notifyListeners();
+      return false;
     }
   }
 
-  Future<void> _handleSuccessfulPurchase() async {
-    try {
-      final context = StoneNavigationHelper.context;
-      if (context != null && !_isDisposed) {
-        // Update premium status in app provider
-        final appProvider = Provider.of<StoneAppProvider>(context, listen: false);
-        await appProvider.setPremiumUser(true);
-        
-        // Perform navigation and show message without using context across async gaps
-        if (!_isDisposed) {
-          // Navigate back
-          StoneNavigationHelper.goBack();
-          
-          // Schedule success message to be shown without using context
-          _scheduleSuccessMessage();
-        }
-      }
-    } catch (e) {
-      debugPrint('Success handling error: $e');
-    }
-  }
-
-  void _scheduleSuccessMessage() {
-    // Use a callback approach or handle success message differently
-    // For now, we'll use a simple approach
-    Future.microtask(() {
-      final context = StoneNavigationHelper.context;
-      if (context != null && !_isDisposed) {
-        // ignore: use_build_context_synchronously
-        _showSuccessMessage(context);
-      }
-    });
-  }
-
-  void _showSuccessMessage(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          'paywall.messages.premium_activated'.tr(),
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        backgroundColor: Colors.green,
-        duration: const Duration(seconds: 3),
-        behavior: SnackBarBehavior.floating,
-        margin: const EdgeInsets.all(16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-      ),
-    );
-  }
-
-  String _getPurchaseErrorMessage(dynamic error) {
-    if (error is PurchasesError) {
-      switch (error.code) {
-        case PurchasesErrorCode.purchaseCancelledError:
-          return 'Satın alma iptal edildi';
-        case PurchasesErrorCode.paymentPendingError:
-          return 'Ödeme beklemede';
-        case PurchasesErrorCode.networkError:
-          return 'İnternet bağlantısını kontrol edin';
-        case PurchasesErrorCode.purchaseNotAllowedError:
-          return 'Satın alma izni verilmedi';
-        case PurchasesErrorCode.purchaseInvalidError:
-          return 'Geçersiz satın alma';
-        default:
-          return 'Satın alma sırasında bir hata oluştu';
-      }
-    }
-    return 'Beklenmeyen bir hata oluştu';
-  }
-
-  // Restore purchases
-  Future<void> restorePurchases() async {
-    if (_isDisposed) return;
-
+  Future<bool> restore() async {
     _isLoading = true;
-    _error = null;
-    _safeNotifyListeners();
+    notifyListeners();
 
     try {
       final success = await RevenueCatHelper.shared.restorePurchases();
-      
-      if (success) {
-        await _handleSuccessfulPurchase();
-      } else {
-        _error = 'Aktif abonelik bulunamadı';
+
+      _isLoading = false;
+      notifyListeners();
+
+      // Notify app provider if restore was successful
+      if (success && StoneNavigationHelper.context != null) {
+        final appProvider = Provider.of<StoneAppProvider>(
+          StoneNavigationHelper.context!,
+          listen: false,
+        );
+        await appProvider.setPremiumUser(true);
+        return true;
       }
+      return false;
     } catch (e) {
       debugPrint('Restore error: $e');
-      _error = 'Abonelik geri yükleme başarısız';
-    } finally {
       _isLoading = false;
-      _safeNotifyListeners();
-    }
-  }
-
-  void clearError() {
-    _error = null;
-    _safeNotifyListeners();
-  }
-
-  void _safeNotifyListeners() {
-    if (!_isDisposed) {
       notifyListeners();
+      return false;
     }
   }
 
-  @override
-  void dispose() {
-    _isDisposed = true;
-    super.dispose();
+  void openTerms() async {
+    const url = 'https://mobinaz.com/terms-rockify';
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    }
+  }
+
+  void openPrivacy() async {
+    const url = 'https://mobinaz.com/privacy-rockify';
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    }
   }
 }

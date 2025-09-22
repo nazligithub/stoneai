@@ -158,7 +158,7 @@ class StoneCard extends StatelessWidget {
                     Flexible(
                       child: Text(
                         stone.name,
-                        style: GoogleFonts.inter(
+                        style: GoogleFonts.poppins(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
@@ -190,7 +190,7 @@ class StoneCard extends StatelessWidget {
                       ),
                       child: Text(
                         stone.category,
-                        style: GoogleFonts.inter(
+                        style: GoogleFonts.poppins(
                           fontSize: 9.sp,
                           color: Colors.white,
                           fontWeight: FontWeight.w700,

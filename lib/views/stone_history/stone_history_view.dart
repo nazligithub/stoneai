@@ -105,7 +105,7 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
                   automaticallyImplyLeading: false,
                   title: Text(
                     'history.title'.tr(),
-                    style: GoogleFonts.inter(
+                    style: GoogleFonts.poppins(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                       color: CrystalColors.textPrimary,
@@ -155,7 +155,7 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
             const SizedBox(height: 16),
             Text(
               viewModel.error!,
-              style: GoogleFonts.inter(
+              style: GoogleFonts.poppins(
                 color: CrystalColors.textSecondary,
                 fontSize: 16,
               ),
@@ -209,7 +209,7 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
             const SizedBox(height: 24),
             Text(
               'history.empty.title'.tr(),
-              style: GoogleFonts.inter(
+              style: GoogleFonts.poppins(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
                 color: CrystalColors.textPrimary,
@@ -218,7 +218,7 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
             const SizedBox(height: 8),
             Text(
               'history.empty.subtitle'.tr(),
-              style: GoogleFonts.inter(
+              style: GoogleFonts.poppins(
                 fontSize: 14,
                 color: CrystalColors.textSecondary,
               ),

@@ -120,7 +120,7 @@ class StoneGridItem extends StatelessWidget {
                             const SizedBox(width: 2),
                             Text(
                               'Popular',
-                              style: GoogleFonts.inter(
+                              style: GoogleFonts.poppins(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.white,
@@ -160,7 +160,7 @@ class StoneGridItem extends StatelessWidget {
                   children: [
                     Text(
                       stone.name,
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.poppins(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: CrystalColors.textPrimary,
@@ -171,7 +171,7 @@ class StoneGridItem extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       stone.category,
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.poppins(
                         fontSize: 11,
                         color: CrystalColors.textSecondary,
                       ),

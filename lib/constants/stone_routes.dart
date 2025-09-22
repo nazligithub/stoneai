@@ -12,6 +12,7 @@ class StoneRoutes {
   static const String exploreDetail = '/explore-detail';
   static const String cameraCapture = '/camera-capture';
   static const String paywall = '/paywall';
+  static const String rating = '/rating';
   static const String aiChat = '/ai-chat';
   static const String photoDetail = '/photo-detail';
   static const String stoneLoading = '/stone-loading';

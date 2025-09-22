@@ -65,7 +65,7 @@ class StoneCategoryCard extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               category,
-              style: GoogleFonts.inter(
+              style: GoogleFonts.poppins(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: isSelected 

@@ -102,110 +102,15 @@ class _PhotoDetailViewContent extends StatelessWidget {
                         ],
                       ),
                     ),
-                    child: Row(
-                      children: [
-                        // App title
-                        Text(
-                          'Rockify',
-                          style: GoogleFonts.inter(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                    child: Center(
+                      child: Text(
+                        'Rock Detail',
+                        style: GoogleFonts.poppins(
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
                         ),
-                        const Spacer(),
-                        // AI Chat button
-                        Container(
-                          margin: EdgeInsets.only(right: 8.w),
-                          child: TextButton.icon(
-                            onPressed: () {
-                              StoneNavigationHelper.goToAIChat();
-                            },
-                            style: TextButton.styleFrom(
-                              backgroundColor: Colors.white.withValues(alpha: 0.15),
-                              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25),
-                                side: BorderSide(
-                                  color: Colors.white.withValues(alpha: 0.3),
-                                  width: 1,
-                                ),
-                              ),
-                            ),
-                            icon: Icon(
-                              Icons.auto_awesome_rounded,
-                              size: 16.sp,
-                              color: Colors.white,
-                            ),
-                            label: Text(
-                              'AI',
-                              style: GoogleFonts.inter(
-                                fontSize: 13.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ),
-                        // PRO button
-                        Container(
-                          margin: EdgeInsets.only(right: 8.w),
-                          child: TextButton(
-                            onPressed: appProvider.isPremiumUser 
-                                ? null 
-                                : () {
-                                    StoneNavigationHelper.goToPaywall();
-                                  },
-                            style: TextButton.styleFrom(
-                              backgroundColor: appProvider.isPremiumUser 
-                                  ? Colors.green 
-                                  : CrystalColors.primaryBlue,
-                              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                if (!appProvider.isPremiumUser) ...[
-                                  Text(
-                                    '💎',
-                                    style: TextStyle(fontSize: 12.sp),
-                                  ),
-                                  SizedBox(width: 4.w),
-                                ],
-                                Text(
-                                  'PRO',
-                                  style: GoogleFonts.inter(
-                                    fontSize: 13.sp,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        // Settings button
-                        IconButton(
-                          onPressed: () {
-                            Navigator.of(context).pushNamed('/gem-settings');
-                          },
-                          icon: Container(
-                            padding: EdgeInsets.all(8.w),
-                            decoration: BoxDecoration(
-                              color: Colors.black.withValues(alpha: 0.5),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.settings_rounded,
-                              color: Colors.white,
-                              size: 20.sp,
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
@@ -256,7 +161,7 @@ class _PhotoDetailViewContent extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     viewModel.error!,
-                                    style: GoogleFonts.inter(
+                                    style: GoogleFonts.poppins(
                                       fontSize: 14.sp,
                                       color: Colors.red,
                                     ),
@@ -303,7 +208,7 @@ class _PhotoDetailViewContent extends StatelessWidget {
                                       SizedBox(width: 8.w),
                                       Text(
                                         'photo_detail.start_scan'.tr(),
-                                        style: GoogleFonts.inter(
+                                        style: GoogleFonts.poppins(
                                           fontSize: 18.sp,
                                           fontWeight: FontWeight.w600,
                                           color: Colors.white,
@@ -345,7 +250,7 @@ class _PhotoDetailViewContent extends StatelessWidget {
                                       SizedBox(width: 8.w),
                                       Text(
                                         'photo_detail.crop'.tr(),
-                                        style: GoogleFonts.inter(
+                                        style: GoogleFonts.poppins(
                                           fontSize: 16.sp,
                                           color: Colors.white,
                                         ),
@@ -383,7 +288,7 @@ class _PhotoDetailViewContent extends StatelessWidget {
                                         SizedBox(width: 8.w),
                                         Text(
                                           'photo_detail.retake'.tr(),
-                                          style: GoogleFonts.inter(
+                                          style: GoogleFonts.poppins(
                                             fontSize: 16.sp,
                                             color: Colors.white,
                                           ),

@@ -126,7 +126,7 @@ class _CameraStickyTipsState extends State<CameraStickyTips>
                         children: [
                           Text(
                             'camera.tips.title'.tr(),
-                            style: GoogleFonts.inter(
+                            style: GoogleFonts.poppins(
                               fontSize: 20.sp,
                               fontWeight: FontWeight.bold,
                               color: Colors.black87,
@@ -185,7 +185,7 @@ class _CameraStickyTipsState extends State<CameraStickyTips>
                                       SizedBox(width: 8.w),
                                       Text(
                                         tip.title,
-                                        style: GoogleFonts.inter(
+                                        style: GoogleFonts.poppins(
                                           fontSize: 16.sp,
                                           fontWeight: FontWeight.w600,
                                           color: tip.iconColor,
@@ -223,7 +223,7 @@ class _CameraStickyTipsState extends State<CameraStickyTips>
                                 // Subtitle
                                 Text(
                                   tip.subtitle,
-                                  style: GoogleFonts.inter(
+                                  style: GoogleFonts.poppins(
                                     fontSize: 14.sp,
                                     color: Colors.grey.shade700,
                                     height: 1.5,
@@ -283,7 +283,7 @@ class _CameraStickyTipsState extends State<CameraStickyTips>
                           ),
                           child: Text(
                             'camera.tips.buttons.got_it'.tr(),
-                            style: GoogleFonts.inter(
+                            style: GoogleFonts.poppins(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                               color: Colors.white,

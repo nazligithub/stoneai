@@ -95,7 +95,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
                     // Loading Text
                     Text(
                       'stone_loading.analyzing'.tr(),
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.poppins(
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
@@ -133,7 +133,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
                     // Status Text
                     Text(
                       'stone_loading.duration_warning'.tr(),
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.poppins(
                         fontSize: 14.sp,
                         color: Colors.white.withValues(alpha: 0.7),
                       ),
@@ -168,7 +168,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     'stone_loading.error_title'.tr(),
-                                    style: GoogleFonts.inter(
+                                    style: GoogleFonts.poppins(
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w600,
                                       color: Colors.red,
@@ -180,7 +180,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
                             SizedBox(height: 8.h),
                             Text(
                               viewModel.error!,
-                              style: GoogleFonts.inter(
+                              style: GoogleFonts.poppins(
                                 fontSize: 14.sp,
                                 color: Colors.red.withValues(alpha: 0.9),
                               ),
@@ -199,7 +199,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
                                     ),
                                     child: Text(
                                       'stone_loading.retry'.tr(),
-                                      style: GoogleFonts.inter(
+                                      style: GoogleFonts.poppins(
                                         fontSize: 14.sp,
                                         color: Colors.red,
                                       ),
@@ -221,7 +221,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
                                     ),
                                     child: Text(
                                       'stone_loading.go_back'.tr(),
-                                      style: GoogleFonts.inter(
+                                      style: GoogleFonts.poppins(
                                         fontSize: 14.sp,
                                         color: Colors.white,
                                       ),
@@ -258,7 +258,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 'stone_loading.ai_tip'.tr(),
-                                style: GoogleFonts.inter(
+                                style: GoogleFonts.poppins(
                                   fontSize: 12.sp,
                                   color: Colors.white.withValues(alpha: 0.8),
                                   height: 1.3,

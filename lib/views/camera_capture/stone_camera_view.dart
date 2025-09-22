@@ -61,7 +61,7 @@ class _StoneCameraViewContent extends StatelessWidget {
                         SizedBox(height: 16.h),
                         Text(
                           'camera.error.title'.tr(),
-                          style: GoogleFonts.inter(
+                          style: GoogleFonts.poppins(
                             fontSize: 18,
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
@@ -70,7 +70,7 @@ class _StoneCameraViewContent extends StatelessWidget {
                         SizedBox(height: 8.h),
                         Text(
                           cameraViewModel.error ?? 'camera.error.message'.tr(),
-                          style: GoogleFonts.inter(
+                          style: GoogleFonts.poppins(
                             fontSize: 14,
                             color: Colors.white.withValues(alpha: 0.8),
                           ),
@@ -100,7 +100,7 @@ class _StoneCameraViewContent extends StatelessWidget {
                     ),
                   ),
 
-                // Top overlay with Rockify app bar
+                // Top overlay with Rock Scan title
                 Positioned(
                   top: 0,
                   left: 0,
@@ -117,110 +117,15 @@ class _StoneCameraViewContent extends StatelessWidget {
                         ],
                       ),
                     ),
-                    child: Row(
-                      children: [
-                        // App title
-                        Text(
-                            'Rockify',
-                            style: GoogleFonts.inter(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        const Spacer(),
-                        // AI Chat button
-                        Container(
-                          margin: EdgeInsets.only(right: 8.w),
-                          child: TextButton.icon(
-                            onPressed: () {
-                              StoneNavigationHelper.goToAIChat();
-                            },
-                            style: TextButton.styleFrom(
-                              backgroundColor: Colors.white.withValues(alpha: 0.15),
-                              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25),
-                                side: BorderSide(
-                                  color: Colors.white.withValues(alpha: 0.3),
-                                  width: 1,
-                                ),
-                              ),
-                            ),
-                            icon: Icon(
-                              Icons.auto_awesome_rounded,
-                              size: 16.sp,
-                              color: Colors.white,
-                            ),
-                            label: Text(
-                              'AI Chat',
-                              style: GoogleFonts.inter(
-                                fontSize: 13.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
+                    child: Center(
+                      child: Text(
+                        'Rock Scan',
+                        style: GoogleFonts.poppins(
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
                         ),
-                        // PRO button
-                        Container(
-                          margin: EdgeInsets.only(right: 8.w),
-                          child: TextButton(
-                            onPressed: appProvider.isPremiumUser 
-                                ? null 
-                                : () {
-                                    StoneNavigationHelper.goToPaywall();
-                                  },
-                            style: TextButton.styleFrom(
-                              backgroundColor: appProvider.isPremiumUser 
-                                  ? Colors.green 
-                                  : CrystalColors.primaryBlue,
-                              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                if (!appProvider.isPremiumUser) ...[
-                                  Text(
-                                    '💎',
-                                    style: TextStyle(fontSize: 12.sp),
-                                  ),
-                                  SizedBox(width: 4.w),
-                                ],
-                                Text(
-                                  appProvider.isPremiumUser ? 'Pro' : 'Pro',
-                                  style: GoogleFonts.inter(
-                                    fontSize: 13.sp,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        // Settings button
-                        IconButton(
-                          onPressed: () {
-                            Navigator.of(context).pushNamed('/gem-settings');
-                          },
-                          icon: Container(
-                            padding: EdgeInsets.all(8.w),
-                            decoration: BoxDecoration(
-                              color: Colors.black.withValues(alpha: 0.5),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.settings_rounded,
-                              color: Colors.white,
-                              size: 20.sp,
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
@@ -234,7 +139,7 @@ class _StoneCameraViewContent extends StatelessWidget {
                     padding: EdgeInsets.only(
                       left: 32.w,
                       right: 32.w,
-                      bottom: 120.h, // More space from tab bar
+                      bottom: 160.h, // More space from tab bar
                       top: 24.h,
                     ),
                     decoration: BoxDecoration(
@@ -253,7 +158,7 @@ class _StoneCameraViewContent extends StatelessWidget {
                         // Gallery button
                         IconButton(
                           onPressed: () async {
-                            if (appProvider.canScanForFree) {
+                            if (appProvider.isPremiumUser) {
                               try {
                                 await cameraViewModel.pickImageFromGallery();
                               } catch (e) {
@@ -306,7 +211,7 @@ class _StoneCameraViewContent extends StatelessWidget {
                         GestureDetector(
                           onTap: cameraViewModel.isCameraInitialized && !cameraViewModel.isCapturing
                               ? () async {
-                                  if (appProvider.canScanForFree) {
+                                  if (appProvider.isPremiumUser) {
                                     cameraViewModel.capturePhoto();
                                   } else {
                                     StoneNavigationHelper.goToPaywall();

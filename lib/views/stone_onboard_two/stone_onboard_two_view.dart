@@ -266,7 +266,7 @@ class _StoneOnboardTwoViewState extends State<StoneOnboardTwoView>
                   borderRadius: BorderRadius.circular(28),
                 ),
                 child: ElevatedButton(
-                  onPressed: viewModel.onContinue,
+                  onPressed: () => viewModel.onContinue(context),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     shadowColor: Colors.transparent,

@@ -63,7 +63,7 @@ class _ExploreDetailViewContent extends StatelessWidget {
               child: IconButton(
                 icon: Icon(Icons.arrow_back, color: Colors.white, size: 20.sp),
                 onPressed: () {
-                  StoneNavigationHelper.goToMainTabsAndClearStack();
+                  StoneNavigationHelper.goBack();
                 },
               ),
             ),
@@ -139,7 +139,7 @@ class _ExploreDetailViewContent extends StatelessWidget {
                   right: 0,
                   child: Text(
                     stone.name,
-                    style: GoogleFonts.inter(
+                    style: GoogleFonts.poppins(
                       fontSize: 32.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -239,7 +239,7 @@ class _ExploreDetailViewContent extends StatelessWidget {
             ),
             child: Text(
               'explore_detail.disclaimer'.tr(),
-              style: GoogleFonts.inter(
+              style: GoogleFonts.poppins(
                 fontSize: 12.sp,
                 color: Colors.grey.shade600,
                 fontStyle: FontStyle.italic,
@@ -282,7 +282,7 @@ class _ExploreDetailViewContent extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 title,
-                style: GoogleFonts.inter(
+                style: GoogleFonts.poppins(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
                   color: CrystalColors.textPrimary,
@@ -293,7 +293,7 @@ class _ExploreDetailViewContent extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             content,
-            style: GoogleFonts.inter(
+            style: GoogleFonts.poppins(
               fontSize: 14.sp,
               color: CrystalColors.textSecondary,
               height: 1.6,

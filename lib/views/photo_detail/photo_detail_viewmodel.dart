@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'dart:io';
+import 'package:provider/provider.dart';
 import '../../helpers/stone_navigation_helper.dart';
 import '../../services/stone_api_service.dart';
+import '../../viewmodels/stone_app_provider.dart';
 
 class PhotoDetailViewModel extends ChangeNotifier {
   final String originalImagePath;
@@ -75,8 +77,16 @@ class PhotoDetailViewModel extends ChangeNotifier {
     if (_isDisposed || _isProcessing) return;
 
     try {
+      // Check premium status and free scan limit
+      final appProvider = Provider.of<StoneAppProvider>(context, listen: false);
+      if (appProvider.hasUsedFreeScans) {
+        // Show paywall if user has used all free scans
+        StoneNavigationHelper.goToPaywall();
+        return;
+      }
+
       final imageFile = File(_displayImagePath ?? originalImagePath);
-      
+
       // Check if file exists
       if (!await imageFile.exists()) {
         throw Exception('Görsel dosyası bulunamadı');

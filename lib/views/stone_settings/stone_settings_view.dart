@@ -28,7 +28,7 @@ class CrystalSettingsView extends StatelessWidget {
                 elevation: 0,
                 title: Text(
                   'settings.title'.tr(),
-                  style: GoogleFonts.inter(
+                  style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: CrystalColors.textPrimary,
@@ -65,62 +65,6 @@ class CrystalSettingsView extends StatelessWidget {
   }
 
   Widget _buildPremiumCard(BuildContext context, StoneAppProvider appProvider) {
-    if (appProvider.isPremiumUser) {
-      return Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          gradient: CrystalColors.crystalTabGradient,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: CrystalColors.primaryBlue.withValues(alpha: 0.3),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.2),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.diamond,
-                color: Colors.white,
-                size: 24,
-              ),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'settings.premium.member_title'.tr(),
-                    style: GoogleFonts.inter(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    'settings.premium.member_subtitle'.tr(),
-                    style: GoogleFonts.inter(
-                      fontSize: 14,
-                      color: Colors.white.withValues(alpha: 0.9),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      );
-    }
-
     return GestureDetector(
       onTap: () {
         final viewModel = Provider.of<StoneSettingsViewModel>(context, listen: false);
@@ -147,8 +91,8 @@ class CrystalSettingsView extends StatelessWidget {
                 color: Colors.white.withValues(alpha: 0.2),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(
-                Icons.workspace_premium,
+              child: Icon(
+                appProvider.isPremiumUser ? Icons.diamond : Icons.workspace_premium,
                 color: Colors.white,
                 size: 24,
               ),
@@ -159,16 +103,20 @@ class CrystalSettingsView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'settings.premium.upgrade_title'.tr(),
-                    style: GoogleFonts.inter(
+                    appProvider.isPremiumUser
+                        ? 'settings.premium.member_title'.tr()
+                        : 'settings.premium.upgrade_title'.tr(),
+                    style: GoogleFonts.poppins(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
                   Text(
-                    'settings.premium.upgrade_subtitle'.tr(),
-                    style: GoogleFonts.inter(
+                    appProvider.isPremiumUser
+                        ? 'settings.premium.member_subtitle'.tr()
+                        : 'settings.premium.upgrade_subtitle'.tr(),
+                    style: GoogleFonts.poppins(
                       fontSize: 14,
                       color: Colors.white.withValues(alpha: 0.9),
                     ),
@@ -281,7 +229,7 @@ class CrystalSettingsView extends StatelessWidget {
       children: [
         Text(
           title,
-          style: GoogleFonts.inter(
+          style: GoogleFonts.poppins(
             fontSize: 18,
             fontWeight: FontWeight.w600,
             color: CrystalColors.textPrimary,
@@ -319,7 +267,7 @@ class CrystalSettingsView extends StatelessWidget {
       leading: leading,
       title: Text(
         title,
-        style: GoogleFonts.inter(
+        style: GoogleFonts.poppins(
           fontSize: 16,
           fontWeight: FontWeight.w500,
           color: CrystalColors.textPrimary,
@@ -327,7 +275,7 @@ class CrystalSettingsView extends StatelessWidget {
       ),
       subtitle: Text(
         subtitle,
-        style: GoogleFonts.inter(
+        style: GoogleFonts.poppins(
           fontSize: 14,
           color: CrystalColors.textSecondary,
         ),

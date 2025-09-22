@@ -39,7 +39,7 @@ class _StoneDiscoverViewContent extends StatelessWidget {
                   sliver: SliverToBoxAdapter(
                     child: Text(
                       'discover.subtitle'.tr(),
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: CrystalColors.textSecondary,
@@ -68,7 +68,7 @@ class _StoneDiscoverViewContent extends StatelessWidget {
                           const SizedBox(height: 16),
                           Text(
                             discoverViewModel.error ?? 'discover.error'.tr(),
-                            style: GoogleFonts.inter(
+                            style: GoogleFonts.poppins(
                               fontSize: 16,
                               color: CrystalColors.textSecondary,
                             ),

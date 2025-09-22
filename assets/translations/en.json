@@ -1,4 +1,14 @@
 {
+  "home": {
+    "subtitle": "Discover Crystals Around You",
+    "crystal_expert_title": "Your AI Crystal Expert Assistant!",
+    "crystal_expert_subtitle": "Ask anything about crystals and their properties",
+    "ask_question": "Ask a question...",
+    "scan_rock": "Scan Gemstone Identifier",
+    "identify_stones": "Identify crystals and stones",
+    "featured_crystals": "Featured Crystals",
+    "error": "Error loading crystals"
+  },
   "onboard": {
     "step1": {
       "title": "Scan & Identify Stones",
@@ -28,27 +38,41 @@
       "status_label": "Status"
     }
   },
+  "rating": {
+    "title": "Rate Rockify",
+    "subtitle": "Love discovering stones with us? Your rating helps us improve and reach more stone enthusiasts!",
+    "button": "Rate Rockify",
+    "rated": "I rated!",
+    "continue": "Continue"
+  },
   "paywall": {
-    "title": "Unlimited Access",
+    "title": "Unlock Premium",
+    "subtitle": "Identify unlimited stones with premium features",
     "features": {
-      "identify_unlimited": "Identify unlimited rocks & stones",
-      "unlock_facts": "Unlock educational facts",
-      "ai_analysis": "AI-powered stone analysis",
-      "remove_paywalls": "Remove annoying paywalls"
+      "unlimited_identification": "Unlimited Stone Identification",
+      "all_facts": "Access to All Stone Facts",
+      "ai_analysis": "AI-Powered Analysis"
     },
     "plans": {
-      "lifetime": "Lifetime Plan",
-      "weekly": "Weekly Plan",
-      "per_week": "per week",
-      "save_badge": "SAVE 90%"
+      "weekly": {
+        "title": "Weekly Access",
+        "subtitle": "Cancel anytime"
+      },
+      "lifetime": {
+        "title": "Lifetime Access",
+        "subtitle": "One-time payment",
+        "save_badge": "SAVE %d%%"
+      }
     },
     "continue": "Continue",
-    "menu": {
-      "title": "More Options",
-      "privacy_policy": "Privacy Policy",
-      "terms_of_service": "Terms of Service",
-      "restore_purchases": "Restore Purchases",
-      "cancel": "Cancel"
+    "security": {
+      "ios": "Secured by App Store",
+      "android": "Secured by Google Play"
+    },
+    "footer": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "restore": "Restore"
     },
     "messages": {
       "restore_success": "Purchases restored successfully",
@@ -208,13 +232,16 @@
     "crystals": "Crystals"
   },
   "navigation": {
+    "home": "Home",
     "explore": "Explore",
     "history": "History"
   },
   "ai_chat": {
-    "title": "AI Stone Chat",
+    "title": "AI Chat",
     "status": "Online",
-    "welcome_title": "Hello! Welcome to AI Stone Chat",
+    "input_placeholder": "Ask about gemstones...",
+    "premium_required": "Premium required for AI chat",
+    "welcome_title": "Hello! Welcome to AI Gemstone Chat",
     "welcome_message": "I'm happy to help you with stones. What would you like to know?",
     "suggestions": {
       "diamond_info": "Diamond information",

@@ -7,9 +7,11 @@ import 'package:get_storage/get_storage.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import 'viewmodels/stone_app_provider.dart';
+import 'providers/remote_config_provider.dart';
 import 'helpers/stone_storage_helper.dart';
 import 'helpers/stone_navigation_helper.dart';
 import 'helpers/revenue_cat_helper.dart';
+import 'services/supabase_service.dart';
 import 'constants/stone_routes.dart';
 import 'constants/crystal_colors.dart';
 import 'views/main_navigation/crystal_main_navigation_view.dart';
@@ -26,6 +28,7 @@ import 'views/stone_onboard_two/stone_onboard_two_view.dart';
 import 'views/stone_onboard_two/stone_onboard_two_viewmodel.dart';
 import 'views/stone_settings/stone_settings_view.dart';
 import 'views/stone_settings/stone_settings_viewmodel.dart';
+import 'views/rating/rating_view.dart';
 import 'models/stone_scan_response.dart';
 
 void main() async {
@@ -40,7 +43,10 @@ void main() async {
   
   // Initialize RevenueCat
   await RevenueCatHelper.shared.init();
-  
+
+  // Initialize Supabase
+  await SupabaseService.initialize();
+
   // Set preferred orientations
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -79,6 +85,9 @@ class RockifyApp extends StatelessWidget {
           providers: [
             ChangeNotifierProvider(
               create: (_) => StoneAppProvider()..initializeApp(),
+            ),
+            ChangeNotifierProvider(
+              create: (_) => RemoteConfigProvider(),
             ),
           ],
           child: Consumer<StoneAppProvider>(
@@ -120,11 +129,11 @@ class RockifyApp extends StatelessWidget {
         seedColor: CrystalColors.primaryBlue,
         brightness: Brightness.light,
       ),
-      textTheme: GoogleFonts.interTextTheme(),
+      textTheme: GoogleFonts.poppinsTextTheme(),
       appBarTheme: AppBarTheme(
         backgroundColor: CrystalColors.primaryBlue,
         elevation: 0,
-        titleTextStyle: GoogleFonts.inter(
+        titleTextStyle: GoogleFonts.poppins(
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: Colors.white,
@@ -137,7 +146,7 @@ class RockifyApp extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: CrystalColors.primaryBlue,
           foregroundColor: Colors.white,
-          textStyle: GoogleFonts.inter(
+          textStyle: GoogleFonts.poppins(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -160,11 +169,11 @@ class RockifyApp extends StatelessWidget {
         seedColor: CrystalColors.primaryBlue,
         brightness: Brightness.dark,
       ),
-      textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
+      textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
       appBarTheme: AppBarTheme(
         backgroundColor: CrystalColors.primaryDark,
         elevation: 0,
-        titleTextStyle: GoogleFonts.inter(
+        titleTextStyle: GoogleFonts.poppins(
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: Colors.white,
@@ -177,7 +186,7 @@ class RockifyApp extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: CrystalColors.primaryBlue,
           foregroundColor: Colors.white,
-          textStyle: GoogleFonts.inter(
+          textStyle: GoogleFonts.poppins(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -222,6 +231,7 @@ class RockifyApp extends StatelessWidget {
         return ExploreDetailView(stoneId: args['stoneId'] as String);
       },
       StoneRoutes.paywall: (context) => const PaywallView(),
+      StoneRoutes.rating: (context) => const RatingView(),
       StoneRoutes.aiChat: (context) => const AIChatView(),
       StoneRoutes.photoDetail: (context) {
         final imagePath = ModalRoute.of(context)!.settings.arguments as String;
@@ -310,7 +320,7 @@ class RockifySplashScreen extends StatelessWidget {
               const SizedBox(height: 32),
               Text(
                 'Rock & Stone',
-                style: GoogleFonts.inter(
+                style: GoogleFonts.poppins(
                   fontSize: 36,
                   fontWeight: FontWeight.w800,
                   color: Colors.white,
@@ -320,7 +330,7 @@ class RockifySplashScreen extends StatelessWidget {
               ),
               Text(
                 'Identifier',
-                style: GoogleFonts.inter(
+                style: GoogleFonts.poppins(
                   fontSize: 28,
                   fontWeight: FontWeight.w300,
                   color: Colors.white.withValues(alpha: 0.95),

@@ -96,12 +96,12 @@ class _RockDetailViewContentState extends State<_RockDetailViewContent> {
             leading: IconButton(
               icon: Icon(Icons.arrow_back, color: Colors.black),
               onPressed: () {
-                StoneNavigationHelper.goToMainTabsAndClearStack();
+                StoneNavigationHelper.goBack();
               },
             ),
             title: Text(
               detailViewModel.stoneName,
-              style: GoogleFonts.inter(
+              style: GoogleFonts.poppins(
                 fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
@@ -463,7 +463,7 @@ class _RockDetailViewContentState extends State<_RockDetailViewContent> {
         children: [
           Text(
             stone.description,
-            style: GoogleFonts.inter(
+            style: GoogleFonts.poppins(
               fontSize: 16.sp,
               color: CrystalColors.textPrimary,
               height: 1.5,
@@ -475,7 +475,7 @@ class _RockDetailViewContentState extends State<_RockDetailViewContent> {
           if (stone.uses != null && stone.uses!.isNotEmpty) ...[
             Text(
               'Properties',
-              style: GoogleFonts.inter(
+              style: GoogleFonts.poppins(
                 fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
                 color: CrystalColors.textPrimary,
@@ -486,7 +486,7 @@ class _RockDetailViewContentState extends State<_RockDetailViewContent> {
               padding: EdgeInsets.only(bottom: 8.h),
               child: Text(
                 '• $use',
-                style: GoogleFonts.inter(
+                style: GoogleFonts.poppins(
                   fontSize: 14.sp,
                   color: CrystalColors.textSecondary,
                 ),

@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../../viewmodels/stone_app_provider.dart';
 import '../../constants/crystal_colors.dart';
-import '../stone_discover/stone_discover_view.dart';
+import '../stone_home/stone_home_view.dart';
 import '../stone_history/stone_history_view.dart';
 import '../camera_capture/stone_camera_view.dart';
 
@@ -26,12 +26,12 @@ class _CrystalMainNavigationViewState extends State<CrystalMainNavigationView>
   late CurvedAnimation borderRadiusCurve;
 
   final List<IconData> iconList = [
-    Icons.explore_rounded,
+    Icons.home_rounded,
     Icons.history_rounded,
   ];
 
   List<String> get tabLabels => [
-    'navigation.explore'.tr(),
+    'navigation.home'.tr(),
     'navigation.history'.tr(),
   ];
 
@@ -74,13 +74,13 @@ class _CrystalMainNavigationViewState extends State<CrystalMainNavigationView>
   Widget _buildTabView(int index) {
     switch (index) {
       case 0:
-        return StoneDiscoverView(); // Explore tab
+        return StoneHomeView(); // Home tab
       case 1:
         return StoneCameraView(); // Camera tab (floating button'dan erişilir)
       case 2:
         return StoneHistoryView(); // History tab
       default:
-        return StoneDiscoverView();
+        return StoneHomeView();
     }
   }
 
@@ -94,8 +94,9 @@ class _CrystalMainNavigationViewState extends State<CrystalMainNavigationView>
           extendBody: true,
           body: IndexedStack(
             index: appProvider.selectedTabIndex == 2 ? 1 : appProvider.selectedTabIndex,
+            sizing: StackFit.expand,
             children: [
-              _buildTabView(0), // Explore
+              _buildTabView(0), // Home
               appProvider.selectedTabIndex == 2 ? _buildTabView(2) : _buildTabView(1), // History or Camera
             ],
           ),
@@ -113,11 +114,12 @@ class _CrystalMainNavigationViewState extends State<CrystalMainNavigationView>
             child: AnimatedBottomNavigationBar.builder(
               itemCount: iconList.length,
               gapLocation: GapLocation.center,
+              notchSmoothness: NotchSmoothness.softEdge,
               tabBuilder: (int index, bool isActive) {
                 // Manual control for active state
                 bool manualActive = false;
                 if (index == 0 && (appProvider.selectedTabIndex == 0 || appProvider.selectedTabIndex == 1)) {
-                  manualActive = appProvider.selectedTabIndex == 0; // Only Explore tab should be active, not camera
+                  manualActive = appProvider.selectedTabIndex == 0; // Only Home tab should be active, not camera
                 } else if (index == 1 && appProvider.selectedTabIndex == 2) {
                   manualActive = true; // History tab
                 }
@@ -138,7 +140,7 @@ class _CrystalMainNavigationViewState extends State<CrystalMainNavigationView>
                     const SizedBox(height: 4),
                     Text(
                       tabLabels[index],
-                      style: GoogleFonts.inter(
+                      style: GoogleFonts.poppins(
                         color: color,
                         fontSize: 11,
                         fontWeight: manualActive ? FontWeight.w600 : FontWeight.normal,
@@ -149,8 +151,8 @@ class _CrystalMainNavigationViewState extends State<CrystalMainNavigationView>
               },
               backgroundColor: Colors.white,
               activeIndex: appProvider.selectedTabIndex == 0 ? 0 : (appProvider.selectedTabIndex == 2 ? 1 : -1),
-              splashColor: CrystalColors.primaryLight.withValues(alpha: 0.1),
-              splashSpeedInMilliseconds: 300,
+              splashColor: Colors.transparent,
+              splashSpeedInMilliseconds: 0,
               leftCornerRadius: 0,
               rightCornerRadius: 0,
               onTap: (index) {

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import '../helpers/stone_storage_helper.dart';
 import '../helpers/revenue_cat_helper.dart';
+import '../helpers/stone_navigation_helper.dart';
 
 class StoneAppProvider extends ChangeNotifier {
   final StoneStorageHelper _storageHelper = StoneStorageHelper();
 
   // Tab index management
-  int _selectedTabIndex = 1; // Start with camera tab (index 1)
+  int _selectedTabIndex = 0; // Start with home tab (index 0)
   int get selectedTabIndex => _selectedTabIndex;
 
   void setTabIndex(int index) {
@@ -145,7 +146,7 @@ class StoneAppProvider extends ChangeNotifier {
   int get scanCount => _scanCount;
   static const int maxFreeScans = 1;
 
-  bool get canScanForFree => _isPremiumUser || _scanCount < maxFreeScans;
+  bool get canScanForFree => _isPremiumUser;
   bool get hasUsedFreeScans => !_isPremiumUser && _scanCount >= maxFreeScans;
 
   Future<void> incrementScanCount() async {

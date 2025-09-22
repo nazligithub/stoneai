@@ -9,7 +9,7 @@ class StoneSettingsViewModel extends ChangeNotifier {
   // Navigation methods
   void navigateToPaywall() {
     HapticFeedback.mediumImpact();
-    StoneNavigationHelper.navigatorKey.currentState?.pushNamed('/paywall');
+    StoneNavigationHelper.goToPaywall();
   }
 
   void navigateToNotifications() {

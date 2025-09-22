@@ -1,577 +1,546 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:io' show Platform;
 import 'package:provider/provider.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:video_player/video_player.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'paywall_viewmodel.dart';
-import '../../constants/crystal_colors.dart';
 import '../../helpers/stone_navigation_helper.dart';
-import '../../helpers/revenue_cat_helper.dart';
 
 class PaywallView extends StatelessWidget {
-  const PaywallView({super.key});
+  final bool fromOnboarding;
+
+  const PaywallView({
+    super.key,
+    this.fromOnboarding = false,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.dark,
-      child: ChangeNotifierProvider(
-        create: (_) => PaywallViewModel(),
-        child: const _PaywallViewContent(),
+    // Get fromOnboarding from route arguments if available
+    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    final isFromOnboarding = args?['isFromOnboarding'] ?? fromOnboarding;
+
+    return ChangeNotifierProvider(
+      create: (_) => PaywallViewModel()..initialize(),
+      child: Consumer<PaywallViewModel>(
+        builder: (context, viewModel, child) {
+          return AnnotatedRegion<SystemUiOverlayStyle>(
+            value: const SystemUiOverlayStyle(
+              statusBarBrightness: Brightness.dark,
+              statusBarIconBrightness: Brightness.light,
+              statusBarColor: Colors.transparent,
+            ),
+            child: _PaywallContent(
+              fromOnboarding: isFromOnboarding,
+              viewModel: viewModel,
+            ),
+          );
+        },
       ),
     );
   }
 }
 
-class _PaywallViewContent extends StatefulWidget {
-  const _PaywallViewContent();
+class _PaywallContent extends StatefulWidget {
+  final bool fromOnboarding;
+  final PaywallViewModel viewModel;
+
+  const _PaywallContent({
+    required this.fromOnboarding,
+    required this.viewModel,
+  });
 
   @override
-  State<_PaywallViewContent> createState() => _PaywallViewContentState();
+  State<_PaywallContent> createState() => _PaywallContentState();
 }
 
-class _PaywallViewContentState extends State<_PaywallViewContent> 
-    with SingleTickerProviderStateMixin {
-  bool _isLifetimeSelected = true;
-  bool _isFromOnboarding = false;
-  late AnimationController _closeButtonController;
-  late Animation<double> _closeButtonAnimation;
-  bool _showCloseButton = false;
+class _PaywallContentState extends State<_PaywallContent> {
+  late VideoPlayerController _videoController;
+  bool _isVideoInitialized = false;
 
   @override
   void initState() {
     super.initState();
-    _closeButtonController = AnimationController(
-      duration: const Duration(milliseconds: 1500),
-      vsync: this,
-    );
-    _closeButtonAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _closeButtonController,
-      curve: Curves.easeInOut,
-    ));
-    
-    // Show close button immediately
-    setState(() {
-      _showCloseButton = true;
-    });
-    _closeButtonController.forward();
+    _initializeVideo();
+  }
+
+  Future<void> _initializeVideo() async {
+    _videoController = VideoPlayerController.asset('assets/rock_paywall.mp4');
+    await _videoController.initialize();
+    _videoController.setLooping(true);
+    _videoController.setVolume(0);
+    _videoController.play();
+    if (mounted) {
+      setState(() {
+        _isVideoInitialized = true;
+      });
+    }
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    
-    // Get the arguments passed to this route
-    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    _isFromOnboarding = args?['isFromOnboarding'] ?? false;
-  }
-  
-  @override
   void dispose() {
-    _closeButtonController.dispose();
+    _videoController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<PaywallViewModel>(
-      builder: (context, paywallViewModel, child) {
-        return PopScope(
-          canPop: !_isFromOnboarding,
-          child: Scaffold(
-            backgroundColor: Colors.white,
-            body: SafeArea(
-              child: Stack(
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(height: 40.h), // Space for close button
-                      
-                      // Content with fixed layout
-                      Expanded(
-                        child: SingleChildScrollView(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Column(
-                              children: [
-                                // Pro Image
-                                SizedBox(
-                                  height: 180.h,
-                                  width: 180.w,
-                                  child: Image.asset(
-                                    'assets/pro.png',
-                                    fit: BoxFit.contain,
-                                  ),
-                                ),
-                                
-                                // Title
-                                Text(
-                                  'paywall.title'.tr(),
-                                  style: GoogleFonts.inter(
-                                    fontSize: 28.sp,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                                
-                                SizedBox(height: 16.h),
-                                
-                                // Features List
-                                _buildFeatureItem(
-                                  icon: Icons.camera_alt,
-                                  title: 'paywall.features.identify_unlimited'.tr(),
-                                ),
-                                
-                                SizedBox(height: 8.h),
-                                
-                                _buildFeatureItem(
-                                  icon: Icons.school,
-                                  title: 'paywall.features.unlock_facts'.tr(),
-                                ),
-                                
-                                SizedBox(height: 8.h),
-                                
-                                _buildFeatureItem(
-                                  icon: Icons.auto_awesome,
-                                  title: 'paywall.features.ai_analysis'.tr(),
-                                ),
-                                
-                                SizedBox(height: 8.h),
-                                
-                                _buildFeatureItem(
-                                  icon: Icons.lock_open,
-                                  title: 'paywall.features.remove_paywalls'.tr(),
-                                ),
-                                
-                                SizedBox(height: 24.h),
-                                
-                                // Dynamic pricing options from RevenueCat
-                                ...RevenueCatHelper.shared.products.asMap().entries.map((entry) {
-                                  final index = entry.key;
-                                  final product = entry.value;
-                                  final isSelected = index == (_isLifetimeSelected ? 0 : 1);
-                                  
-                                  // Determine if this is lifetime based on product identifier
-                                  final isLifetime = product.identifier.toLowerCase().contains('lifetime');
-                                  
-                                  return Padding(
-                                    padding: EdgeInsets.only(bottom: index < RevenueCatHelper.shared.products.length - 1 ? 12.h : 0),
-                                    child: _buildNewPricingCard(
-                                      title: isLifetime ? 'paywall.plans.lifetime'.tr() : 'paywall.plans.weekly'.tr(),
-                                      subtitle: isLifetime ? null : '${product.priceString} ${'paywall.plans.per_week'.tr()}',
-                                      price: isLifetime ? product.priceString : null,
-                                      badge: isLifetime ? 'paywall.plans.save_badge'.tr() : '',
-                                      badgeColor: isLifetime ? Colors.red[600]! : Colors.green[600]!,
-                                      isSelected: isSelected,
-                                      onTap: () {
-                                        setState(() {
-                                          _isLifetimeSelected = index == 0;
-                                        });
-                                      },
-                                    ),
-                                  );
-                                }),
-                                
-                                SizedBox(height: 32.h), // Space for button
-                              ],
-                            ),
-                          ),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          // Background video with gradient
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            height: MediaQuery.of(context).size.height * 0.7,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                // Background video
+                if (_isVideoInitialized)
+                  Positioned.fill(
+                    child: FittedBox(
+                      fit: BoxFit.cover,
+                      child: SizedBox(
+                        width: _videoController.value.size.width,
+                        height: _videoController.value.size.height,
+                        child: VideoPlayer(_videoController),
+                      ),
+                    ),
+                  )
+                else
+                  // Fallback image while video loads
+                  Positioned.fill(
+                    child: Image.asset(
+                      'assets/paywall.png',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(color: const Color(0xFF030712));
+                      },
+                    ),
+                  ),
+                // Gradient overlay
+                Positioned.fill(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          const Color(0xFF030712).withOpacity(0),
+                          const Color(0xFF030712).withOpacity(1),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Content
+          SafeArea(
+            child: Column(
+              children: [
+                // Close button
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: IconButton(
+                      icon: Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.05),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          Icons.close,
+                          color: Colors.white,
+                          size: 20,
                         ),
                       ),
-                      
-                      // Purchase Button
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 24.h),
-                        child: SizedBox(
-                          width: double.infinity,
-                          height: 56.h,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              gradient: CrystalColors.crystalTabGradient,
-                              borderRadius: BorderRadius.circular(16.r),
-                            ),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                if (RevenueCatHelper.shared.products.isNotEmpty) {
-                                  final selectedIndex = _isLifetimeSelected ? 0 : 1;
-                                  if (selectedIndex < RevenueCatHelper.shared.products.length) {
-                                    final selectedProduct = RevenueCatHelper.shared.products[selectedIndex];
-                                    paywallViewModel.purchaseProduct(selectedProduct.identifier);
-                                  }
-                                }
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                shadowColor: Colors.transparent,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16.r),
-                                ),
-                                elevation: 0,
-                              ),
-                              child: paywallViewModel.isLoading
-                                  ? SizedBox(
-                                      height: 20.h,
-                                      width: 20.w,
-                                      child: CircularProgressIndicator(
-                                        color: Colors.white,
-                                        strokeWidth: 2,
-                                      ),
-                                    )
-                                  : Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'paywall.continue'.tr(),
-                                          style: GoogleFonts.inter(
-                                            fontSize: 18.sp,
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        SizedBox(width: 8.w),
-                                        Icon(
-                                          Icons.arrow_forward,
-                                          color: Colors.white,
-                                          size: 20.sp,
-                                        ),
-                                      ],
-                                    ),
-                            ),
-                          ),
+                      onPressed: () {
+                        if (widget.fromOnboarding) {
+                          // Go to main tabs when closing paywall from onboarding
+                          StoneNavigationHelper.goToMainTabsAndClearStack();
+                        } else {
+                          Navigator.pop(context);
+                        }
+                      },
+                    ),
+                  ),
+                ),
+
+                // Expanded to push content to bottom
+                const Spacer(),
+
+                // Title and subtitle
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: Column(
+                    children: [
+                      Text(
+                        'paywall.title'.tr(),
+                        style: const TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                          height: 1.2,
                         ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        'paywall.subtitle'.tr(),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.white.withOpacity(0.8),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 20),
+                      // Features list
+                      Column(
+                        children: [
+                          _buildFeatureItem(
+                            '🔍',
+                            'paywall.features.unlimited_identification'.tr(),
+                          ),
+                          const SizedBox(height: 8),
+                          _buildFeatureItem(
+                            '📚',
+                            'paywall.features.all_facts'.tr(),
+                          ),
+                          const SizedBox(height: 8),
+                          _buildFeatureItem('⚡', 'paywall.features.ai_analysis'.tr()),
+                        ],
                       ),
                     ],
                   ),
-                  
-                  // Hamburger menu button positioned at top left
-                  Positioned(
-                    top: 16.h,
-                    left: 16.w,
-                    child: GestureDetector(
-                      onTap: () => _showOptionsMenu(context),
-                      child: Container(
-                        width: 30.w,
-                        height: 30.h,
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.1),
-                          shape: BoxShape.circle,
+                ),
+
+                const SizedBox(height: 24),
+
+                // Pricing options
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    children: [
+                      _buildPricingOption(
+                        index: 0,
+                        title: 'paywall.plans.weekly.title'.tr(),
+                        subtitle: 'paywall.plans.weekly.subtitle'.tr(),
+                        price: widget.viewModel.weeklyPrice,
+                        isSelected: widget.viewModel.isWeeklySelected,
+                        isWeekly: true,
+                        onTap: () => widget.viewModel.selectWeekly(),
+                      ),
+                      const SizedBox(height: 12),
+                      _buildPricingOption(
+                        index: 1,
+                        title: 'paywall.plans.lifetime.title'.tr(),
+                        subtitle: 'paywall.plans.lifetime.subtitle'.tr(),
+                        price: widget.viewModel.lifetimePrice,
+                        isSelected: widget.viewModel.isLifetimeSelected,
+                        isWeekly: false,
+                        onTap: () => widget.viewModel.selectLifetime(),
+                        savingsPercentage: widget.viewModel.savingsPercentage,
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 24),
+
+                // Start button at the bottom
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: GestureDetector(
+                    onTap: widget.viewModel.isLoading
+                        ? null
+                        : () async {
+                            final purchased = await widget.viewModel
+                                .purchase();
+                            if (purchased && context.mounted) {
+                              Navigator.pop(context, true);
+                            }
+                          },
+                    child: Container(
+                      width: double.infinity,
+                      height: 56,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Colors.white,
+                            Colors.white.withOpacity(0.8),
+                          ],
                         ),
-                        child: Icon(
-                          Icons.menu,
-                          color: Colors.grey[600],
-                          size: 18.sp,
-                        ),
+                        borderRadius: BorderRadius.circular(28),
+                      ),
+                      child: Center(
+                        child: widget.viewModel.isLoading
+                            ? const CircularProgressIndicator(
+                                color: Colors.black,
+                              )
+                            : Text(
+                                'paywall.continue'.tr(),
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
+                                ),
+                              ),
                       ),
                     ),
                   ),
-                  
-                  // Close button
-                  if (_showCloseButton)
-                    Positioned(
-                      top: 16.h,
-                      right: 16.w,
-                      child: GestureDetector(
-                        onTap: () async {
-                          if (_isFromOnboarding) {
-                            // Mark onboarding as completed
-                            StoneNavigationHelper.goToMainTabsAndClearStack();
-                          } else {
-                            StoneNavigationHelper.goBack();
-                          }
-                        },
-                        child: Container(
-                          width: 28.w,
-                          height: 28.h,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.85),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.close,
-                            color: Colors.grey[600],
-                            size: 16.sp,
-                          ),
+                ),
+
+                const SizedBox(height: 16),
+
+                // Security badge
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.lock,
+                      size: 16,
+                      color: Colors.white.withOpacity(0.6),
+                    ),
+                    const SizedBox(width: 6),
+                    Text(
+                      Platform.isIOS
+                          ? 'paywall.security.ios'.tr()
+                          : 'paywall.security.android'.tr(),
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white.withOpacity(0.6),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 16),
+
+                // Footer links
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: widget.viewModel.openTerms,
+                      child: Text(
+                        'paywall.footer.terms'.tr(),
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white.withOpacity(0.6),
                         ),
                       ),
                     ),
-                ],
-              ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                      ),
+                      width: 1,
+                      height: 14,
+                      color: Colors.white.withOpacity(0.3),
+                    ),
+                    GestureDetector(
+                      onTap: widget.viewModel.openPrivacy,
+                      child: Text(
+                        'paywall.footer.privacy'.tr(),
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white.withOpacity(0.6),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                      ),
+                      width: 1,
+                      height: 14,
+                      color: Colors.white.withOpacity(0.3),
+                    ),
+                    GestureDetector(
+                      onTap: () async {
+                        final restored = await widget.viewModel.restore();
+                        if (restored && context.mounted) {
+                          Navigator.pop(context, true);
+                        }
+                      },
+                      child: Text(
+                        'paywall.footer.restore'.tr(),
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white.withOpacity(0.6),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 8),
+              ],
             ),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 
-  Widget _buildFeatureItem({
-    required IconData icon,
-    required String title,
-  }) {
+  Widget _buildFeatureItem(String emoji, String text) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
-          width: 32.w,
-          height: 32.h,
-          decoration: BoxDecoration(
-            color: CrystalColors.primaryBlue.withValues(alpha: 0.1),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            icon,
-            color: CrystalColors.primaryBlue,
-            size: 18.sp,
-          ),
-        ),
-        SizedBox(width: 12.w),
-        Expanded(
-          child: Text(
-            title,
-            style: GoogleFonts.inter(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w500,
-              color: Colors.black,
-            ),
+        Text(emoji, style: const TextStyle(fontSize: 16)),
+        const SizedBox(width: 8),
+        Text(
+          text,
+          style: const TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
       ],
     );
   }
 
-  Widget _buildNewPricingCard({
+  Widget _buildPricingOption({
+    required int index,
     required String title,
-    String? subtitle,
-    String? price,
-    required String badge,
-    required Color badgeColor,
+    required String subtitle,
+    required String price,
     required bool isSelected,
+    required bool isWeekly,
     required VoidCallback onTap,
+    int? savingsPercentage,
   }) {
+    final isYearly = !isWeekly;
+
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(
-            color: isSelected ? CrystalColors.primaryBlue : Colors.grey[300]!,
-            width: isSelected ? 2 : 1,
-          ),
-        ),
-        child: Row(
-          children: [
-            // Title and price section
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Container(
+            height: 64,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            decoration: BoxDecoration(
+              color: isSelected
+                  ? const Color(0xFF8B5CF6).withOpacity(0.2)
+                  : const Color(0xFF000000).withOpacity(0.54),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: isSelected
+                    ? const Color(0xFF8B5CF6)
+                    : Colors.white.withOpacity(0.2),
+                width: isSelected ? 2 : 1,
+              ),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 24,
+                  height: 24,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: isSelected
+                          ? const Color(0xFF8B5CF6)
+                          : Colors.white.withOpacity(0.5),
+                      width: 2,
+                    ),
+                    color: isSelected
+                        ? const Color(0xFF8B5CF6)
+                        : Colors.transparent,
+                  ),
+                  child: isSelected
+                      ? const Icon(Icons.check, color: Colors.black, size: 16)
+                      : null,
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         title,
-                        style: GoogleFonts.inter(
-                          fontSize: 16.sp,
+                        style: const TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
                           fontWeight: FontWeight.w600,
-                          color: Colors.black,
                         ),
                       ),
-                      SizedBox(width: 8.w),
-                      // Badge next to title
-                      if (badge.isNotEmpty)
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                          decoration: BoxDecoration(
-                            color: badgeColor,
-                            borderRadius: BorderRadius.circular(4.r),
-                          ),
-                          child: Text(
-                            badge,
-                            style: GoogleFonts.inter(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                            ),
-                          ),
+                      const SizedBox(height: 2),
+                      Text(
+                        subtitle,
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.white.withOpacity(0.6),
                         ),
+                      ),
                     ],
                   ),
-                  if (subtitle != null) ...[
-                    SizedBox(height: 4.h),
+                ),
+                Text(
+                  price,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // Discount badge for lifetime plan
+          if (!isWeekly)
+            Positioned(
+              top: -10,
+              right: 10,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFFF94D4), Color(0xFFE7B4F5)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.star, color: Colors.black, size: 12),
+                    const SizedBox(width: 3),
                     Text(
-                      subtitle,
-                      style: GoogleFonts.inter(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.grey[600],
-                      ),
-                    ),
-                  ],
-                  if (price != null && price.isNotEmpty && subtitle == null) ...[
-                    SizedBox(height: 4.h),
-                    Text(
-                      price,
-                      style: GoogleFonts.inter(
-                        fontSize: 14.sp,
+                      'SAVE ${savingsPercentage ?? 70}%',
+                      style: const TextStyle(
+                        fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
                       ),
                     ),
                   ],
-                ],
-              ),
-            ),
-            
-            // Check mark on the right
-            Container(
-              width: 20.w,
-              height: 20.h,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: isSelected ? CrystalColors.primaryBlue : Colors.transparent,
-                border: Border.all(
-                  color: isSelected ? CrystalColors.primaryBlue : Colors.grey[400]!,
-                  width: 1.5,
-                ),
-              ),
-              child: isSelected
-                  ? Icon(
-                      Icons.check,
-                      size: 12.sp,
-                      color: Colors.white,
-                    )
-                  : null,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  void _showOptionsMenu(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.r),
-          ),
-          title: Text(
-            'paywall.menu.title'.tr(),
-            style: GoogleFonts.inter(
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w600,
-              color: Colors.black,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _buildMenuOption(
-                context,
-                title: 'paywall.menu.privacy_policy'.tr(),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  _launchURL('https://mobinaz.com/privacy-rockify');
-                },
-              ),
-              Divider(height: 1.h, color: Colors.grey[300]),
-              _buildMenuOption(
-                context,
-                title: 'paywall.menu.terms_of_service'.tr(),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  _launchURL('https://mobinaz.com/terms-rockify');
-                },
-              ),
-              Divider(height: 1.h, color: Colors.grey[300]),
-              _buildMenuOption(
-                context,
-                title: 'paywall.menu.restore_purchases'.tr(),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  _restorePurchases();
-                },
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text(
-                'paywall.menu.cancel'.tr(),
-                style: GoogleFonts.inter(
-                  fontSize: 16.sp,
-                  color: Colors.grey[600],
-                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
-          ],
-        );
-      },
-    );
-  }
-
-  Widget _buildMenuOption(BuildContext context, {
-    required String title,
-    required VoidCallback onTap,
-  }) {
-    return ListTile(
-      title: Text(
-        title,
-        style: GoogleFonts.inter(
-          fontSize: 16.sp,
-          color: CrystalColors.primaryBlue,
-          fontWeight: FontWeight.w500,
-        ),
-        textAlign: TextAlign.center,
+        ],
       ),
-      onTap: onTap,
-      contentPadding: EdgeInsets.symmetric(vertical: 4.h),
     );
-  }
-
-  Future<void> _launchURL(String url) async {
-    final Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } else {
-      debugPrint('Could not launch $url');
-    }
-  }
-
-  Future<void> _restorePurchases() async {
-    try {
-      await RevenueCatHelper.shared.restorePurchases();
-      // Show success message
-      ScaffoldMessenger.of(StoneNavigationHelper.navigatorKey.currentContext!).showSnackBar(
-        SnackBar(
-          content: Text(
-            'paywall.messages.restore_success'.tr(),
-            style: GoogleFonts.inter(color: Colors.white),
-          ),
-          backgroundColor: CrystalColors.primaryBlue,
-        ),
-      );
-    } catch (e) {
-      // Show error message
-      ScaffoldMessenger.of(StoneNavigationHelper.navigatorKey.currentContext!).showSnackBar(
-        SnackBar(
-          content: Text(
-            '${'paywall.messages.restore_failed'.tr()}: $e',
-            style: GoogleFonts.inter(color: Colors.white),
-          ),
-          backgroundColor: Colors.red,
-        ),
-      );
-    }
   }
 }

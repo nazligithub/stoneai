@@ -1,4 +1,14 @@
 {
+  "home": {
+    "subtitle": "あなたの周りのクリスタルを発見",
+    "crystal_expert_title": "あなたのAIクリスタル専門アシスタント！",
+    "crystal_expert_subtitle": "クリスタルとその特性について何でも聞いてください",
+    "ask_question": "質問をする...",
+    "scan_rock": "宝石スキャナー",
+    "identify_stones": "クリスタルと石を識別",
+    "featured_crystals": "注目のクリスタル",
+    "error": "クリスタルの読み込みエラー"
+  },
   "onboard": {
     "step1": {
       "title": "石をスキャンして識別",

@@ -1,4 +1,14 @@
 {
+  "home": {
+    "subtitle": "Entdecken Sie Kristalle um Sie herum",
+    "crystal_expert_title": "Ihr KI-Kristall-Experten-Assistent!",
+    "crystal_expert_subtitle": "Fragen Sie alles über Kristalle und ihre Eigenschaften",
+    "ask_question": "Stellen Sie eine Frage...",
+    "scan_rock": "Edelstein-Scanner",
+    "identify_stones": "Kristalle und Steine identifizieren",
+    "featured_crystals": "Ausgewählte Kristalle",
+    "error": "Fehler beim Laden der Kristalle"
+  },
   "onboard": {
     "step1": {
       "title": "Steine scannen & identifizieren",
@@ -29,26 +39,33 @@
     }
   },
   "paywall": {
-    "title": "Unbegrenzter Zugang",
+    "title": "Premium freischalten",
+    "subtitle": "Unbegrenzte Steine mit Premium-Funktionen identifizieren",
     "features": {
-      "identify_unlimited": "Unbegrenzt Gesteine & Steine identifizieren",
-      "unlock_facts": "Bildungsinhalte freischalten",
-      "ai_analysis": "KI-gestützte Steinanalyse",
-      "remove_paywalls": "Lästige Bezahlschranken entfernen"
+      "unlimited_identification": "Unbegrenzte Stein-Identifizierung",
+      "all_facts": "Zugang zu allen Stein-Fakten",
+      "ai_analysis": "KI-gestützte Analyse"
     },
     "plans": {
-      "lifetime": "Lebenslanger Plan",
-      "weekly": "Wöchentlicher Plan",
-      "per_week": "pro Woche",
-      "save_badge": "90% SPAREN"
+      "weekly": {
+        "title": "Wöchentlicher Zugang",
+        "subtitle": "Jederzeit kündbar"
+      },
+      "lifetime": {
+        "title": "Lebenslanger Zugang",
+        "subtitle": "Einmalige Zahlung",
+        "save_badge": "%d%% SPAREN"
+      }
     },
     "continue": "Weiter",
-    "menu": {
-      "title": "Weitere Optionen",
-      "privacy_policy": "Datenschutzrichtlinie",
-      "terms_of_service": "Nutzungsbedingungen",
-      "restore_purchases": "Käufe wiederherstellen",
-      "cancel": "Abbrechen"
+    "security": {
+      "ios": "Gesichert durch App Store",
+      "android": "Gesichert durch Google Play"
+    },
+    "footer": {
+      "terms": "AGB",
+      "privacy": "Datenschutz",
+      "restore": "Wiederherstellen"
     },
     "messages": {
       "restore_success": "Käufe erfolgreich wiederhergestellt",
