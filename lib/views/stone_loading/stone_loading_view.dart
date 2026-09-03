@@ -9,11 +9,8 @@ import '../../constants/crystal_colors.dart';
 
 class StoneLoadingView extends StatelessWidget {
   final String imagePath;
-  
-  const StoneLoadingView({
-    super.key,
-    required this.imagePath,
-  });
+
+  const StoneLoadingView({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +31,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
         return PopScope(
           canPop: false, // Prevent back navigation
           child: Scaffold(
-            backgroundColor: Colors.black,
+            backgroundColor: const Color(0xFF081421),
             body: SafeArea(
               child: Container(
                 width: double.infinity,
@@ -43,10 +40,10 @@ class _StoneLoadingViewContent extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.black,
-                      const Color(0xFF0D1117),
-                      Colors.black,
+                    colors: const [
+                      Color(0xFF081421),
+                      Color(0xFF102A3A),
+                      Color(0xFF081421),
                     ],
                   ),
                 ),
@@ -55,7 +52,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
                   children: [
                     // Header spacing
                     SizedBox(height: 60.h),
-                    
+
                     // Diamond Animation
                     SizedBox(
                       width: 280.w,
@@ -71,8 +68,12 @@ class _StoneLoadingViewContent extends StatelessWidget {
                               shape: BoxShape.circle,
                               gradient: RadialGradient(
                                 colors: [
-                                  CrystalColors.primaryBlue.withValues(alpha: 0.3),
-                                  CrystalColors.primaryBlue.withValues(alpha: 0.1),
+                                  CrystalColors.primaryLight.withValues(
+                                    alpha: 0.3,
+                                  ),
+                                  CrystalColors.primaryBlue.withValues(
+                                    alpha: 0.12,
+                                  ),
                                   Colors.transparent,
                                 ],
                               ),
@@ -89,59 +90,70 @@ class _StoneLoadingViewContent extends StatelessWidget {
                         ],
                       ),
                     ),
-                    
+
                     SizedBox(height: 40.h),
-                    
+
                     // Loading Text
                     Text(
                       'stone_loading.analyzing'.tr(),
                       style: GoogleFonts.poppins(
-                        fontSize: 24.sp,
+                        fontSize: 22.sp,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
+                        letterSpacing: -0.2,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    
+
                     SizedBox(height: 16.h),
-                    
+
                     // Progress indicator
                     Container(
-                      width: 200.w,
-                      height: 4.h,
+                      width: 240.w,
+                      height: 6.h,
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(2.r),
+                        color: Colors.white.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(4.r),
                       ),
                       child: Stack(
                         children: [
                           AnimatedContainer(
                             duration: Duration(milliseconds: 500),
-                            width: 200.w * viewModel.progress,
-                            height: 4.h,
+                            width: 240.w * viewModel.progress,
+                            height: 6.h,
                             decoration: BoxDecoration(
                               gradient: CrystalColors.crystalTabGradient,
-                              borderRadius: BorderRadius.circular(2.r),
+                              borderRadius: BorderRadius.circular(4.r),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    
+
                     SizedBox(height: 12.h),
-                    
+
                     // Status Text
                     Text(
-                      'stone_loading.duration_warning'.tr(),
+                      viewModel.statusText,
                       style: GoogleFonts.poppins(
-                        fontSize: 14.sp,
-                        color: Colors.white.withValues(alpha: 0.7),
+                        fontSize: 12.sp,
+                        color: CrystalColors.primaryLight,
+                        fontWeight: FontWeight.w600,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    
+                    SizedBox(height: 4.h),
+                    Text(
+                      'stone_loading.duration_warning'.tr(),
+                      style: GoogleFonts.poppins(
+                        fontSize: 11.sp,
+                        color: Colors.white.withValues(alpha: 0.55),
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+
                     SizedBox(height: 60.h),
-                    
+
                     // Error message if any
                     if (viewModel.error != null)
                       Container(
@@ -149,7 +161,7 @@ class _StoneLoadingViewContent extends StatelessWidget {
                         padding: EdgeInsets.all(16.w),
                         decoration: BoxDecoration(
                           color: Colors.red.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(12.r),
+                          borderRadius: BorderRadius.circular(18.r),
                           border: Border.all(
                             color: Colors.red.withValues(alpha: 0.3),
                             width: 1,
@@ -192,9 +204,14 @@ class _StoneLoadingViewContent extends StatelessWidget {
                                   child: OutlinedButton(
                                     onPressed: () => viewModel.retryScanning(),
                                     style: OutlinedButton.styleFrom(
-                                      side: BorderSide(color: Colors.red, width: 1),
+                                      side: BorderSide(
+                                        color: Colors.red,
+                                        width: 1,
+                                      ),
                                       shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(8.r),
+                                        borderRadius: BorderRadius.circular(
+                                          8.r,
+                                        ),
                                       ),
                                     ),
                                     child: Text(
@@ -212,11 +229,15 @@ class _StoneLoadingViewContent extends StatelessWidget {
                                     onPressed: () => viewModel.goBack(),
                                     style: OutlinedButton.styleFrom(
                                       side: BorderSide(
-                                        color: Colors.white.withValues(alpha: 0.3),
+                                        color: Colors.white.withValues(
+                                          alpha: 0.3,
+                                        ),
                                         width: 1,
                                       ),
                                       shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(8.r),
+                                        borderRadius: BorderRadius.circular(
+                                          8.r,
+                                        ),
                                       ),
                                     ),
                                     child: Text(
@@ -233,17 +254,19 @@ class _StoneLoadingViewContent extends StatelessWidget {
                           ],
                         ),
                       ),
-                    
+
                     // AI Tips
                     if (viewModel.error == null)
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 24.w),
                         padding: EdgeInsets.all(16.w),
                         decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.05),
-                          borderRadius: BorderRadius.circular(12.r),
+                          color: Colors.white.withValues(alpha: 0.07),
+                          borderRadius: BorderRadius.circular(18.r),
                           border: Border.all(
-                            color: CrystalColors.primaryBlue.withValues(alpha: 0.2),
+                            color: CrystalColors.primaryLight.withValues(
+                              alpha: 0.18,
+                            ),
                             width: 1,
                           ),
                         ),

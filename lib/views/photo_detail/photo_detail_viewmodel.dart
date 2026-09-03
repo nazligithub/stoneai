@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
+import '../../constants/crystal_colors.dart';
 import '../../helpers/stone_navigation_helper.dart';
 import '../../services/stone_api_service.dart';
 import '../../viewmodels/stone_app_provider.dart';
@@ -34,6 +36,13 @@ class PhotoDetailViewModel extends ChangeNotifier {
     }
   }
 
+  /// Cropping tight around the stone is what the API actually receives, so it
+  /// is worth its place: a stone photographed on a cluttered table gives the
+  /// model more to misread, and every attempt costs a scan.
+  ///
+  /// The aspect-ratio picker and the rotate buttons are hidden — a stone has no
+  /// correct orientation and no useful aspect ratio, and the native camera
+  /// already applies the right rotation.
   Future<void> cropImage() async {
     if (_isDisposed) return;
 
@@ -42,24 +51,25 @@ class PhotoDetailViewModel extends ChangeNotifier {
         sourcePath: _displayImagePath ?? originalImagePath,
         uiSettings: [
           AndroidUiSettings(
-            toolbarTitle: 'Crop Image',
-            toolbarColor: Colors.black,
-            toolbarWidgetColor: Colors.white,
-            statusBarColor: Colors.black,
-            backgroundColor: Colors.black,
-            activeControlsWidgetColor: const Color(0xFF13C8A3),
+            toolbarTitle: 'photo_detail.crop_title'.tr(),
+            toolbarColor: CrystalColors.inkDark,
+            toolbarWidgetColor: const Color(0xFFFBF3E9),
+            statusBarColor: CrystalColors.inkDark,
+            backgroundColor: CrystalColors.inkDark,
+            activeControlsWidgetColor: CrystalColors.accentAction,
             initAspectRatio: CropAspectRatioPreset.original,
             lockAspectRatio: false,
+            hideBottomControls: false,
           ),
           IOSUiSettings(
-            title: 'Crop Image',
-            cancelButtonTitle: 'Cancel',
-            doneButtonTitle: 'Done',
+            title: 'photo_detail.crop_title'.tr(),
+            cancelButtonTitle: 'photo_detail.crop_cancel'.tr(),
+            doneButtonTitle: 'photo_detail.crop_done'.tr(),
             aspectRatioLockEnabled: false,
             resetAspectRatioEnabled: true,
-            aspectRatioPickerButtonHidden: false,
-            rotateButtonsHidden: false,
-            rotateClockwiseButtonHidden: false,
+            aspectRatioPickerButtonHidden: true,
+            rotateButtonsHidden: true,
+            rotateClockwiseButtonHidden: true,
           ),
         ],
       );

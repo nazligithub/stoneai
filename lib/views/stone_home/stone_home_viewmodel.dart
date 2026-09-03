@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../../models/stone_model.dart';
 import '../../data/stone_data.dart';
 import '../../helpers/stone_navigation_helper.dart';
 import '../../constants/stone_routes.dart';
-import '../../viewmodels/stone_app_provider.dart';
+import '../../services/stone_camera_service.dart';
 
 class StoneHomeViewModel extends ChangeNotifier {
   List<StoneModel> _featuredStones = [];
@@ -59,10 +58,8 @@ class StoneHomeViewModel extends ChangeNotifier {
     );
   }
 
-  void navigateToCamera() {
-    // Update tab index to camera
-    final context = StoneNavigationHelper.navigatorKey.currentContext!;
-    Provider.of<StoneAppProvider>(context, listen: false).setTabIndex(1);
+  Future<void> navigateToCamera(BuildContext context) {
+    return StoneCameraService.instance.openNativeCamera(context: context);
   }
 
   void submitQuestion() {

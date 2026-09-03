@@ -11,7 +11,7 @@ import '../models/chat_request.dart';
 import '../models/chat_response.dart';
 
 class StoneApiService {
-  static const String _baseUrl = 'https://firm-elli-nazli-41018a5e.koyeb.app/';
+  static const String _baseUrl = 'https://skow40scksc88o4kwgwg40go.mobinaz.work/';
   static const Duration _timeout = Duration(seconds: 60); // Increased timeout for AI processing
   
   late final Dio _dio;

@@ -7,7 +7,9 @@
     "scan_rock": "Değerli Taş Tanımlayıcıyı Tara",
     "identify_stones": "Kristalleri ve taşları tanımlayın",
     "featured_crystals": "Öne Çıkan Kristaller",
-    "error": "Kristaller yüklenirken hata oluştu"
+    "error": "Kristaller yüklenirken hata oluştu",
+    "see_all": "Tümü",
+    "open_camera": "Kamerayı aç"
   },
   "onboard": {
     "step1": {
@@ -39,9 +41,9 @@
     }
   },
   "rating": {
-    "title": "Rockify'ı Değerlendir",
+    "title": "Gemstone ID'yi Değerlendir",
     "subtitle": "Bizimle taş keşfetmeyi sevdin mi? Değerlendirmen iyileştirmelerimize yardım eder ve daha fazla taş tutkununa ulaşmamızı sağlar!",
-    "button": "Rockify'ı Değerlendir",
+    "button": "Gemstone ID'yi Değerlendir",
     "rated": "Değerlendirdim!",
     "continue": "Devam Et"
   },
@@ -85,34 +87,16 @@
     "error": "Bir hata oluştu"
   },
   "stone_detail": {
-    "unknown_stone": "Bilinmeyen Taş",
-    "stone_not_found": "Taş bulunamadı",
-    "sections": {
-      "description": "Açıklama",
-      "basic_identity": "Temel Kimlik",
-      "energy_spiritual_benefits": "Enerji & Spiritüel Faydalar",
-      "physical_beliefs": "Fiziksel İnanışlar*",
-      "physical_properties": "Fiziksel Özellikler",
-      "localities": "Yerler",
-      "collection_care": "Koleksiyon & Bakım",
-      "quality_indicators": "Kalite Göstergeleri",
-      "faq": "Sık Sorulan Sorular"
-    },
+    "basic_identity": "Temel Kimlik",
     "properties": {
       "element_chakra": "Element & Çakra",
-      "zodiac_compatibility": "Burç Uyumu",
-      "spiritual_theme": "Ruhsal Tema",
-      "mineral_family": "Mineral Ailesi",
-      "hardness": "Sertlik",
-      "formation": "Oluşum",
-      "origin": "Köken",
-      "color_variations": "Renk Çeşitleri",
-      "crystal_system": "Kristal Sistemi",
-      "quality_indicators": "Kalite Göstergeleri",
-      "value_factors": "Değer Faktörleri",
-      "sources": "Kaynaklar"
+      "zodiac_compatibility": "Burç Uyumluluğu",
+      "spiritual_theme": "Spiritüel Tema"
     },
-    "disclaimer": "*Bunlar geleneksel inançlardır, tıbbi tavsiye değildir"
+    "energy_benefits": "Enerji & Spiritüel Faydalar",
+    "emotional_balance": "Duygusal Dengeleyici",
+    "energy_balance": "Enerji Dengeleme",
+    "spiritual_clarity": "Ruhsal Berraklık"
   },
   "camera": {
     "error": {
@@ -148,19 +132,10 @@
   "photo_detail": {
     "start_scan": "Tarama başlat",
     "crop": "Kırp",
-    "retake": "Yeniden çek"
-  },
-  "stone_detail": {
-    "basic_identity": "Temel Kimlik",
-    "properties": {
-      "element_chakra": "Element & Çakra",
-      "zodiac_compatibility": "Burç Uyumluluğu",
-      "spiritual_theme": "Spiritüel Tema"
-    },
-    "energy_benefits": "Enerji & Spiritüel Faydalar",
-    "emotional_balance": "Duygusal Dengeleyici",
-    "energy_balance": "Enerji Dengeleme",
-    "spiritual_clarity": "Ruhsal Berraklık"
+    "retake": "Yeniden çek",
+    "crop_title": "Taşı çerçeveye al",
+    "crop_cancel": "Vazgeç",
+    "crop_done": "Bitti"
   },
   "explore_detail": {
     "description": "Açıklama",
@@ -234,14 +209,20 @@
     }
   },
   "stone_loading": {
-    "analyzing_properties": "Taşınızın özelliklerini ve enerji bilgilerini AI teknolojisi ile analiz ediyoruz",
-    "stone_not_detected": "Taş Tespit Edilemedi",
-    "stone_not_detected_desc": "Görüntüde taş veya kristal tespit edilemedi. Lütfen bir taş/kristal fotoğrafı yükleyin.",
-    "ok": "Tamam",
-    "try_again": "Yeniden Dene",
-    "retry": "Yeniden Dene",
+    "analyzing": "Taş Analiz Ediliyor...",
+    "error_title": "Analiz Hatası",
+    "retry": "Tekrar Dene",
     "go_back": "Geri Dön",
-    "error_title": "Hata"
+    "ai_tip": "AI teknolojisi ile taşınızın özelliklerini\nve enerji bilgilerini analiz ediyoruz",
+    "duration_warning": "Bu işlem 15 saniye kadar sürebilir",
+    "preparing_image": "Görsel hazırlanıyor...",
+    "starting_ai_analysis": "AI analiz başlatılıyor...",
+    "preparing_results": "Sonuçlar hazırlanıyor...",
+    "analysis_complete": "Analiz tamamlandı!",
+    "processing_image": "Görsel işleniyor...",
+    "ai_model_working": "AI modeli çalışıyor...",
+    "determining_stone_properties": "Taş özellikleri belirleniyor...",
+    "final_checks": "Son kontroller yapılıyor..."
   },
   "history": {
     "title": "Geçmiş",
@@ -283,22 +264,6 @@
       "version": "Sürüm"
     }
   },
-  "stone_loading": {
-    "analyzing": "Taş Analiz Ediliyor...",
-    "error_title": "Analiz Hatası",
-    "retry": "Tekrar Dene",
-    "go_back": "Geri Dön",
-    "ai_tip": "AI teknolojisi ile taşınızın özelliklerini\nve enerji bilgilerini analiz ediyoruz",
-    "duration_warning": "Bu işlem 15 saniye kadar sürebilir",
-    "preparing_image": "Görsel hazırlanıyor...",
-    "starting_ai_analysis": "AI analiz başlatılıyor...",
-    "preparing_results": "Sonuçlar hazırlanıyor...",
-    "analysis_complete": "Analiz tamamlandı!",
-    "processing_image": "Görsel işleniyor...",
-    "ai_model_working": "AI modeli çalışıyor...",
-    "determining_stone_properties": "Taş özellikleri belirleniyor...",
-    "final_checks": "Son kontroller yapılıyor..."
-  },
   "stones": {
     "alexandrite": "Aleksandrit",
     "diamond": "Elmas",
@@ -324,7 +289,7 @@
   "ai_chat": {
     "title": "AI Chat",
     "status": "Çevrimiçi",
-    "input_placeholder": "Değerli taşlar hakkında sorun...",
+    "input_placeholder": "Taşlar hakkında sorun...",
     "premium_required": "AI sohbet için premium gerekli",
     "welcome_title": "Merhaba! AI Değerli Taş Sohbetine Hoş Geldiniz",
     "welcome_message": "Taşlar hakkında size yardımcı olmaktan mutluluk duyarım. Ne öğrenmek istiyorsunuz?",
@@ -340,7 +305,6 @@
       "stone_cleaning_guide": "Kristalleri ve taşları nasıl temizleyebilirim?",
       "chakra_stones_guide": "Çakra taşları nelerdir ve nasıl kullanılır?"
     },
-    "input_placeholder": "Taşlar hakkında sorun...",
     "send": "Gönder"
   },
   "app": {

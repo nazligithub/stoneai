@@ -123,10 +123,6 @@ class StoneNavigationHelper {
     );
   }
 
-  static Future<void> goToCameraCapture() {
-    return navigateTo(StoneRoutes.cameraCapture);
-  }
-
   static Future<void> goToPaywall({bool isFromOnboarding = false}) {
     if (!isNavigatorReady) {
       debugPrint('Navigation failed: Navigator not ready');

@@ -15,7 +15,6 @@ import 'services/supabase_service.dart';
 import 'constants/stone_routes.dart';
 import 'constants/crystal_colors.dart';
 import 'views/main_navigation/crystal_main_navigation_view.dart';
-import 'views/camera_capture/stone_camera_view.dart';
 import 'views/stone_detail/stone_detail_view.dart';
 import 'views/explore_detail/explore_detail_view.dart';
 import 'views/paywall/paywall_view.dart';
@@ -33,14 +32,14 @@ import 'models/stone_scan_response.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Initialize EasyLocalization
   await EasyLocalization.ensureInitialized();
-  
+
   // Initialize storage
   await GetStorage.init();
   await StoneStorageHelper().init();
-  
+
   // Initialize RevenueCat
   await RevenueCatHelper.shared.init();
 
@@ -52,12 +51,12 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  
+
   runApp(
     EasyLocalization(
       supportedLocales: const [
         Locale('en'),
-        Locale('de'), 
+        Locale('de'),
         Locale('fr'),
         Locale('ja'),
         Locale('ko'),
@@ -66,13 +65,13 @@ void main() async {
       ],
       path: 'assets/translations',
       fallbackLocale: const Locale('en'),
-      child: const RockifyApp(),
+      child: const GemstoneIDApp(),
     ),
   );
 }
 
-class RockifyApp extends StatelessWidget {
-  const RockifyApp({super.key});
+class GemstoneIDApp extends StatelessWidget {
+  const GemstoneIDApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -86,9 +85,7 @@ class RockifyApp extends StatelessWidget {
             ChangeNotifierProvider(
               create: (_) => StoneAppProvider()..initializeApp(),
             ),
-            ChangeNotifierProvider(
-              create: (_) => RemoteConfigProvider(),
-            ),
+            ChangeNotifierProvider(create: (_) => RemoteConfigProvider()),
           ],
           child: Consumer<StoneAppProvider>(
             builder: (context, appProvider, child) {
@@ -98,18 +95,20 @@ class RockifyApp extends StatelessWidget {
                 navigatorKey: StoneNavigationHelper.navigatorKey,
                 theme: _buildLightTheme(),
                 darkTheme: _buildDarkTheme(),
-                themeMode: appProvider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+                themeMode: appProvider.isDarkMode
+                    ? ThemeMode.dark
+                    : ThemeMode.light,
                 localizationsDelegates: context.localizationDelegates,
                 supportedLocales: context.supportedLocales,
                 locale: context.locale,
-                home: appProvider.isAppLoading 
-                    ? const RockifySplashScreen()
-                    : appProvider.isOnboardingCompleted 
-                        ? const CrystalMainNavigationView()
-                        : ChangeNotifierProvider(
-                            create: (_) => StoneOnboardOneViewModel(),
-                            child: const StoneOnboardOneView(),
-                          ),
+                home: appProvider.isAppLoading
+                    ? const GemstoneIDSplashScreen()
+                    : appProvider.isOnboardingCompleted
+                    ? const CrystalMainNavigationView()
+                    : ChangeNotifierProvider(
+                        create: (_) => StoneOnboardOneViewModel(),
+                        child: const StoneOnboardOneView(),
+                      ),
                 routes: _buildRoutes(),
               );
             },
@@ -124,23 +123,54 @@ class RockifyApp extends StatelessWidget {
       useMaterial3: true,
       brightness: Brightness.light,
       primaryColor: CrystalColors.primaryBlue,
-      scaffoldBackgroundColor: CrystalColors.backgroundLight,
+      scaffoldBackgroundColor: const Color(0xFFF5F8FB),
       colorScheme: ColorScheme.fromSeed(
         seedColor: CrystalColors.primaryBlue,
         brightness: Brightness.light,
+        surface: const Color(0xFFF5F8FB),
       ),
       textTheme: GoogleFonts.poppinsTextTheme(),
       appBarTheme: AppBarTheme(
-        backgroundColor: CrystalColors.primaryBlue,
+        backgroundColor: const Color(0xFFF5F8FB),
         elevation: 0,
+        surfaceTintColor: Colors.transparent,
         titleTextStyle: GoogleFonts.poppins(
           fontSize: 20,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: CrystalColors.textPrimary,
         ),
-        iconTheme: const IconThemeData(
-          color: Colors.white,
+        iconTheme: const IconThemeData(color: CrystalColors.textPrimary),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.white,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 14,
         ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide.none,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(
+            color: CrystalColors.primaryBlue.withValues(alpha: 0.08),
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: const BorderSide(
+            color: CrystalColors.primaryLight,
+            width: 1.5,
+          ),
+        ),
+      ),
+      snackBarTheme: SnackBarThemeData(
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        backgroundColor: CrystalColors.primaryDark,
+        contentTextStyle: GoogleFonts.poppins(color: Colors.white),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -171,16 +201,14 @@ class RockifyApp extends StatelessWidget {
       ),
       textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
       appBarTheme: AppBarTheme(
-        backgroundColor: CrystalColors.primaryDark,
+        backgroundColor: CrystalColors.backgroundDark,
         elevation: 0,
         titleTextStyle: GoogleFonts.poppins(
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
-        iconTheme: const IconThemeData(
-          color: Colors.white,
-        ),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -210,10 +238,9 @@ class RockifyApp extends StatelessWidget {
         child: const StoneOnboardTwoView(),
       ),
       StoneRoutes.mainTabs: (context) => const CrystalMainNavigationView(),
-      StoneRoutes.cameraCapture: (context) => StoneCameraView(),
       StoneRoutes.stoneDetail: (context) {
         final args = ModalRoute.of(context)!.settings.arguments;
-        
+
         if (args is Map<String, dynamic>) {
           // API response data
           return StoneDetailView(
@@ -227,7 +254,8 @@ class RockifyApp extends StatelessWidget {
         }
       },
       StoneRoutes.exploreDetail: (context) {
-        final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+        final args =
+            ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
         return ExploreDetailView(stoneId: args['stoneId'] as String);
       },
       StoneRoutes.paywall: (context) => const PaywallView(),
@@ -249,8 +277,8 @@ class RockifyApp extends StatelessWidget {
   }
 }
 
-class RockifySplashScreen extends StatelessWidget {
-  const RockifySplashScreen({super.key});
+class GemstoneIDSplashScreen extends StatelessWidget {
+  const GemstoneIDSplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -349,5 +377,4 @@ class RockifySplashScreen extends StatelessWidget {
       ),
     );
   }
-
 }

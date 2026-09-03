@@ -7,14 +7,12 @@ import 'explore_detail_viewmodel.dart';
 import '../../constants/crystal_colors.dart';
 import '../../models/stone_model.dart';
 import '../../helpers/stone_navigation_helper.dart';
+import '../../constants/app_shadows.dart';
 
 class ExploreDetailView extends StatelessWidget {
   final String stoneId;
-  
-  const ExploreDetailView({
-    super.key,
-    required this.stoneId,
-  });
+
+  const ExploreDetailView({super.key, required this.stoneId});
 
   @override
   Widget build(BuildContext context) {
@@ -34,25 +32,20 @@ class _ExploreDetailViewContent extends StatelessWidget {
       builder: (context, detailViewModel, child) {
         if (detailViewModel.isLoading) {
           return Scaffold(
-            body: const Center(
-              child: CircularProgressIndicator(),
-            ),
+            body: const Center(child: CircularProgressIndicator()),
           );
         }
 
         final stone = detailViewModel.stone;
         if (stone == null) {
-          return Scaffold(
-            body: const Center(
-              child: Text('Stone not found'),
-            ),
-          );
+          return Scaffold(body: const Center(child: Text('Stone not found')));
         }
 
         return Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: const Color(0xFFF5F8FB),
           appBar: AppBar(
             backgroundColor: Colors.transparent,
+            surfaceTintColor: Colors.transparent,
             elevation: 0,
             leading: Container(
               margin: EdgeInsets.all(8.w),
@@ -84,9 +77,7 @@ class _ExploreDetailViewContent extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 350.h,
-            decoration: BoxDecoration(
-              color: const Color(0xFF1E1E2E),
-            ),
+            decoration: BoxDecoration(color: const Color(0xFF1E1E2E)),
             child: Stack(
               fit: StackFit.expand,
               children: [
@@ -164,88 +155,88 @@ class _ExploreDetailViewContent extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-          // Description
-          _buildCard(
-            icon: '📖',
-            title: 'explore_detail.description'.tr(),
-            content: _buildDescription(stone.id),
-          ),
-          SizedBox(height: 16.h),
-          
-          // Basic Identity
-          _buildCard(
-            icon: '🔮',
-            title: 'explore_detail.basic_identity'.tr(),
-            content: _buildCoreIdentity(stone.id),
-          ),
-          SizedBox(height: 16.h),
-          
-          // Spiritual Properties
-          if (_buildSpiritualProperties(stone.id).isNotEmpty) ...[
-            _buildCard(
-              icon: '✨',
-              title: 'explore_detail.spiritual_properties'.tr(),
-              content: _buildSpiritualProperties(stone.id),
-            ),
-            SizedBox(height: 16.h),
-          ],
-          
-          // Physical Beliefs
-          if (_buildPhysicalBeliefs(stone.id).isNotEmpty) ...[
-            _buildCard(
-              icon: '🩺',
-              title: 'explore_detail.physical_beliefs'.tr(),
-              content: _buildPhysicalBeliefs(stone.id),
-            ),
-            SizedBox(height: 16.h),
-          ],
-          
-          // Collection Tips
-          if (_buildCollectionTips(stone.id).isNotEmpty) ...[
-            _buildCard(
-              icon: '💎',
-              title: 'explore_detail.collection_tips'.tr(),
-              content: _buildCollectionTips(stone.id),
-            ),
-            SizedBox(height: 16.h),
-          ],
-          
-          // Localities
-          if (_buildLocalities(stone.id).isNotEmpty) ...[
-            _buildCard(
-              icon: '🌍',
-              title: 'Localities',
-              content: _buildLocalities(stone.id),
-            ),
-            SizedBox(height: 16.h),
-          ],
-          
-          // FAQs
-          if (_buildFAQs(stone.id).isNotEmpty) ...[
-            _buildCard(
-              icon: '❓',
-              title: 'explore_detail.faqs'.tr(),
-              content: _buildFAQs(stone.id),
-            ),
-            SizedBox(height: 16.h),
-          ],
-          
-          // Disclaimer
-          Container(
-            padding: EdgeInsets.all(12.w),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade100,
-              borderRadius: BorderRadius.circular(8.r),
-            ),
-            child: Text(
-              'explore_detail.disclaimer'.tr(),
-              style: GoogleFonts.poppins(
-                fontSize: 12.sp,
-                color: Colors.grey.shade600,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-          ),
+                // Description
+                _buildCard(
+                  icon: '📖',
+                  title: 'explore_detail.description'.tr(),
+                  content: _buildDescription(stone.id),
+                ),
+                SizedBox(height: 16.h),
+
+                // Basic Identity
+                _buildCard(
+                  icon: '🔮',
+                  title: 'explore_detail.basic_identity'.tr(),
+                  content: _buildCoreIdentity(stone.id),
+                ),
+                SizedBox(height: 16.h),
+
+                // Spiritual Properties
+                if (_buildSpiritualProperties(stone.id).isNotEmpty) ...[
+                  _buildCard(
+                    icon: '✨',
+                    title: 'explore_detail.spiritual_properties'.tr(),
+                    content: _buildSpiritualProperties(stone.id),
+                  ),
+                  SizedBox(height: 16.h),
+                ],
+
+                // Physical Beliefs
+                if (_buildPhysicalBeliefs(stone.id).isNotEmpty) ...[
+                  _buildCard(
+                    icon: '🩺',
+                    title: 'explore_detail.physical_beliefs'.tr(),
+                    content: _buildPhysicalBeliefs(stone.id),
+                  ),
+                  SizedBox(height: 16.h),
+                ],
+
+                // Collection Tips
+                if (_buildCollectionTips(stone.id).isNotEmpty) ...[
+                  _buildCard(
+                    icon: '💎',
+                    title: 'explore_detail.collection_tips'.tr(),
+                    content: _buildCollectionTips(stone.id),
+                  ),
+                  SizedBox(height: 16.h),
+                ],
+
+                // Localities
+                if (_buildLocalities(stone.id).isNotEmpty) ...[
+                  _buildCard(
+                    icon: '🌍',
+                    title: 'Localities',
+                    content: _buildLocalities(stone.id),
+                  ),
+                  SizedBox(height: 16.h),
+                ],
+
+                // FAQs
+                if (_buildFAQs(stone.id).isNotEmpty) ...[
+                  _buildCard(
+                    icon: '❓',
+                    title: 'explore_detail.faqs'.tr(),
+                    content: _buildFAQs(stone.id),
+                  ),
+                  SizedBox(height: 16.h),
+                ],
+
+                // Disclaimer
+                Container(
+                  padding: EdgeInsets.all(12.w),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade100,
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: Text(
+                    'explore_detail.disclaimer'.tr(),
+                    style: GoogleFonts.poppins(
+                      fontSize: 12.sp,
+                      color: Colors.grey.shade600,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ),
                 SizedBox(height: 20.h),
               ],
             ),
@@ -254,31 +245,29 @@ class _ExploreDetailViewContent extends StatelessWidget {
       ),
     );
   }
-  
-  Widget _buildCard({required String icon, required String title, required String content}) {
+
+  Widget _buildCard({
+    required String icon,
+    required String title,
+    required String content,
+  }) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 8.r,
-            offset: Offset(0, 2.h),
-          ),
-        ],
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(
+          color: CrystalColors.primaryBlue.withValues(alpha: 0.07),
+        ),
+        boxShadow: AppShadows.softShadow,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Text(
-                icon,
-                style: TextStyle(fontSize: 20.sp),
-              ),
+              Text(icon, style: TextStyle(fontSize: 20.sp)),
               SizedBox(width: 8.w),
               Text(
                 title,
@@ -290,7 +279,7 @@ class _ExploreDetailViewContent extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 14.h),
           Text(
             content,
             style: GoogleFonts.poppins(
@@ -303,7 +292,7 @@ class _ExploreDetailViewContent extends StatelessWidget {
       ),
     );
   }
-  
+
   String _getSpiritualTheme(String stoneId) {
     switch (stoneId) {
       case 'emerald':
@@ -330,23 +319,23 @@ class _ExploreDetailViewContent extends StatelessWidget {
   String _buildSpiritualProperties(String stoneId) {
     return 'explore_detail.stones.$stoneId.spiritual_properties'.tr();
   }
-  
+
   String _buildPhysicalBeliefs(String stoneId) {
     return 'explore_detail.stones.$stoneId.physical_beliefs'.tr();
   }
-  
+
   String _buildFAQs(String stoneId) {
     return 'explore_detail.stones.$stoneId.faqs'.tr();
   }
-  
+
   String _buildDescription(String stoneId) {
     return 'explore_detail.stones.$stoneId.description'.tr();
   }
-  
+
   String _buildCoreIdentity(String stoneId) {
     return 'explore_detail.stones.$stoneId.core_identity'.tr();
   }
-  
+
   String _buildLocalities(String stoneId) {
     return 'explore_detail.stones.$stoneId.localities'.tr();
   }

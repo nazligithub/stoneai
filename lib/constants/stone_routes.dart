@@ -10,7 +10,6 @@ class StoneRoutes {
   static const String gemSettings = '/gem-settings';
   static const String stoneDetail = '/stone-detail';
   static const String exploreDetail = '/explore-detail';
-  static const String cameraCapture = '/camera-capture';
   static const String paywall = '/paywall';
   static const String rating = '/rating';
   static const String aiChat = '/ai-chat';

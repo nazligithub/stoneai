@@ -29,17 +29,7 @@ class StoneSettingsViewModel extends ChangeNotifier {
 
   // URL launch methods
   Future<void> launchSupportEmail() async {
-    final Uri emailUri = Uri(
-      scheme: 'mailto',
-      path: 'support@mobinaz.com',
-      query: 'subject=Rock & Stone Identifier Support',
-    );
-    
-    if (await canLaunchUrl(emailUri)) {
-      await launchUrl(emailUri);
-    } else {
-      _showError('Could not launch email client');
-    }
+    await _launchURL('https://mobinaz.com/support');
   }
 
   Future<void> launchPrivacyPolicy() async {
@@ -154,5 +144,5 @@ class StoneSettingsViewModel extends ChangeNotifier {
   }
 
   // App version
-  String get appVersion => '1.0.0';
+  String get appVersion => '1.3.1';
 }

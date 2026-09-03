@@ -7,7 +7,9 @@
     "scan_rock": "Scan Gemstone Identifier",
     "identify_stones": "Identify crystals and stones",
     "featured_crystals": "Featured Crystals",
-    "error": "Error loading crystals"
+    "error": "Error loading crystals",
+    "see_all": "See all",
+    "open_camera": "Open camera"
   },
   "onboard": {
     "step1": {
@@ -23,7 +25,7 @@
       "button": "Get Started",
       "stones": {
         "amethyst": "Amethyst",
-        "lapis_lazuli": "Lapis Lazuli", 
+        "lapis_lazuli": "Lapis Lazuli",
         "emerald": "Emerald",
         "dioptase": "Dioptase"
       },
@@ -39,9 +41,9 @@
     }
   },
   "rating": {
-    "title": "Rate Rockify",
+    "title": "Rate Gemstone ID",
     "subtitle": "Love discovering stones with us? Your rating helps us improve and reach more stone enthusiasts!",
-    "button": "Rate Rockify",
+    "button": "Rate Gemstone ID",
     "rated": "I rated!",
     "continue": "Continue"
   },
@@ -100,7 +102,7 @@
     },
     "properties": {
       "element_chakra": "Element & Chakra",
-      "zodiac_compatibility": "Zodiac Compatibility", 
+      "zodiac_compatibility": "Zodiac Compatibility",
       "spiritual_theme": "Spiritual Theme",
       "mineral_family": "Mineral Family",
       "hardness": "Hardness",
@@ -151,7 +153,10 @@
   "photo_detail": {
     "start_scan": "Start Scan",
     "crop": "Crop",
-    "retake": "Retake"
+    "retake": "Retake",
+    "crop_title": "Frame the stone",
+    "crop_cancel": "Cancel",
+    "crop_done": "Done"
   },
   "stone_loading": {
     "analyzing_properties": "We are analyzing your stone's properties and energy information with AI technology",
@@ -239,7 +244,7 @@
   "ai_chat": {
     "title": "AI Chat",
     "status": "Online",
-    "input_placeholder": "Ask about gemstones...",
+    "input_placeholder": "Ask about stones...",
     "premium_required": "Premium required for AI chat",
     "welcome_title": "Hello! Welcome to AI Gemstone Chat",
     "welcome_message": "I'm happy to help you with stones. What would you like to know?",
@@ -255,7 +260,6 @@
       "stone_cleaning_guide": "How can I clean crystals and stones?",
       "chakra_stones_guide": "What are chakra stones and how are they used?"
     },
-    "input_placeholder": "Ask about stones...",
     "send": "Send"
   },
   "explore_detail": {

@@ -7,6 +7,8 @@ import 'stone_history_viewmodel.dart';
 import '../../viewmodels/stone_app_provider.dart';
 import '../../constants/crystal_colors.dart';
 import '../../widgets/stone_grid_item.dart';
+import '../../services/stone_camera_service.dart';
+import '../../constants/app_shadows.dart';
 
 class StoneHistoryView extends StatelessWidget {
   const StoneHistoryView({super.key});
@@ -24,17 +26,19 @@ class _RockHistoryViewContent extends StatefulWidget {
   const _RockHistoryViewContent();
 
   @override
-  State<_RockHistoryViewContent> createState() => _RockHistoryViewContentState();
+  State<_RockHistoryViewContent> createState() =>
+      _RockHistoryViewContentState();
 }
 
-class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with WidgetsBindingObserver {
+class _RockHistoryViewContentState extends State<_RockHistoryViewContent>
+    with WidgetsBindingObserver {
   final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    
+
     // Listen for scroll to top requests and tab selection
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final appProvider = Provider.of<StoneAppProvider>(context, listen: false);
@@ -42,7 +46,7 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
       appProvider.addListener(_handleTabSelection);
     });
   }
-  
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
@@ -52,12 +56,13 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
       }
     }
   }
-  
+
   void _handleScrollToTop() {
     if (!mounted) return;
-    
+
     final appProvider = Provider.of<StoneAppProvider>(context, listen: false);
-    if (appProvider.historyScrollToTopRequested && _scrollController.hasClients) {
+    if (appProvider.historyScrollToTopRequested &&
+        _scrollController.hasClients) {
       _scrollController.animateTo(
         0,
         duration: const Duration(milliseconds: 500),
@@ -65,10 +70,10 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
       );
     }
   }
-  
+
   void _handleTabSelection() {
     if (!mounted) return;
-    
+
     final appProvider = Provider.of<StoneAppProvider>(context, listen: false);
     if (appProvider.historyTabSelected) {
       // Reload history when tab is selected
@@ -97,42 +102,49 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
                 controller: _scrollController,
                 slivers: [
                   SliverAppBar(
-                  pinned: false,
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                  toolbarHeight: 60,
-                  leading: null,
-                  automaticallyImplyLeading: false,
-                  title: Text(
-                    'history.title'.tr(),
-                    style: GoogleFonts.poppins(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: CrystalColors.textPrimary,
+                    pinned: false,
+                    backgroundColor: CrystalColors.backgroundLight,
+                    surfaceTintColor: Colors.transparent,
+                    elevation: 0,
+                    toolbarHeight: 76,
+                    titleSpacing: 20,
+                    leading: null,
+                    automaticallyImplyLeading: false,
+                    title: Text(
+                      'history.title'.tr(),
+                      style: GoogleFonts.poppins(
+                        fontSize: 26,
+                        fontWeight: FontWeight.w700,
+                        color: CrystalColors.textPrimary,
+                      ),
                     ),
                   ),
-                ),
-                
-                if (historyViewModel.isLoading)
-                  const SliverFillRemaining(
-                    child: Center(child: CircularProgressIndicator()),
-                  )
-                else if (historyViewModel.hasError)
-                  SliverFillRemaining(
-                    child: _buildErrorState(historyViewModel),
-                  )
-                else if (historyViewModel.isEmpty)
-                  SliverFillRemaining(
-                    child: _buildEmptyState(),
-                  )
-                else ...[
-                  _buildHistoryContent(historyViewModel),
-                  const SliverPadding(
-                    padding: EdgeInsets.only(bottom: 100), // Space for bottom nav
-                  ),
+
+                  if (historyViewModel.isLoading)
+                    const SliverFillRemaining(
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          color: CrystalColors.primaryBlue,
+                          strokeWidth: 2.5,
+                        ),
+                      ),
+                    )
+                  else if (historyViewModel.hasError)
+                    SliverFillRemaining(
+                      child: _buildErrorState(historyViewModel),
+                    )
+                  else if (historyViewModel.isEmpty)
+                    SliverFillRemaining(child: _buildEmptyState())
+                  else ...[
+                    _buildHistoryContent(historyViewModel),
+                    const SliverPadding(
+                      padding: EdgeInsets.only(
+                        bottom: 100,
+                      ), // Space for bottom nav
+                    ),
+                  ],
                 ],
-              ],
-            ),
+              ),
             ),
           ),
         );
@@ -199,11 +211,14 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
               decoration: BoxDecoration(
                 color: CrystalColors.primaryLight.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
+                border: Border.all(
+                  color: CrystalColors.primaryLight.withValues(alpha: 0.22),
+                ),
               ),
               child: Icon(
                 Icons.history_rounded,
                 size: 64,
-                color: CrystalColors.textSecondary,
+                color: CrystalColors.primaryBlue,
               ),
             ),
             const SizedBox(height: 24),
@@ -228,14 +243,13 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
             Container(
               decoration: BoxDecoration(
                 gradient: CrystalColors.crystalTabGradient,
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(14),
+                boxShadow: AppShadows.softShadow,
               ),
               child: ElevatedButton.icon(
-                onPressed: () {
-                  // Navigate to camera tab
-                  final appProvider = Provider.of<StoneAppProvider>(context, listen: false);
-                  appProvider.setTabIndex(1);
-                },
+                onPressed: () => StoneCameraService.instance.openNativeCamera(
+                  context: context,
+                ),
                 icon: const Icon(Icons.camera_alt_rounded),
                 label: Text('history.empty.start_identifying'.tr()),
                 style: ElevatedButton.styleFrom(
@@ -243,7 +257,7 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
                   shadowColor: Colors.transparent,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(14),
                   ),
                   elevation: 0,
                 ),
@@ -265,18 +279,14 @@ class _RockHistoryViewContentState extends State<_RockHistoryViewContent> with W
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
         ),
-        delegate: SliverChildBuilderDelegate(
-          (context, index) {
-            final stone = viewModel.allHistory[index];
-            return StoneGridItem(
-              stone: stone,
-              onTap: () => viewModel.navigateToStoneDetail(stone.id),
-            );
-          },
-          childCount: viewModel.allHistory.length,
-        ),
+        delegate: SliverChildBuilderDelegate((context, index) {
+          final stone = viewModel.allHistory[index];
+          return StoneGridItem(
+            stone: stone,
+            onTap: () => viewModel.navigateToStoneDetail(stone.id),
+          );
+        }, childCount: viewModel.allHistory.length),
       ),
     );
   }
-
 }
